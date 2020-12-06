@@ -11,12 +11,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.shaft.gui.element.ElementActions.hoverAndClick;
 
 public class Data_Management_Page {
     private WebDriver driver;
     public JavascriptExecutor jse;
-    private Actions Action;
 
     public void Scroll_To_Bottom() {
         jse.executeScript("scrollBy(0,2500)");
@@ -83,6 +81,10 @@ public class Data_Management_Page {
     //public List<WebElement> Spinner = driver.findElements(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div"));
     //public List<WebElement> Table_Rows = driver.findElements(By.xpath("//*[@id=\"scrub_content\"]/div/table/tbody/tr"));
 
+    public void Z2D_Wait_Invisibility_Of_Toast_Container() {
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
+        Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(Toast_Container)));
+    }
     public void Z2D_Spinner_to_Disappear() throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div"))).size() != 0 && count < 40) {
@@ -99,8 +101,6 @@ public class Data_Management_Page {
         ElementActions.waitForElementToBePresent(driver, Table_Name, 5, true);
         ElementActions.isElementClickable(driver, Table_Name);
     }
-
-
 
     public void Z2D_Open_Scrub() {
         ElementActions.click(driver, Scrub);
@@ -161,6 +161,15 @@ public class Data_Management_Page {
     public void Z2D_Select_Folder() throws InterruptedException {
         Thread.sleep(2000);
         ElementActions.click(driver, Search_Result);
+    }
+    public void Z2D_is_Clickable_of_Followed_Text(){
+        ElementActions.waitForElementToBePresent(driver, Followed_Text,5,true);
+    }
+    public void Z2D_is_Clickable_of_Unfollow_Btn(){
+        ElementActions.waitForElementToBePresent(driver, Unfollow_Btn,5,true);
+    }
+    public void Z2D_is_Clickable_of_LifeCycle_Btn(){
+        ElementActions.waitForElementToBePresent(driver, LifeCycle_Btn,5,true);
     }
 
 
@@ -279,5 +288,10 @@ public class Data_Management_Page {
 
     public void SetSearchValue() {
         ElementActions.click(driver, Search_Result);
+    }
+
+    public void Z2D_Wait_Text_Not_To_be_Create_Alert(){
+        ElementActions.waitForTextToChange(driver,Followed_Text,"Followed",5);
+
     }
 }

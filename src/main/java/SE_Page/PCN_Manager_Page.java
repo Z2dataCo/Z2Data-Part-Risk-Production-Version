@@ -1,11 +1,10 @@
 package SE_Page;
 
 import com.shaft.gui.element.ElementActions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class PCN_Manager_Page {
 
@@ -88,6 +87,11 @@ public class PCN_Manager_Page {
 
     public void Z2D_Move_To_Impacted_MPN() throws InterruptedException {
         Scroll_to_Element(Impacted_MPN_Results);
+    }
+    public void Z2D_Dashboard_Tab_Total_PCNs_Visibility(){
+        ElementActions.waitForElementToBePresent(driver, Dashboard_Tab_Total_PCNs,5,true);
+       // WebDriverWait Wait = new WebDriverWait(driver, 30);
+        // Wait.until(ExpectedConditions.visibilityOf(driver.findElement(Dashboard_Tab_Total_PCNs)));
     }
 }
 

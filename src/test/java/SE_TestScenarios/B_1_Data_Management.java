@@ -7,14 +7,10 @@ import com.shaft.gui.browser.BrowserFactory;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import javax.annotation.Priority;
 
 public class B_1_Data_Management  {
     private WebDriver driver;
@@ -34,7 +30,7 @@ public class B_1_Data_Management  {
 
     }
 
-    @Test(description = "TS002 || Validate To Open Data Management Page " , priority = 2)
+    @Test(description = "TS002 || Validate Scenario using Data Management Page " , priority = 2)
     @Severity(SeverityLevel.NORMAL)
     public void Data_Management() {
 
