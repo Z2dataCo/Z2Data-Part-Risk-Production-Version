@@ -29,7 +29,7 @@ public class Risk_Management_Module {
 
     public By Dashboard_Tab = By.xpath("//a[contains(text(),'Dashboard')]");
     public By Scrub_Tab = By.xpath("//a[contains(text(),'Scrub')]");
-    public By Parts_Tab = By.xpath("//a[contains(text(),'Parts')]");
+    public By Parts_Tab = By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/div/div//li[3]/a");
     public By Forecast_Tab = By.xpath("//a[contains(text(),'Forecast')]");
     public By Compliance_Tab = By.xpath("//a[contains(text(),'Compliance')]");
     public By Mitigation_Tab = By.xpath("//a[contains(text(),'Mitigation')]");
@@ -239,26 +239,32 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Scrub_Tab() {
-        ElementActions.click(driver, Scrub_Tab);
+        ElementActions.hover(driver, Scrub_Tab);
+        ElementActions.click(driver,Scrub_Tab);
     }
 
     public void Z2D_Click_Forecast_Tab() {
+        ElementActions.hover(driver,Forecast_Tab);
         ElementActions.click(driver, Forecast_Tab);
     }
 
     public void Z2D_Click_Compliance_Tab() {
+        ElementActions.hover(driver,Compliance_Tab);
         ElementActions.click(driver, Compliance_Tab);
     }
 
     public void Z2D_Click_Mitigation_Tab() {
+        ElementActions.hover(driver,Mitigation_Tab);
         ElementActions.click(driver, Mitigation_Tab);
     }
 
     public void Z2D_Click_Reports_Tab() {
+        ElementActions.hover(driver,Reports_Tab);
         ElementActions.click(driver, Reports_Tab);
     }
 
     public void Z2D_Click_on_Parts_Tab() {
+        ElementActions.hover(driver,Parts_Tab);
         ElementActions.click(driver, Parts_Tab);
         Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         ElementActions.isElementClickable(driver, First_CheckBox);
@@ -366,13 +372,13 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Forecast_is_Clickable_of_First_Filter() {
-        ElementActions.isElementClickable(driver, Reports_First_Filter);
+        ElementActions.isElementClickable(driver, First_Filter);
     }
     public void Z2D_Forecast_is_Clickable_of_Second_Filter() {
-        ElementActions.isElementClickable(driver, Reports_Second_Filter);
+        ElementActions.isElementClickable(driver, Second_Filter);
     }
     public void Z2D_Forecast_is_Clickable_of_Third_Filter() {
-        ElementActions.isElementClickable(driver, Reports_Third_Filter);
+        ElementActions.isElementClickable(driver, Third_Filter);
     }
     public void Z2D_Forecast_is_Clickable_of_Fifth_Filter() {
         ElementActions.isElementClickable(driver, Fifth_Filter);

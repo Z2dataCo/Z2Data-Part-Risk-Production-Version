@@ -5,6 +5,9 @@ import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Login_Page {
     private WebDriver driver;
@@ -18,7 +21,16 @@ public class Login_Page {
     public JavascriptExecutor jse;
 
     public void navigateToURLForNavigationL() {
-        BrowserActions.navigateToURL(driver,URL_for_Navigation,Target_URL_Login);
+        driver.navigate().to(URL_for_Navigation);
+        //BrowserActions.navigateToURL(driver,URL_for_Navigation);
+    }
+
+    protected static void Set_Text_Element_Text(WebElement textElement, String value) {
+        textElement.sendKeys(value);
+    }
+
+    protected static void Click_Button(WebElement button) {
+        button.click();
     }
 
     public By Verify_Redirect = By.xpath("//*[@id=\"main_start_page\"]/div/h2");
@@ -28,8 +40,15 @@ public class Login_Page {
     public By SignIn_Btn = By.name("button");
 
     public void Z2D_SignIn() {
+        Set_Text_Element_Text((driver.findElement(Input_Text_Box)),"Z2D.PR1@z2data.com");
+        Set_Text_Element_Text((driver.findElement(Input_Pass)),"Z2D.PR1@z2data.com");
+        Click_Button(driver.findElement(SignIn_Btn));
+        WebDriverWait WebWait = new WebDriverWait(driver, 30);
+        WebWait.until(ExpectedConditions.titleIs("Part Risk | Z2DATA"));
+        /*
         ElementActions.type(driver, Input_Text_Box, "Z2D.PR1@z2data.com");
         ElementActions.type(driver, Input_Pass, "Z2D.PR1@z2data.com");
         ElementActions.click(driver, SignIn_Btn);
+        */
     }
 }

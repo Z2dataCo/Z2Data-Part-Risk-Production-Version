@@ -112,7 +112,7 @@ public class Landing_Page {
     }
 
     public void Z2D_Open_Data_Management() {
-        ElementActions.click(this.driver, Data_Management_Tab);
+        ElementActions.click(driver, Data_Management_Tab);
     }
 
     public void Z2D_Open_DDL_Menu() {

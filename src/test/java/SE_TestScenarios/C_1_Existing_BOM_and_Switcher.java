@@ -20,13 +20,13 @@ public class C_1_Existing_BOM_and_Switcher {
         Login_Obj.navigateToURLForNavigationL();
     }
 
-    @Test(description = "TS001 || Login to Z2Data Part Risk")
+    @Test(description = "TS001 || Login to Z2Data Part Risk",priority = 1)
     public void Login() {
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
 
-    @Test(description = "TS002 || Validate Existing BOM and Switcher")
+    @Test(description = "TS002 || Validate Existing BOM and Switcher",priority = 2)
     public void Existing_BOM_and_Switcher() throws InterruptedException {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);
@@ -62,19 +62,19 @@ public class C_1_Existing_BOM_and_Switcher {
 
 
         Risk_Management_Obj.Z2D_Click_on_Parts_Tab();
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Forecast_First_Table_Data).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Table_Data).isDisplayed());
 
         Risk_Management_Obj.Z2D_Click_Forecast_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         Risk_Management_Obj.Z2D_Forecast_is_Clickable_of_First_Filter();
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Reports_First_Filter).isDisplayed());
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Reports_Second_Filter).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Filter).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Second_Filter).isDisplayed());
         Risk_Management_Obj.Z2D_is_Clickable_of_Switchers_Pipeline();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         Risk_Management_Obj.Z2D_Forecast_is_Clickable_of_First_Filter();
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Reports_First_Filter).isDisplayed());
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Reports_Second_Filter).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Filter).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Second_Filter).isDisplayed());
 
         Risk_Management_Obj.Z2D_Click_Compliance_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();

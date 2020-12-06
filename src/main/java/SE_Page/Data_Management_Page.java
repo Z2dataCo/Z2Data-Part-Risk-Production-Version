@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static com.shaft.gui.element.ElementActions.hoverAndClick;
+
 public class Data_Management_Page {
     private WebDriver driver;
     public JavascriptExecutor jse;
@@ -93,7 +95,7 @@ public class Data_Management_Page {
     }
 
     public void Z2D_Open_Data_Management() {
-        ElementActions.hoverAndClick(driver, Data_Management_Tab,Data_Management_Tab);
+        ElementActions.click(driver,Data_Management_Tab);
         ElementActions.waitForElementToBePresent(driver, Table_Name, 5, true);
         ElementActions.isElementClickable(driver, Table_Name);
     }
