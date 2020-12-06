@@ -291,7 +291,7 @@ public class Data_Management_Page {
     }
 
     public void Z2D_Wait_Text_Not_To_be_Create_Alert(){
-        ElementActions.waitForTextToChange(driver,Followed_Text,"Followed",5);
+        ElementActions.waitForTextToChange(driver,Followed_Text,"Create Alert",5);
 
     }
 }

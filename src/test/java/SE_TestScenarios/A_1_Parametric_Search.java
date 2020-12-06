@@ -31,8 +31,8 @@ public class A_1_Parametric_Search {
 
     @Test(description = "TS002 || Validate Parametric Search")
     public void Parametric_Search() {
-        Landing_Page landing_Obj = new Landing_Page(driver);
-        landing_Obj.Search_using_Parametric();
+        Landing_Page Landing_Obj = new Landing_Page(driver);
+        Landing_Obj.Search_using_Parametric();
         Assert.assertTrue(driver.getCurrentUrl().contains("/keysearch?ProductId=12292"));
     }
 

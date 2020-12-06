@@ -50,7 +50,9 @@ public class Landing_Page {
 
     //public List<WebElement> GeneralSpinner = driver.findElement(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]"));
     //public List<WebElement> SpinnerZezo2 =
-
+    public void Z2D_is_Clickable_of_Adv_Crosses_Value(){
+        ElementActions.waitForElementToBePresent(driver, Adv_Crosses_Value,5,true);
+    }
     public void Z2D_Wait_General_Spinner_Disappear( ) throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]")).size() != 0 && count < 40)) {
@@ -101,8 +103,8 @@ public class Landing_Page {
         ElementActions.click(driver, Search_Btn);
     }
 
-    public void Z2D_input_Search(String Value) {
-        ElementActions.type(driver, Search_Input, Value);
+    public void Z2D_input_Search( ) {
+        ElementActions.type(driver, Search_Input, "bav");
     }
 
     public void Search_using_Parametric() {
