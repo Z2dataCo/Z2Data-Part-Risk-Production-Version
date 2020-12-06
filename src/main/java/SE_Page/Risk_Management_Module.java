@@ -1,6 +1,7 @@
 package SE_Page;
 
 import com.shaft.gui.element.ElementActions;
+import io.cucumber.java.en_old.Ac;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -205,19 +206,23 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_is_Clickable_of_Switchers_Pipeline() {
-        ElementActions.isElementClickable(driver, Switchers_Pipeline);
+        ElementActions.waitForElementToBePresent(driver, Switchers_Pipeline,5,true);
+    }
+
+    public void Z2D_is_Clickable_of_Active_Parts() {
+        ElementActions.waitForElementToBePresent(driver, Active_Parts,5,true);
     }
 
     public void Z2D_is_Clickable_of_Preview_Button() {
-        ElementActions.isElementClickable(driver, Preview_Button);
+        ElementActions.waitForElementToBePresent(driver, Preview_Button,5,true);
     }
 
     public void Z2D_is_Clickable_of_First_Total_Card_Mitigation() {
-        ElementActions.isElementClickable(driver, Total_Card_Mitigation);
+        ElementActions.waitForElementToBePresent(driver, Total_Card_Mitigation,5,true);
     }
 
     public void Z2D_is_Clickable_of_First_CheckBox_Comp() {
-        ElementActions.isElementClickable(driver, First_CheckBox_Comp);
+        ElementActions.waitForElementToBePresent(driver, First_CheckBox_Comp,5,true);
     }
 
     public void Z2D_is_Clickable_of_High_Risk_Card() {
@@ -372,7 +377,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Forecast_is_Clickable_of_First_Filter() {
-        ElementActions.isElementClickable(driver, First_Filter);
+        ElementActions.waitForElementToBePresent(driver, First_Filter,5,true);
     }
     public void Z2D_Forecast_is_Clickable_of_Second_Filter() {
         ElementActions.isElementClickable(driver, Second_Filter);

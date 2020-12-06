@@ -89,6 +89,7 @@ public class C_1_Existing_BOM_and_Switcher {
         Risk_Management_Obj.Z2D_is_Clickable_of_Switchers_Pipeline();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_is_Clickable_of_Active_Parts();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Active_Parts).isDisplayed());
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.NRND_Parts).isDisplayed());
 
