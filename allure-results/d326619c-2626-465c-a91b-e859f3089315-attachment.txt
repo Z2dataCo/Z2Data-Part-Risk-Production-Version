@@ -1,6 +1,0 @@
-
-################################################################################################################################################
-Starting Execution:	[1 out of 2] test cases in the current suite
-Test Method:		[SE_TestScenarios.B_1_Data_Management.Data_Management]
-Test Description:	[TS002 || Validate To Open Data Management Page ]
-################################################################################################################################################
