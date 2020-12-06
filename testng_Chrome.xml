@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Chrome E2ETS Test Suite">
+    <test verbose="2" preserve-order="true" name="Chrome Main Function E2ETS">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="E2ETS.A_Parametric_Search">
+                <methods>
+                    <include name="Parametric_Search"/>
+                </methods>
+            </class>
+            <class name="E2ETS.B_Data_Management">
+                <methods>
+                    <include name="Data_Management"/>
+                </methods>
+            </class>
+            <class name="E2ETS.C_Upload_BOM_and_Switcher">
+                <methods>
+                    <include name="User_Upload_BOM"/>
+                </methods>
+            </class>
+            <class name="E2ETS.D_PCN_Manager">
+                <methods>
+                    <include name="PCN_Tab"/>
+                </methods>
+            </class>
+            <class name="E2ETS.E_Create_Alert_LifeCycle">
+                <methods>
+                    <include name="Create_Alert_LifeCycle"/>
+                </methods>
+            </class>
+            <class name="E2ETS.F_Create_Alert_Litigation">
+                <methods>
+                    <include name="Create_Alert_Litigation"/>
+                </methods>
+            </class>
+            <class name="E2ETS.G_Create_Alert_LifeCycle_Litigation">
+                <methods>
+                    <include name="Create_Alert_LifeCycle_Litigation"/>
+                </methods>
+            </class>
+            <class name="E2ETS.H_Advanced_Crosses">
+                <methods>
+                    <include name="Advanced_Crosses"/>
+                </methods>
+            </class>
+            <class name="E2ETS.I_Compare">
+                <methods>
+                    <include name="Compare_Parts"/>
+                </methods>
+            </class>
+            <class name="E2ETS.J_Supplier_Search">
+                <methods>
+                    <include name="Search_for_Supplier"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Chrome Sub Function E2ETS">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="E2ETS.L_Fun_Search_Part_Number">
+                <methods>
+                    <include name="Search_with_Part_Number"/>
+                </methods>
+            </class>
+            <class name="E2ETS.M_Fun_Search_IPN">
+                <methods>
+                    <include name="Search_by_IPN"/>
+                </methods>
+            </class>
+            <class name="E2ETS.N_Fun_Impacted_Parts">
+                <methods>
+                    <include name="Impacted_Parts"/>
+                </methods>
+            </class>
+            <class name="E2ETS.O_Fun_Count_Of_Exact_Match">
+                <methods>
+                    <include name="Count_Exact_Match_in_Scrub"/>
+                </methods>
+            </class>
+            <class name="E2ETS.P_Fun_MPN_View">
+                <methods>
+                    <include name="MPN_View"/>
+                </methods>
+            </class>
+            <class name="E2ETS.Q_Fun_IPN_View">
+                <methods>
+                    <include name="IPN_View"/>
+                </methods>
+            </class>
+            <class name="E2ETS.R_Fun_Forecast_Graph_and_MPN_View">
+                <methods>
+                    <include name="Status_with_Forecast_Graph_MPN_View"/>
+                </methods>
+            </class>
+            <class name="E2ETS.S_Fun_Forecast_Graph_and_IPN_View">
+                <methods>
+                    <include name="ForeCast_Graph"/>
+                </methods>
+            </class>
+            <class name="E2ETS.T_Fun_Filters_For_Compliance">
+                <methods>
+                    <include name="Filters_For_Compliance"/>
+                </methods>
+            </class>
+            <class name="E2ETS.U_Fun_Create_Report">
+                <methods>
+                    <include name="Create_Report_Download"/>
+                </methods>
+            </class>
+            <class name="E2ETS.V_Fun_Create_Folder_Data_Management">
+                <methods>
+                    <include name="Create_Folder_in_Data_Management"/>
+                </methods>
+            </class>
+            <class name="E2ETS.W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link">
+                <methods>
+                    <include name="Check_Side_Panel_High_Risk"/>
+                </methods>
+            </class>
+            <class name="E2ETS.X_Fun_Delete_BOMs">
+                <methods>
+                    <include name="Delete_BMS"/>
+                </methods>
+            </class>
+            <class name="E2ETS.Y_Fun_Obsolescence">
+                <methods>
+                    <include name="Check_Side_Panel_High_Risk"/>
+                    <include name="Obsolete_Parts_in_3_Years"/>
+                    <include name="Obsolete_Part_IN_5_Years"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

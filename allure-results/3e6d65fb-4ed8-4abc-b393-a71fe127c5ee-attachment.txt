@@ -1,0 +1,12 @@
+
+################################################################################################################################################
+Starting Execution:	[2 out of 2] test cases in the current suite
+Test Method:		[SE_TestScenarios.B_1_Data_Management.Login]
+Test Description:	[TS001 || Login to Z2Data Part Risk]
+################################################################################################################################################
+[ReportManager] Element Action [type] successfully performed. With the following test data [Z2D.PR1@z2data.com]. @06-12-2020 12:17:08.0329 PM
+[ReportManager] Element Action [type] successfully performed. With the following test data [Z2D.PR1@z2data.com]. @06-12-2020 12:17:09.0408 PM
+[ReportManager] File Action [createFile] successfully performed. With the following test data [Target Folder: "allure-results//screenshots/20201206-121627", Target File: "\1607249830491_Login.gif"]. @06-12-2020 12:17:10.0768 PM
+[ReportManager] Element Action [click] successfully performed. With the following test data [Sign in]. @06-12-2020 12:17:38.0837 PM
+[ReportManager] Successfully created attachment [Video Recording - Login] @06-12-2020 12:18:02.0379 PM
+[ReportManager] Successfully created attachment [Animated Gif - Login] @06-12-2020 12:18:02.0385 PM
