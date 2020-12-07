@@ -406,7 +406,9 @@ public class Risk_Management_Module {
     public void Z2D_Open_Parts() {
         ElementActions.click(driver, Parts);
     }
-
+    public void Z2D_Parts_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Parts, 5, true);
+    }
     public void Z2D_Parts_Check_AVX() {
         ElementActions.click(driver, AVX_Filter);
     }

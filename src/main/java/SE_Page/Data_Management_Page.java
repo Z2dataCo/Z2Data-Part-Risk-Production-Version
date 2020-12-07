@@ -179,8 +179,8 @@ public class Data_Management_Page {
     }
 
 
-    public void Z2D_Search(String Value) {
-        ElementActions.type(driver, Search_Text_Input, Value);
+    public void Z2D_Search( ) {
+        ElementActions.type(driver, Search_Text_Input, "TAP_BOM");
     }
 
     public void NextPagination() {
