@@ -37,14 +37,7 @@ public class C_1_Existing_BOM_and_Switcher {
         Landing_Obj.Z2D_Open_Data_Management();
         Landing_Obj.Z2D_Wait_General_Spinner_Disappear();
         Data_Management_Obj.Z2D_Type_Folder_Name();
-        boolean Stale_Element = true;
-        while (Stale_Element) {
-            try {
-                Data_Management_Obj.Z2D_Select_Folder();
-                Stale_Element = false;
-            } catch (Exception e) {
-            }
-        }
+        Data_Management_Obj.Z2D_Select_Folder();
         Data_Management_Obj.Z2D_Open_BOM();
         Switch_Tabs();
         Risk_Management_Obj.Z2D_Spinner_to_Disappear();

@@ -143,7 +143,6 @@ public class Data_Management_Page {
     }
 
     public void Z2D_Select_Folder() throws InterruptedException {
-        Thread.sleep(2000);
         ElementActions.click(driver, Search_Result);
     }
 
