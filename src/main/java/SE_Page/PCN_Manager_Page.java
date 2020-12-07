@@ -1,8 +1,10 @@
 package SE_Page;
 
-import com.shaft.gui.browser.BrowserActions;
 import com.shaft.gui.element.ElementActions;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,9 +13,11 @@ public class PCN_Manager_Page {
 
     private WebDriver driver;
     public JavascriptExecutor jse;
+
     public PCN_Manager_Page(WebDriver driver) {
         this.driver = driver;
     }
+
     public String PCN_ID = "PD22748X";
     public String MPN_ID = "FSP012-FHEN2";
     public String Total_Results = "Showing 1-21 of";
@@ -41,24 +45,24 @@ public class PCN_Manager_Page {
     public By Impacted_MPN_Results = By.xpath("//*[@id=\"dataconfigrationtableTableView\"]/tr[48]/td[2]");
     public By FSP_Text = By.xpath("//*[@id=\"PCNManagerPCNTab\"]/div[3]/div/div/div/div[1]/div/div[2]/h4/span[2]");
     public By SpinnerZezo = By.id("progressDiv");
+    // Impacted Parts
+    public By Search_Btn = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]/a[1]");
+    public By Supplier_CheckBox = By.xpath("//*[@id=\"DivAlertsFilterPCN\"]/div[1]/div[2]/div[1]/div/table/tbody/tr/td[4]/div/fieldset[1]/div/label/span/span");
 
 
-
-    public void Z2D_Wait_General_Spinner_Disappear( ) throws InterruptedException {
+    public void Z2D_Wait_General_Spinner_Disappear() throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]")).size() != 0 && count < 40)) {
             Thread.sleep(700);
             count++;
         }
     }
+
     public void Z2D_Wait_Invisibility_Of_Spinner_Zezo_1() {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(SpinnerZezo)));
     }
-    /*public void Scroll_to_Element(By element) throws InterruptedException {
-        jse.executeScript("arguments[0].scrollIntoView(true);", element);
-        Thread.sleep(500);
-    }*/
+
 
     public void Z2D_Open_Dashboard_Tab() {
         ElementActions.click(driver, Dashboard_Tab);
@@ -97,23 +101,25 @@ public class PCN_Manager_Page {
         ElementActions.click(driver, First_Search_Result);
     }
 
-    public void Z2D_Search_PCN_ID( ) {
-        ElementActions.type(driver, Search_Field,PCN_ID);
-        ElementActions.click(driver, Search_button);
-    }
-    public void Z2D_Search_MPN_ID( ) {
-        ElementActions.type(driver, Search_Field,MPN_ID);
+    public void Z2D_Search_PCN_ID() {
+        ElementActions.type(driver, Search_Field, PCN_ID);
         ElementActions.click(driver, Search_button);
     }
 
-  /*  public void Z2D_Move_To_Impacted_MPN() throws InterruptedException {
-        Scroll_to_Element(Impacted_MPN_Results);
-    }*/
-    public void Z2D_Dashboard_Tab_Total_PCNs_Visibility(){
-        ElementActions.waitForElementToBePresent(driver, Dashboard_Tab_Total_PCNs,5,true);
-       // WebDriverWait Wait = new WebDriverWait(driver, 30);
-        // Wait.until(ExpectedConditions.visibilityOf(driver.findElement(Dashboard_Tab_Total_PCNs)));
+    public void Z2D_Search_MPN_ID() {
+        ElementActions.type(driver, Search_Field, MPN_ID);
+        ElementActions.click(driver, Search_button);
     }
+
+    public void Z2D_Dashboard_Tab_Total_PCNs_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Dashboard_Tab_Total_PCNs, 5, true);
+    }
+    // Impacted Parts Methods
+    public void Z2D_Select_Supplier() {
+        ElementActions.click(driver, Supplier_CheckBox);
+    }
+
+
 }
 
 
