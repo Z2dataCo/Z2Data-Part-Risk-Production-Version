@@ -12,9 +12,11 @@ import java.util.ArrayList;
 public class Risk_Management_Module {
     private static WebDriver driver;
     public JavascriptExecutor jse;
+
     public void Scroll_To_Middle() {
         jse.executeScript("window.scrollBy(0,2000)");
     }
+
     public void Scroll_to_Element(By element) throws InterruptedException {
         jse.executeScript("arguments[0].scrollIntoView(true);", element);
         Thread.sleep(500);
@@ -23,6 +25,7 @@ public class Risk_Management_Module {
     public void Scroll_To_Bottom() {
         jse.executeScript("scrollBy(0,2500)");
     }
+
     public Risk_Management_Module(WebDriver driver) {
         this.driver = driver;
     }
@@ -193,19 +196,19 @@ public class Risk_Management_Module {
     public By Tungsten = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/div[2]/table/thead/tr/th[6]");
 
 
-
-
-
     //Risk Management Methods
-    public void Z2D_is_Clickable_of_Followed_Text(){
-        ElementActions.waitForElementToBePresent(driver, Followed_Text,5,true);
+    public void Z2D_Followed_Text_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Followed_Text, 5, true);
     }
-    public void Z2D_is_Clickable_of_Unfollow_Btn(){
-        ElementActions.waitForElementToBePresent(driver, Unfollow_Btn,5,true);
+
+    public void Z2D_Unfollow_Btn_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Unfollow_Btn, 5, true);
     }
-    public void Z2D_is_Clickable_of_LifeCycle_Btn(){
-        ElementActions.waitForElementToBePresent(driver, LifeCycle_Btn,5,true);
+
+    public void Z2D_LifeCycle_Btn_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, LifeCycle_Btn, 5, true);
     }
+
     public void Z2D_Click_Followed_Btn() {
         ElementActions.click(driver, Followed_Text);
     }
@@ -213,12 +216,14 @@ public class Risk_Management_Module {
     public void Z2D_Click_Unfollow_Btn() {
         ElementActions.click(driver, Unfollow_Btn);
     }
+
     public static void Switch_Tabs() {
         ArrayList<String> tab2 = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tab2.get(0));
         driver.close();
         driver.switchTo().window(tab2.get(1));
     }
+
     public void Z2D_Click_on_LifeCycle() throws InterruptedException {
         while (!driver.findElement(LifeCycle_Btn).isSelected()) {
             ElementActions.click(driver, LifeCycle_Btn);
@@ -226,13 +231,16 @@ public class Risk_Management_Module {
             break;
         }
     }
+
     public void Z2D_Wait_Invisibility_Of_Toast_Container() {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(Toast_Container)));
     }
+
     public void Z2D_Click_on_Create_Alert(WebDriver driver) {
         ElementActions.click(driver, Create_Alert_Btn);
     }
+
     public void Z2D_Click_on_Litigation() throws InterruptedException {
         while (!driver.findElement(Litigation_Btn).isSelected()) {
             ElementActions.click(driver, Litigation_Btn);
@@ -240,13 +248,16 @@ public class Risk_Management_Module {
             break;
         }
     }
+
     public void Z2D_Click_on_Submit_Btn() {
         ElementActions.click(driver, Submit_Btn);
     }
-    public void Z2D_Wait_Text_Not_To_be_Create_Alert(){
-        ElementActions.waitForTextToChange(driver,Followed_Text,"Create Alert",5);
+
+    public void Z2D_Wait_Text_Not_To_be_Create_Alert() {
+        ElementActions.waitForTextToChange(driver, Followed_Text, "Create Alert", 5);
 
     }
+
     public void Z2D_Spinner_to_Disappear() throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div"))).size() != 0 && count < 40) {
@@ -255,32 +266,32 @@ public class Risk_Management_Module {
         }
     }
 
-    public void Z2D_is_Clickable_of_Switchers_Pipeline() {
-        ElementActions.waitForElementToBePresent(driver, Switchers_Pipeline,5,true);
+    public void Z2D_Switchers_Pipeline_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Switchers_Pipeline, 5, true);
     }
 
-    public void Z2D_is_Clickable_of_Active_Parts() {
-        ElementActions.waitForElementToBePresent(driver, Active_Parts,5,true);
+    public void Z2D_Active_Parts_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Active_Parts, 5, true);
     }
 
-    public void Z2D_is_Clickable_of_Preview_Button() {
-        ElementActions.waitForElementToBePresent(driver, Preview_Button,5,true);
+    public void Z2D_Preview_Button_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Preview_Button, 5, true);
     }
 
-    public void Z2D_is_Clickable_of_First_Total_Card_Mitigation() {
-        ElementActions.waitForElementToBePresent(driver, Total_Card_Mitigation,5,true);
+    public void Z2D_First_Total_Card_Mitigation_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Total_Card_Mitigation, 5, true);
     }
 
-    public void Z2D_is_Clickable_of_First_CheckBox_Comp() {
-        ElementActions.waitForElementToBePresent(driver, First_CheckBox_Comp,5,true);
+    public void Z2D_First_CheckBox_Comp_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, First_CheckBox_Comp, 5, true);
     }
 
-    public void Z2D_is_Clickable_of_High_Risk_Card() {
-        ElementActions.isElementClickable(driver, High_Risk_Card);
+    public void Z2D_High_Risk_Card_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, High_Risk_Card, 5, true);
     }
 
-    public void Z2D_is_Clickable_of_Total_Card() {
-        ElementActions.isElementClickable(driver, Total_Card);
+    public void Z2D_Total_Card_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Total_Card, 5, true);
     }
 
 
@@ -289,61 +300,74 @@ public class Risk_Management_Module {
         Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(Spinner_Zezo)));
     }
 
+    public void Z2D_Wait_Invisibility_Of_Spinner_Zezo_2() {
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
+        Wait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElements(By.xpath("//div[@id='dropbg']//div[@style='border-radius: 3px; background-color: rgba(0, 18, 59, 0.6);']"))));
+    }
+
     public void Z2D_Click_Dashboard_Tab() {
-        ElementActions.hover(driver,Dashboard_Tab);
+        ElementActions.hover(driver, Dashboard_Tab);
         ElementActions.click(driver, Dashboard_Tab);
     }
+
     public void Z2D_Dashboard_Tab_Visibility() {
-        ElementActions.waitForElementToBePresent(driver, Dashboard_Tab,5,true);
+        ElementActions.waitForElementToBePresent(driver, Dashboard_Tab, 5, true);
     }
+
     public void Z2D_Click_Scrub_Tab() {
         ElementActions.hover(driver, Scrub_Tab);
-        ElementActions.click(driver,Scrub_Tab);
+        ElementActions.click(driver, Scrub_Tab);
     }
+
     public void Z2D_Scrub_Tab_Visibility() {
-        ElementActions.waitForElementToBePresent(driver, Scrub_Tab,5,true);
+        ElementActions.waitForElementToBePresent(driver, Scrub_Tab, 5, true);
     }
 
     public void Z2D_Click_Forecast_Tab() {
-        ElementActions.hover(driver,Forecast_Tab);
+        ElementActions.hover(driver, Forecast_Tab);
         ElementActions.click(driver, Forecast_Tab);
     }
+
     public void Z2D_Forecast_Tab_Visibility() {
-        ElementActions.waitForElementToBePresent(driver, Forecast_Tab,5,true);
+        ElementActions.waitForElementToBePresent(driver, Forecast_Tab, 5, true);
     }
 
     public void Z2D_Click_Compliance_Tab() {
-        ElementActions.hover(driver,Compliance_Tab);
+        ElementActions.hover(driver, Compliance_Tab);
         ElementActions.click(driver, Compliance_Tab);
     }
+
     public void Z2D_Compliance_Tab_Visibility() {
-        ElementActions.waitForElementToBePresent(driver, Compliance_Tab,5,true);
+        ElementActions.waitForElementToBePresent(driver, Compliance_Tab, 5, true);
     }
 
     public void Z2D_Click_Mitigation_Tab() {
-        ElementActions.hover(driver,Mitigation_Tab);
+        ElementActions.hover(driver, Mitigation_Tab);
         ElementActions.click(driver, Mitigation_Tab);
     }
+
     public void Z2D_Mitigation_Tab_Visibility() {
-        ElementActions.waitForElementToBePresent(driver, Mitigation_Tab,5,true);
+        ElementActions.waitForElementToBePresent(driver, Mitigation_Tab, 5, true);
     }
 
     public void Z2D_Click_Reports_Tab() {
-        ElementActions.hover(driver,Reports_Tab);
+        ElementActions.hover(driver, Reports_Tab);
         ElementActions.click(driver, Reports_Tab);
     }
+
     public void Z2D_Reports_Tab_Visibility() {
-        ElementActions.waitForElementToBePresent(driver, Reports_Tab,5,true);
+        ElementActions.waitForElementToBePresent(driver, Reports_Tab, 5, true);
     }
 
     public void Z2D_Click_Parts_Tab() {
-        ElementActions.hover(driver,Parts_Tab);
+        ElementActions.hover(driver, Parts_Tab);
         ElementActions.click(driver, Parts_Tab);
         Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         ElementActions.isElementClickable(driver, First_CheckBox);
     }
+
     public void Z2D_Parts_Tab_Visibility() {
-        ElementActions.waitForElementToBePresent(driver, Parts_Tab,5,true);
+        ElementActions.waitForElementToBePresent(driver, Parts_Tab, 5, true);
     }
 
     public void Z2D_Select_Switcher() throws InterruptedException {
@@ -374,13 +398,15 @@ public class Risk_Management_Module {
     }
 
     //Parts Page Method
-    public int Z2D_Rows_Number(){
+    public int Z2D_Rows_Number() {
         driver.findElements(By.xpath("//*[@id=\"partsMPNTabTblId\"]/tbody/tr")).size();
         return 0;
     }
+
     public void Z2D_Open_Parts() {
         ElementActions.click(driver, Parts);
     }
+
     public void Z2D_Parts_Check_AVX() {
         ElementActions.click(driver, AVX_Filter);
     }
@@ -438,10 +464,12 @@ public class Risk_Management_Module {
         driver.findElements(By.xpath("//div[@class='z2tablemost']//table/tbody/tr[1]/td")).size();
         return 0;
     }
-    public int Z2D_Forecast_Table_Rows(){
+
+    public int Z2D_Forecast_Table_Rows() {
         driver.findElements(By.xpath("//div[@class='z2tablemost']//table/tbody/tr")).size();
         return 0;
     }
+
     public void Z2D_Forecast_Get_Table_Data(WebDriver driver, String Assertion) {
         WebDriverWait Wait = new WebDriverWait(driver, 30);
         int Row_Size = Z2D_Forecast_Table_Rows();
@@ -454,16 +482,19 @@ public class Risk_Management_Module {
         }
     }
 
-    public void Z2D_Forecast_is_Clickable_of_First_Filter() {
-        ElementActions.waitForElementToBePresent(driver, First_Filter,5,true);
+    public void Z2D_Forecast_First_Filter_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, First_Filter, 5, true);
     }
-    public void Z2D_Forecast_is_Clickable_of_Second_Filter() {
+
+    public void Z2D_Forecast_Second_Filter_Clickability() {
         ElementActions.isElementClickable(driver, Second_Filter);
     }
-    public void Z2D_Forecast_is_Clickable_of_Third_Filter() {
+
+    public void Z2D_Forecast_Third_Filter_Clickability() {
         ElementActions.isElementClickable(driver, Third_Filter);
     }
-    public void Z2D_Forecast_is_Clickable_of_Fifth_Filter() {
+
+    public void Z2D_Forecast_Fifth_Filter_Clickabilityp() {
         ElementActions.isElementClickable(driver, Fifth_Filter);
     }
 
@@ -471,6 +502,10 @@ public class Risk_Management_Module {
     public void Z2D_Compliance_Click_on_First_Filter() {
         ElementActions.click(driver, First_Check_Box_Filter);
     }
+    public void Z2D_First_Check_Box_Filter_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, First_Check_Box_Filter, 5, true);
+    }
+
 
     public void Z2D_Compliance_Click_on_Second_Filter() {
         boolean Intercepted = true;
@@ -484,6 +519,10 @@ public class Risk_Management_Module {
 
         }
     }
+    public void Z2D_Second_Check_Box_Filter_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Second_Check_Box_Filter, 5, true);
+    }
+
     //Mitigation Page Methods
 
     public void Z2D_Mitigation_Open_Drop_INCrosses() throws InterruptedException {

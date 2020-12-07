@@ -202,23 +202,23 @@ public class Data_Management_Page {
         driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
     }
 
-    public void Z2D_Move_to_Mitigation_Bom(WebDriver driver) throws InterruptedException {
+    public void Z2D_Move_to_Mitigation_Bom( )   {
         driver.get("https://parts.z2data.com/RiskManager/Mitigation?BomId=119090");
     }
 
-    public void Z2D_Move_to_Forecast_Bom(WebDriver driver) throws InterruptedException {
+    public void Z2D_Move_to_Forecast_Bom( )   {
         driver.get("https://parts.z2data.com/RiskManager/Forecast?BomId=119090");
     }
 
-    public void Z2D_Move_to_Compliance_Bom(WebDriver driver) throws InterruptedException {
+    public void Z2D_Move_to_Compliance_BOM( )   {
         driver.get("https://parts.z2data.com/RiskManager/Compliance?BomId=119090");
     }
 
-    public void Z2D_Move_to_Reports_Bom(WebDriver driver) throws InterruptedException {
+    public void Z2D_Move_to_Reports_Bom( )   {
         driver.get("https://parts.z2data.com/RiskManager/Report?BomId=119090");
     }
 
-    public void Z2D_Move_to_Scrub_Bom(WebDriver driver) throws InterruptedException {
+    public void Z2D_Move_to_Scrub_Bom( )   {
         driver.get("https://parts.z2data.com/RiskManager/Scrub?BomId=119090");
     }
 

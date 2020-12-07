@@ -2,7 +2,6 @@ package SE_TestScenarios;
 
 import SE_Page.*;
 import com.shaft.gui.browser.BrowserFactory;
-import com.tigervnc.rdr.Exception;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -41,7 +40,7 @@ public class C_1_Existing_BOM_and_Switcher {
         Data_Management_Obj.Z2D_Open_BOM();
         Switch_Tabs();
         Risk_Management_Obj.Z2D_Spinner_to_Disappear();
-        Risk_Management_Obj.Z2D_is_Clickable_of_High_Risk_Card();
+        Risk_Management_Obj.Z2D_High_Risk_Card_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.High_Risk_Card).isDisplayed());
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Compliance_Card).isDisplayed());
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Market_Availability_Card).isDisplayed());
@@ -49,7 +48,7 @@ public class C_1_Existing_BOM_and_Switcher {
 
         Risk_Management_Obj.Z2D_Click_Scrub_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_is_Clickable_of_Total_Card();
+        Risk_Management_Obj.Z2D_Total_Card_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Total_Card).isDisplayed());
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Scrub_Exact_Matches).isDisplayed());
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Scrub_Tab).getText(), "Scrub");
@@ -60,36 +59,36 @@ public class C_1_Existing_BOM_and_Switcher {
 
         Risk_Management_Obj.Z2D_Click_Forecast_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_Forecast_is_Clickable_of_First_Filter();
+        Risk_Management_Obj.Z2D_Forecast_First_Filter_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Filter).isDisplayed());
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Second_Filter).isDisplayed());
-        Risk_Management_Obj.Z2D_is_Clickable_of_Switchers_Pipeline();
+        Risk_Management_Obj.Z2D_Switchers_Pipeline_Clickability();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_Forecast_is_Clickable_of_First_Filter();
+        Risk_Management_Obj.Z2D_Forecast_First_Filter_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Filter).isDisplayed());
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Second_Filter).isDisplayed());
 
         Risk_Management_Obj.Z2D_Click_Compliance_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_is_Clickable_of_First_CheckBox_Comp();
+        Risk_Management_Obj.Z2D_First_CheckBox_Comp_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Table_Data_Comp).isDisplayed());
 
         Risk_Management_Obj.Z2D_Click_Mitigation_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_is_Clickable_of_First_Total_Card_Mitigation();
+        Risk_Management_Obj.Z2D_First_Total_Card_Mitigation_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Total_Card_Mitigation).isDisplayed());
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Unknown_Card).isDisplayed());
-        Risk_Management_Obj.Z2D_is_Clickable_of_Switchers_Pipeline();
+        Risk_Management_Obj.Z2D_Switchers_Pipeline_Clickability();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_is_Clickable_of_Active_Parts();
+        Risk_Management_Obj.Z2D_Active_Parts_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Active_Parts).isDisplayed());
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.NRND_Parts).isDisplayed());
 
         Risk_Management_Obj.Z2D_Click_Reports_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_is_Clickable_of_Preview_Button();
+        Risk_Management_Obj.Z2D_Preview_Button_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Report).isDisplayed());
     }
     @AfterClass(alwaysRun = true)

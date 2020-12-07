@@ -33,10 +33,10 @@ public class E_1_Create_Alert_LifeCycle {
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         Data_Management_Obj.Z2D_Move_To_Prod_BOM(driver);
-        Risk_Management_Obj.Z2D_is_Clickable_of_Followed_Text();
+        Risk_Management_Obj.Z2D_Followed_Text_Clickability();
         if (driver.findElement(Risk_Management_Obj.Followed_Text).getText().equals("Followed")) {
             Risk_Management_Obj.Z2D_Click_Followed_Btn();
-            Risk_Management_Obj.Z2D_is_Clickable_of_Unfollow_Btn();
+            Risk_Management_Obj.Z2D_Unfollow_Btn_Clickability();
             Risk_Management_Obj.Z2D_Click_Unfollow_Btn();
             Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
             Risk_Management_Obj.Z2D_Click_on_Create_Alert(driver);
@@ -44,14 +44,14 @@ public class E_1_Create_Alert_LifeCycle {
             Risk_Management_Obj.Z2D_Click_on_Create_Alert(driver);
 
         }
-        Risk_Management_Obj.Z2D_is_Clickable_of_LifeCycle_Btn();
+        Risk_Management_Obj.Z2D_LifeCycle_Btn_Clickability();
         Risk_Management_Obj.Z2D_Click_on_LifeCycle();
         Risk_Management_Obj.Z2D_Click_on_Submit_Btn();
         Risk_Management_Obj.Z2D_Wait_Text_Not_To_be_Create_Alert();
         String Status = driver.findElement(Risk_Management_Obj.Followed_Text).getText();
         Assert.assertEquals(Status, "Followed");
         Risk_Management_Obj.Z2D_Click_Followed_Btn();
-        Risk_Management_Obj.Z2D_is_Clickable_of_Unfollow_Btn();
+        Risk_Management_Obj.Z2D_Unfollow_Btn_Clickability();
         Risk_Management_Obj.Z2D_Click_Unfollow_Btn();
     }
     @AfterClass(alwaysRun = true)
