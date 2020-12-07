@@ -5,6 +5,7 @@ import com.shaft.gui.browser.BrowserFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -103,5 +104,9 @@ public class AC_1_Upload_BOM_and_Switcher {
         Risk_Management_Obj.Z2D_Click_Reports_Tab();
         Assert.assertEquals((driver.findElement(By.xpath("//a[contains(text(),'Reports')]"))).getText(), "Reports");
         Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+    }
+    @AfterClass(alwaysRun = true)
+    public void TearDown() {
+        driver.quit();
     }
 }
