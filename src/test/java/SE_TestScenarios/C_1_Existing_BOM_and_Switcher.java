@@ -2,6 +2,7 @@ package SE_TestScenarios;
 
 import SE_Page.*;
 import com.shaft.gui.browser.BrowserFactory;
+import com.tigervnc.rdr.Exception;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -41,7 +42,7 @@ public class C_1_Existing_BOM_and_Switcher {
             try {
                 Data_Management_Obj.Z2D_Select_Folder();
                 Stale_Element = false;
-            } catch (Exception ignored) {
+            } catch (Exception e) {
             }
         }
         Data_Management_Obj.Z2D_Open_BOM();
