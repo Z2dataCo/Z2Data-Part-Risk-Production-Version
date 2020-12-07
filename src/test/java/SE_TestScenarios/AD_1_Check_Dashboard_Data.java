@@ -41,18 +41,8 @@ public class AD_1_Check_Dashboard_Data   {
 
 
         Landing_Obj.Z2D_Open_Data_Management();
-
         Data_Management_Obj.Z2D_Type_Folder_Name();
-
-        boolean Stale_Element = true;
-        while (Stale_Element) {
-            try {
-                ElementActions.hoverAndClick(driver,Data_Management_Obj.Test_Folder,Data_Management_Obj.Test_Folder);
-                Stale_Element = false;
-            } catch (Exception e) {
-                Stale_Element = true;
-            }
-        }
+        Data_Management_Obj.Z2D_Select_Folder();
         Data_Management_Obj.Z2D_Open_BOM();
         Switch_Tabs();
         Risk_Management_Obj.Z2D_Open_Parts();
