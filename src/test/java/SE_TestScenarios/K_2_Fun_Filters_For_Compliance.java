@@ -1,9 +1,7 @@
 package SE_TestScenarios;
 
 
-import SE_Page.Compliance_Page;
 import SE_Page.Data_Management_Page;
-import SE_Page.Forecast_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
@@ -13,7 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class K_2_Fun_Filters_For_Compliance extends Test_Base {
+public class K_2_Fun_Filters_For_Compliance {
     private WebDriver driver;
 
     @BeforeClass(alwaysRun = true)
