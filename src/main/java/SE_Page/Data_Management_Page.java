@@ -11,7 +11,21 @@ import java.util.ArrayList;
 
 
 public class Data_Management_Page {
+
     public JavascriptExecutor jse;
+    Actions action;
+    private final WebDriver driver;
+    public void Scroll_To_Bottom() {
+        jse.executeScript("scrollBy(0,2500)");
+    }
+    public void Scroll_To_Middle() {
+        jse.executeScript("window.scrollBy(0,2000)");
+    }
+    public Data_Management_Page(WebDriver driver) {
+        this.driver = driver;
+    }
+
+
     public By Data_Management_Tab = By.xpath("//a[contains(text(),'Data Management')]");
     public By Verification = By.xpath("//*[@id=\"z2page-head-bar\"]/div/h1/span/span");
     public By Verify_BOMs = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li/a[1]/div[2]");
@@ -44,7 +58,6 @@ public class Data_Management_Page {
     public By BOM_Folder = By.xpath("//tbody/tr[20]/td[2]/a[1]");
     public By BOM = By.xpath("//tbody/tr[1]/td[2]/a[1]");
     public By BOM_Prod_Test = By.partialLinkText("TAP_BOM_Proud_Te");
-    public By Compliance_Tab = By.xpath("//a[contains(text(),'Compliance')]");
     public By Forecast = By.linkText("Forecast");
     public By Mitigation = By.linkText("Mitigation");
     public By Scrub = By.linkText("Scrub");
@@ -54,19 +67,7 @@ public class Data_Management_Page {
     public By is_Row = By.xpath("//*[@class='table-responsive']//tbody/tr[1]/td[2]/a");
     public By Delete = By.xpath("//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/tbody/tr[1]/td[8]/div/app-datamanagement-boms-popups/div[1]/a[2]");
     public By Yes_Delete = By.xpath("/html/body/modal-container/div/div/div/button[1]");
-    Actions action;
-    private final WebDriver driver;
-    public Data_Management_Page(WebDriver driver) {
-        this.driver = driver;
-    }
 
-    public void Scroll_To_Bottom() {
-        jse.executeScript("scrollBy(0,2500)");
-    }
-
-    public void Scroll_To_Middle() {
-        jse.executeScript("window.scrollBy(0,2000)");
-    }
     //public List<WebElement> Spinner = driver.findElements(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div"));
     //public List<WebElement> Table_Rows = driver.findElements(By.xpath("//*[@id=\"scrub_content\"]/div/table/tbody/tr"));
 
@@ -179,10 +180,6 @@ public class Data_Management_Page {
         action.moveByOffset(270, 488).perform();
         Thread.sleep(2000);
         action.click().build().perform();
-    }
-
-    public void Z2D_Click_on_Compliance_Tab() {
-        ElementActions.click(driver, Compliance_Tab);
     }
 
 

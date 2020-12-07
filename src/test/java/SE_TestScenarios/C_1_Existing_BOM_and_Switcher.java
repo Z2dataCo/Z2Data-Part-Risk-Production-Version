@@ -61,7 +61,7 @@ public class C_1_Existing_BOM_and_Switcher {
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Scrub_Tab).getText(), "Scrub");
 
 
-        Risk_Management_Obj.Z2D_Click_on_Parts_Tab();
+        Risk_Management_Obj.Z2D_Click_Parts_Tab();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Table_Data).isDisplayed());
 
         Risk_Management_Obj.Z2D_Click_Forecast_Tab();

@@ -69,9 +69,9 @@ public class Landing_Page {
         Wait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElements(By.xpath("//div[@id='dropbg']//div[@style='border-radius: 3px; background-color: rgba(0, 18, 59, 0.6);']"))));
     }
 
-    public void Z2D_Upload_BOM(String Z2DataFilePath) throws AWTException {
+    public void Z2D_Upload_BOM( ) throws AWTException {
         ElementActions.click(driver, Upload_BOM_Btn);
-        StringSelection strSelection = new StringSelection(Z2DataFilePath);
+        StringSelection strSelection = new StringSelection(System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx");
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(strSelection, null);
         Robot robot = new Robot();

@@ -62,7 +62,7 @@ public class Risk_Management_Module {
     public By H1_Life_Forecast = By.xpath("//*[@id=\"dashboard_content\"]/div/div/div[1]/div[2]/div[1]/app-dashboard-forecast/div/div[1]/div[1]/span");
     public By Switches_Dashboard = By.xpath("//*[@id=\"dashboard_content\"]/div/div/div[1]/div[2]/div[1]/app-dashboard-forecast/div/div[1]/div[2]/div/label/div");
     public By Reports = By.linkText("Reports");
-    public By HighRisk = By.xpath("//*[@id=\"dashboard_content\"]/div/div/div[1]/app-dashboard-risk/div/div[1]/div[2]/div/a");
+    public By High_Risk = By.xpath("//*[@id=\"dashboard_content\"]/div/div/div[1]/app-dashboard-risk/div/div[1]/div[2]/div/a");
     public By IPNs_Count = By.xpath("//*[@id=\"dashboard_content\"]/div/div/div[2]/app-dashboard-bominfo/table[1]/tbody/tr[1]/td[2]/span");
 
     //Scrub Page
@@ -290,39 +290,60 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Dashboard_Tab() {
+        ElementActions.hover(driver,Dashboard_Tab);
         ElementActions.click(driver, Dashboard_Tab);
     }
-
+    public void Z2D_Dashboard_Tab_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Dashboard_Tab,5,true);
+    }
     public void Z2D_Click_Scrub_Tab() {
         ElementActions.hover(driver, Scrub_Tab);
         ElementActions.click(driver,Scrub_Tab);
+    }
+    public void Z2D_Scrub_Tab_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Scrub_Tab,5,true);
     }
 
     public void Z2D_Click_Forecast_Tab() {
         ElementActions.hover(driver,Forecast_Tab);
         ElementActions.click(driver, Forecast_Tab);
     }
+    public void Z2D_Forecast_Tab_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Forecast_Tab,5,true);
+    }
 
     public void Z2D_Click_Compliance_Tab() {
         ElementActions.hover(driver,Compliance_Tab);
         ElementActions.click(driver, Compliance_Tab);
+    }
+    public void Z2D_Compliance_Tab_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Compliance_Tab,5,true);
     }
 
     public void Z2D_Click_Mitigation_Tab() {
         ElementActions.hover(driver,Mitigation_Tab);
         ElementActions.click(driver, Mitigation_Tab);
     }
+    public void Z2D_Mitigation_Tab_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Mitigation_Tab,5,true);
+    }
 
     public void Z2D_Click_Reports_Tab() {
         ElementActions.hover(driver,Reports_Tab);
         ElementActions.click(driver, Reports_Tab);
     }
+    public void Z2D_Reports_Tab_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Reports_Tab,5,true);
+    }
 
-    public void Z2D_Click_on_Parts_Tab() {
+    public void Z2D_Click_Parts_Tab() {
         ElementActions.hover(driver,Parts_Tab);
         ElementActions.click(driver, Parts_Tab);
         Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         ElementActions.isElementClickable(driver, First_CheckBox);
+    }
+    public void Z2D_Parts_Tab_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Parts_Tab,5,true);
     }
 
     public void Z2D_Select_Switcher() throws InterruptedException {
@@ -349,7 +370,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Dashboard__HighRisk() {
-        ElementActions.click(driver, HighRisk);
+        ElementActions.click(driver, High_Risk);
     }
 
     //Parts Page Method

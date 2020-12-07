@@ -43,7 +43,9 @@ public class Upload_BOM_Page {
             }
         }
     }
-
+    public void Z2D_Click_Next_Visibility(){
+        ElementActions.waitForElementToBePresent(driver, Next,5,true);
+    }
     public void Z2D_Select_Type() {
         ElementActions.click(driver, Selection);
     }
@@ -75,15 +77,25 @@ public class Upload_BOM_Page {
     public void Z2D_Open_Column() {
         ElementActions.click(driver, Column2);
     }
-
+    public void Z2D_Mapped_IPN_Clickability(){
+        ElementActions.waitForElementToBePresent(driver, Mapped_IPN,5,true);
+    }
     public void Z2D_Mapped_IPN() {
         ElementActions.click(driver, Mapped_IPN);
     }
-
+    public void Z2D_Next_Step_Clickability(){
+        ElementActions.waitForElementToBePresent(driver, Next_Step,5,true);
+    }
     public void Z2D_Wait_Invisibility_Of_Spinner_Zezo_1() {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(Spinner_Zezo)));
     }
-
+    public void Z2D_Wait_General_Spinner_Disappear( ) throws InterruptedException {
+        int count = 0;
+        while ((driver.findElements(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]")).size() != 0 && count < 40)) {
+            Thread.sleep(700);
+            count++;
+        }
+    }
 
 }
