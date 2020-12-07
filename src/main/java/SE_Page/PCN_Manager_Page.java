@@ -1,5 +1,6 @@
 package SE_Page;
 
+import com.shaft.gui.browser.BrowserActions;
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +14,9 @@ public class PCN_Manager_Page {
     public PCN_Manager_Page(WebDriver driver) {
         this.driver = driver;
     }
+    public String PCN_ID = "PD22748X";
+    public String MPN_ID = "FSP012-FHEN2";
+    public String Total_Results = "Showing 1-21 of";
 
     public By Dashboard_Tab = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]");
     public By Dashboard_Tab_Total_PCNs = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]");
@@ -51,10 +55,10 @@ public class PCN_Manager_Page {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(SpinnerZezo)));
     }
-    public void Scroll_to_Element(By element) throws InterruptedException {
+    /*public void Scroll_to_Element(By element) throws InterruptedException {
         jse.executeScript("arguments[0].scrollIntoView(true);", element);
         Thread.sleep(500);
-    }
+    }*/
 
     public void Z2D_Open_Dashboard_Tab() {
         ElementActions.click(driver, Dashboard_Tab);
@@ -94,19 +98,17 @@ public class PCN_Manager_Page {
     }
 
     public void Z2D_Search_PCN_ID( ) {
-        driver.findElement(Results_Table).clear();
-        ElementActions.type(driver, Search_Field, "PD22748X");
+        ElementActions.type(driver, Search_Field,PCN_ID);
         ElementActions.click(driver, Search_button);
     }
     public void Z2D_Search_MPN_ID( ) {
-        driver.findElement(Results_Table).clear();
-        ElementActions.type(driver, Search_Field, "FSP012-FHEN2");
+        ElementActions.type(driver, Search_Field,MPN_ID);
         ElementActions.click(driver, Search_button);
     }
 
-    public void Z2D_Move_To_Impacted_MPN() throws InterruptedException {
+  /*  public void Z2D_Move_To_Impacted_MPN() throws InterruptedException {
         Scroll_to_Element(Impacted_MPN_Results);
-    }
+    }*/
     public void Z2D_Dashboard_Tab_Total_PCNs_Visibility(){
         ElementActions.waitForElementToBePresent(driver, Dashboard_Tab_Total_PCNs,5,true);
        // WebDriverWait Wait = new WebDriverWait(driver, 30);
