@@ -48,14 +48,16 @@ public class Landing_Page {
     public By btn_search = By.xpath("//*[@id=\"btnautoSearch\"]/i");
     public By Remove_File = By.xpath("//a[contains(text(),'Remove file')]");
 
-    //public List<WebElement> GeneralSpinner = driver.findElement(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]"));
-    //public List<WebElement> SpinnerZezo2 =
     public void Z2D_Adv_Crosses_Value_Clickability(){
         ElementActions.waitForElementToBePresent(driver, Adv_Crosses_Value,5,true);
     }
     public void Z2D_Supplier_Check_Box_Clickability(){
         ElementActions.waitForElementToBePresent(driver, Supplier_Check_Box,5,true);
     }
+    public void Z2D_IPN_Value_Visibility(){
+        ElementActions.waitForElementToBePresent(driver, IPN_Value,5,true);
+    }
+
     
     public void Z2D_Wait_General_Spinner_Disappear( ) throws InterruptedException {
         int count = 0;
@@ -107,8 +109,14 @@ public class Landing_Page {
         ElementActions.click(driver, Search_Btn);
     }
 
-    public void Z2D_input_Search( ) {
+    public void Z2D_Advanced_Crosses_Input_Search( ) {
+        ElementActions.type(driver, Search_Input, "bav");
+    }
+    public void Z2D_Part_Number_Input_Search( ) {
         ElementActions.type(driver, Search_Input, "bav99");
+    }
+    public void Z2D_IPN_Input_Search( ) {
+        ElementActions.type(driver, Search_Input, "0.9902785216");
     }
 
     public void Search_using_Parametric() {

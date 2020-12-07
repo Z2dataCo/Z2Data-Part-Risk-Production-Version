@@ -34,7 +34,7 @@ public class H_1_Advanced_Crosses  {
         Landing_Obj.Z2D_Open_DDL_Menu();
         Landing_Obj.Z2D_Adv_Crosses_Value_Clickability();
         Landing_Obj.Z2D_Adv_Crosses();
-        Landing_Obj.Z2D_input_Search();
+        Landing_Obj.Z2D_Advanced_Crosses_Input_Search();
         Landing_Obj.Z2D_Adv_Product();
         Assert.assertTrue(driver.findElement(Advanced_Crosses_Obj.Total).getText().contains("Total"));
         Assert.assertTrue(driver.findElement(Advanced_Crosses_Obj.Different_Input).getText().contains("Different Input"));
