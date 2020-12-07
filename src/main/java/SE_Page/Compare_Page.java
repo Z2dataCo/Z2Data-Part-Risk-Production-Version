@@ -22,12 +22,12 @@ public class Compare_Page {
     public By Right_First_Row_Data = By.xpath("//*[@class='tbodyfeatureParts-0']//tr[1]/td[3]/span");
     public By Left_First_Row_Data = By.xpath("//*[@class='tbodyfeatureParts-0']//tr[1]/td[2]/span");
 
-    public void Z2D_Input_Compare_1(String Z2DataCompare_1) {
-        ElementActions.type(driver, Compare1, Z2DataCompare_1);
+    public void Z2D_Input_Compare_1( ) {
+        ElementActions.type(driver, Compare1, "bav10");
     }
 
-    public void Z2D_Input_Compare_2(String Z2DataCompare_2) {
-        ElementActions.type(driver, Compare2, Z2DataCompare_2);
+    public void Z2D_Input_Compare_2( ) {
+        ElementActions.type(driver, Compare2, "bav20");
     }
 
     public void Z2D_Select_Differences() {
@@ -36,6 +36,12 @@ public class Compare_Page {
 
     public void Z2D_Select_Similarities() {
         ElementActions.click(driver, Similarities);
+    }
+    public void Z2D_Left_First_Row_Data_Visibility(){
+        ElementActions.waitForElementToBePresent(driver, Left_First_Row_Data,5,true);
+    }
+    public void Z2D_Right_First_Row_Data_Visibility(){
+        ElementActions.waitForElementToBePresent(driver, Right_First_Row_Data,5,true);
     }
     /*public void Z2D_Set_Value_1(){ElementActions.click(driver,Value_Compare1);}
     public void Z2D_Set_Value_2(){ElementActions.click(driver,Value_Compare2);}*/

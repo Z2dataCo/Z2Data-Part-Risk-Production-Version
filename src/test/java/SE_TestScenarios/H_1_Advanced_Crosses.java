@@ -27,7 +27,7 @@ public class H_1_Advanced_Crosses  {
     }
 
     @Test(description = "TS002 || Validate To Search By Advanced Crosses\"", priority = 2)
-    public void Advanced_Crosses() throws InterruptedException {
+    public void Advanced_Crosses() {
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Advanced_Crosses_Page Advanced_Crosses_Obj = new Advanced_Crosses_Page(driver);
 
