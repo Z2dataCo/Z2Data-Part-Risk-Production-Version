@@ -28,7 +28,6 @@ public class N_2_Fun_Impacted_Parts   {
         Login_Obj.Z2D_SignIn();
     }
 
-
     @Test(description = "TS002 || Validate To Check ability to view impacted parts in PCN", priority = 2)
     public void Impacted_Parts() throws InterruptedException {
 

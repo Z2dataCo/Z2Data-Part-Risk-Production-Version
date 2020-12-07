@@ -237,7 +237,7 @@ public class Risk_Management_Module {
         Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(Toast_Container)));
     }
 
-    public void Z2D_Click_on_Create_Alert(WebDriver driver) {
+    public void Z2D_Click_on_Create_Alert() {
         ElementActions.click(driver, Create_Alert_Btn);
     }
 
@@ -419,6 +419,14 @@ public class Risk_Management_Module {
     public void Z2D_Scrub_Last_Pagination() {
         ElementActions.click(driver, Last);
     }
+    public int Z2D_Scrub_Table_Rows() {
+        driver.findElements(By.xpath("//*[@id=\"scrub_content\"]/div/table/tbody/tr")).size();
+        return 0;
+    }
+    public void Z2D_Scrub_Last_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Last, 5, true);
+    }
+
 
     //Forecast Page Methods
 

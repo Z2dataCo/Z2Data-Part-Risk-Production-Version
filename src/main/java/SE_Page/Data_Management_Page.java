@@ -79,9 +79,6 @@ public class Data_Management_Page {
         }
     }
 
-    public void Z2D_Table_Rows() {
-        driver.findElements(By.xpath("//*[@id=\"scrub_content\"]/div/table/tbody/tr")).size();
-    }
 
     public void Z2D_Open_Data_Management() {
         ElementActions.click(driver, Data_Management_Tab);
@@ -142,7 +139,7 @@ public class Data_Management_Page {
         ElementActions.type(driver, Search_Text_Input, "TAP_BOM");
     }
 
-    public void Z2D_Select_Folder() throws InterruptedException {
+    public void Z2D_Select_Folder()  {
         ElementActions.click(driver, Search_Result);
     }
 
@@ -198,15 +195,15 @@ public class Data_Management_Page {
         ElementActions.click(driver, Select_Proud_Test_BOM);
     }
 
-    public void Z2D_Move_To_Prod_BOM(WebDriver driver) {
+    public void Z2D_Move_To_Prod_BOM( ) {
         driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
     }
 
-    public void Z2D_Move_to_Mitigation_Bom( )   {
+    public void Z2D_Move_to_Mitigation_BOM( )   {
         driver.get("https://parts.z2data.com/RiskManager/Mitigation?BomId=119090");
     }
 
-    public void Z2D_Move_to_Forecast_Bom( )   {
+    public void Z2D_Move_to_Forecast_BOM( )   {
         driver.get("https://parts.z2data.com/RiskManager/Forecast?BomId=119090");
     }
 
@@ -214,11 +211,11 @@ public class Data_Management_Page {
         driver.get("https://parts.z2data.com/RiskManager/Compliance?BomId=119090");
     }
 
-    public void Z2D_Move_to_Reports_Bom( )   {
+    public void Z2D_Move_to_Reports_BOM( )   {
         driver.get("https://parts.z2data.com/RiskManager/Report?BomId=119090");
     }
 
-    public void Z2D_Move_to_Scrub_Bom( )   {
+    public void Z2D_Move_to_Scrub_BOM( )   {
         driver.get("https://parts.z2data.com/RiskManager/Scrub?BomId=119090");
     }
 

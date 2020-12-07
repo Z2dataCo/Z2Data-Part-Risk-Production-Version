@@ -33,16 +33,16 @@ public class G_1_Create_Alert_LifeCycle_Litigation   {
         Data_Management_Page DManagement_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
-        DManagement_Obj.Z2D_Move_To_Prod_BOM(driver);
+        DManagement_Obj.Z2D_Move_To_Prod_BOM();
         Risk_Management_Obj.Z2D_Followed_Text_Clickability();
         if (driver.findElement(Risk_Management_Obj.Followed_Text).getText().equals("Followed")) {
             Risk_Management_Obj.Z2D_Click_Followed_Btn();
             Risk_Management_Obj.Z2D_Unfollow_Btn_Clickability();
             Risk_Management_Obj.Z2D_Click_Unfollow_Btn();
             Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
-            Risk_Management_Obj.Z2D_Click_on_Create_Alert(driver);
+            Risk_Management_Obj.Z2D_Click_on_Create_Alert();
         } else {
-            Risk_Management_Obj.Z2D_Click_on_Create_Alert(driver);
+            Risk_Management_Obj.Z2D_Click_on_Create_Alert();
         }
         Risk_Management_Obj.Z2D_LifeCycle_Btn_Clickability();
         Risk_Management_Obj.Z2D_Click_on_LifeCycle();
