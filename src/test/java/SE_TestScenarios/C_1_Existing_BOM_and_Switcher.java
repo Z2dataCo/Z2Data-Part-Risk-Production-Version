@@ -30,21 +30,21 @@ public class C_1_Existing_BOM_and_Switcher {
     public void Existing_BOM_and_Switcher() throws InterruptedException {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);
-        Data_Management_Page DManagement_Obj = new Data_Management_Page(driver);
+        Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         Landing_Obj.Z2D_Open_Data_Management();
         Landing_Obj.Z2D_Wait_General_Spinner_Disappear();
-        DManagement_Obj.Z2D_Type_Folder_Name("TAP_BOM");
+        Data_Management_Obj.Z2D_Type_Folder_Name();
         boolean Stale_Element = true;
         while (Stale_Element) {
             try {
-                DManagement_Obj.Z2D_Select_Folder();
+                Data_Management_Obj.Z2D_Select_Folder();
                 Stale_Element = false;
             } catch (Exception ignored) {
             }
         }
-        DManagement_Obj.Z2D_Open_BOM();
+        Data_Management_Obj.Z2D_Open_BOM();
         Switch_Tabs();
         Risk_Management_Obj.Z2D_Spinner_to_Disappear();
         Risk_Management_Obj.Z2D_is_Clickable_of_High_Risk_Card();

@@ -3,6 +3,7 @@ package SE_TestScenarios;
 
 import SE_Page.Data_Management_Page;
 import SE_Page.Login_Page;
+import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -30,28 +31,29 @@ public class G_1_Create_Alert_LifeCycle_Litigation   {
     @Test(description = "TS002 || Validate creating alert by selecting LifeCycle & Litigation", priority = 2)
     public void Create_Alert_LifeCycle_Litigation() throws InterruptedException {
         Data_Management_Page DManagement_Obj = new Data_Management_Page(driver);
+        Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         DManagement_Obj.Z2D_Move_To_Prod_BOM(driver);
-        DManagement_Obj.Z2D_is_Clickable_of_Followed_Text();
-        if (driver.findElement(DManagement_Obj.Followed_Text).getText().equals("Followed")) {
-            DManagement_Obj.Z2D_Click_Followed_Btn();
-            DManagement_Obj.Z2D_is_Clickable_of_Unfollow_Btn();
-            DManagement_Obj.Z2D_Click_Unfollow_Btn();
-            DManagement_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
-            DManagement_Obj.Z2D_Click_on_Create_Alert(driver);
+        Risk_Management_Obj.Z2D_is_Clickable_of_Followed_Text();
+        if (driver.findElement(Risk_Management_Obj.Followed_Text).getText().equals("Followed")) {
+            Risk_Management_Obj.Z2D_Click_Followed_Btn();
+            Risk_Management_Obj.Z2D_is_Clickable_of_Unfollow_Btn();
+            Risk_Management_Obj.Z2D_Click_Unfollow_Btn();
+            Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
+            Risk_Management_Obj.Z2D_Click_on_Create_Alert(driver);
         } else {
-            DManagement_Obj.Z2D_Click_on_Create_Alert(driver);
+            Risk_Management_Obj.Z2D_Click_on_Create_Alert(driver);
         }
-        DManagement_Obj.Z2D_is_Clickable_of_LifeCycle_Btn();
-        DManagement_Obj.Z2D_Click_on_LifeCycle();
-        DManagement_Obj.Z2D_Click_on_Litigation();
-        DManagement_Obj.Z2D_Click_on_Submit_Btn();
-        DManagement_Obj.Z2D_Wait_Text_Not_To_be_Create_Alert();
-        String Status = driver.findElement(DManagement_Obj.Followed_Text).getText();
+        Risk_Management_Obj.Z2D_is_Clickable_of_LifeCycle_Btn();
+        Risk_Management_Obj.Z2D_Click_on_LifeCycle();
+        Risk_Management_Obj.Z2D_Click_on_Litigation();
+        Risk_Management_Obj.Z2D_Click_on_Submit_Btn();
+        Risk_Management_Obj.Z2D_Wait_Text_Not_To_be_Create_Alert();
+        String Status = driver.findElement(Risk_Management_Obj.Followed_Text).getText();
         Assert.assertEquals(Status, "Followed");
-        DManagement_Obj.Z2D_Click_Followed_Btn();
-        DManagement_Obj.Z2D_is_Clickable_of_Unfollow_Btn();
-        DManagement_Obj.Z2D_Click_Unfollow_Btn();
+        Risk_Management_Obj.Z2D_Click_Followed_Btn();
+        Risk_Management_Obj.Z2D_is_Clickable_of_Unfollow_Btn();
+        Risk_Management_Obj.Z2D_Click_Unfollow_Btn();
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {

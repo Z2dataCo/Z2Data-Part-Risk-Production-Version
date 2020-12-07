@@ -1,7 +1,6 @@
 package SE_Page;
 
 import com.shaft.gui.element.ElementActions;
-import io.cucumber.java.en_old.Ac;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -51,6 +50,13 @@ public class Risk_Management_Module {
     public By Unknown_Card = By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-mitigation/app-riskmitigationipn/div[1]/div[1]/div/div/div[2]/div[1]");
     public By Preview_Button = By.xpath("//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/button[1]");
     public By First_Report = By.xpath("//*[@id=\"z2-2cols-sub-2cols-left\"]/div//div[3]/div[2]/div/div[1]/h3");
+    public By Followed_Text = By.xpath("//*[@id=\"z2page-head-bar\"]/div/app-create-alert/button/span");
+    public By Unfollow_Btn = By.xpath("//div[@id='z2page-head-bar']/div/app-create-alert/div[1]/a[2]");
+    public By LifeCycle_Btn = By.xpath("//div[@id='sidepanelCreateAlert']//span[contains(text(),'Lifecycle')]");
+    public By Toast_Container = By.id("toast-container");
+    public By Create_Alert_Btn = By.xpath("//div[@id='z2page-head-bar']/div//button/span[contains(text(),'Create Alert')]");
+    public By Litigation_Btn = By.xpath("//div[@id='sidepanelCreateAlert']//span[contains(text(),'Litigation')]");
+    public By Submit_Btn = By.xpath("//button[contains(text(),'Create Alert')]");
 
     //Dashboard Page
     public By H1_Life_Forecast = By.xpath("//*[@id=\"dashboard_content\"]/div/div/div[1]/div[2]/div[1]/app-dashboard-forecast/div/div[1]/div[1]/span");
@@ -67,6 +73,7 @@ public class Risk_Management_Module {
     public By LastPage = By.xpath("//li[.='Next']/preceding-sibling::li[position()<2] ");
 
     //Parts Page
+    public By Parts = By.linkText("Parts");
     public By Number_Of_Parts = By.xpath("//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/app-risk-parts[1]/app-riskpartsmpn[1]/div[2]/div[1]/div[2]/div[1]/app-z2pagination[1]/span[1]/span[2]");
     public By Uploaded_IPN = By.xpath("//*[@id=\"partsMPNTabTHeadTrTblId\"]/th[3]");
     public By Uploaded_MPN = By.xpath("//*[@id=\"partsMPNTabTHeadTrTblId\"]/th[4]");
@@ -178,7 +185,7 @@ public class Risk_Management_Module {
     public By Info_Total = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/div[2]//app-z2pagination/span/span[2]");
     public By First_Report_Name = By.xpath("//*[@placeholder='Saved Reports']/option[2]");
     public By CusReport = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li[2]/a/div[2]");
-    public By reportlist = By.xpath("//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/div/div/i");
+    public By Report_List = By.xpath("//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/div/div/i");
     public By DeleteReport = By.xpath("//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/div/div/popover-container/div[2]/div/div[1]/div[1]/a[2]/div[2]");
     public By FirstRow = By.xpath("//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[1]/h3");
     public By ConflictMinerals = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li[7]/a");
@@ -190,13 +197,56 @@ public class Risk_Management_Module {
 
 
     //Risk Management Methods
+    public void Z2D_is_Clickable_of_Followed_Text(){
+        ElementActions.waitForElementToBePresent(driver, Followed_Text,5,true);
+    }
+    public void Z2D_is_Clickable_of_Unfollow_Btn(){
+        ElementActions.waitForElementToBePresent(driver, Unfollow_Btn,5,true);
+    }
+    public void Z2D_is_Clickable_of_LifeCycle_Btn(){
+        ElementActions.waitForElementToBePresent(driver, LifeCycle_Btn,5,true);
+    }
+    public void Z2D_Click_Followed_Btn() {
+        ElementActions.click(driver, Followed_Text);
+    }
+
+    public void Z2D_Click_Unfollow_Btn() {
+        ElementActions.click(driver, Unfollow_Btn);
+    }
     public static void Switch_Tabs() {
         ArrayList<String> tab2 = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tab2.get(0));
         driver.close();
         driver.switchTo().window(tab2.get(1));
     }
+    public void Z2D_Click_on_LifeCycle() throws InterruptedException {
+        while (!driver.findElement(LifeCycle_Btn).isSelected()) {
+            ElementActions.click(driver, LifeCycle_Btn);
+            Thread.sleep(200);
+            break;
+        }
+    }
+    public void Z2D_Wait_Invisibility_Of_Toast_Container() {
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
+        Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(Toast_Container)));
+    }
+    public void Z2D_Click_on_Create_Alert(WebDriver driver) {
+        ElementActions.click(driver, Create_Alert_Btn);
+    }
+    public void Z2D_Click_on_Litigation() throws InterruptedException {
+        while (!driver.findElement(Litigation_Btn).isSelected()) {
+            ElementActions.click(driver, Litigation_Btn);
+            Thread.sleep(200);
+            break;
+        }
+    }
+    public void Z2D_Click_on_Submit_Btn() {
+        ElementActions.click(driver, Submit_Btn);
+    }
+    public void Z2D_Wait_Text_Not_To_be_Create_Alert(){
+        ElementActions.waitForTextToChange(driver,Followed_Text,"Create Alert",5);
 
+    }
     public void Z2D_Spinner_to_Disappear() throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div"))).size() != 0 && count < 40) {
@@ -303,6 +353,13 @@ public class Risk_Management_Module {
     }
 
     //Parts Page Method
+    public int Z2D_Rows_Number(){
+        driver.findElements(By.xpath("//*[@id=\"partsMPNTabTblId\"]/tbody/tr")).size();
+        return 0;
+    }
+    public void Z2D_Open_Parts() {
+        ElementActions.click(driver, Parts);
+    }
     public void Z2D_Parts_Check_AVX() {
         ElementActions.click(driver, AVX_Filter);
     }
@@ -582,7 +639,7 @@ public class Risk_Management_Module {
 
 
     public void Z2D_Reports_Openlist() {
-        ElementActions.click(driver, reportlist);
+        ElementActions.click(driver, Report_List);
     }
 
     public void Z2D_Reports_Delete_Report() {

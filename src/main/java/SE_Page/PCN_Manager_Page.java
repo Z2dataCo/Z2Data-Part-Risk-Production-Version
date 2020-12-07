@@ -36,7 +36,21 @@ public class PCN_Manager_Page {
     public By Showing_Of_Total = By.xpath("//div[@id=\"PCNManagerPCNTab\"]/div[2]/div[1]/div[1]/div/span[1]");
     public By Impacted_MPN_Results = By.xpath("//*[@id=\"dataconfigrationtableTableView\"]/tr[48]/td[2]");
     public By FSP_Text = By.xpath("//*[@id=\"PCNManagerPCNTab\"]/div[3]/div/div/div/div[1]/div/div[2]/h4/span[2]");
+    public By SpinnerZezo = By.id("progressDiv");
 
+
+
+    public void Z2D_Wait_General_Spinner_Disappear( ) throws InterruptedException {
+        int count = 0;
+        while ((driver.findElements(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]")).size() != 0 && count < 40)) {
+            Thread.sleep(700);
+            count++;
+        }
+    }
+    public void Z2D_Wait_Invisibility_Of_Spinner_Zezo_1() {
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
+        Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(SpinnerZezo)));
+    }
     public void Scroll_to_Element(By element) throws InterruptedException {
         jse.executeScript("arguments[0].scrollIntoView(true);", element);
         Thread.sleep(500);
@@ -79,9 +93,14 @@ public class PCN_Manager_Page {
         ElementActions.click(driver, First_Search_Result);
     }
 
-    public void Z2D_Search(String SeacrhWith) {
+    public void Z2D_Search_PCN_ID( ) {
         driver.findElement(Results_Table).clear();
-        ElementActions.type(driver, Search_Field, SeacrhWith);
+        ElementActions.type(driver, Search_Field, "PD22748X");
+        ElementActions.click(driver, Search_button);
+    }
+    public void Z2D_Search_MPN_ID( ) {
+        driver.findElement(Results_Table).clear();
+        ElementActions.type(driver, Search_Field, "FSP012-FHEN2");
         ElementActions.click(driver, Search_button);
     }
 

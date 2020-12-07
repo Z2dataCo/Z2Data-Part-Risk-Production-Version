@@ -32,49 +32,49 @@ public class D_1_PCN_Manager   {
 
     public void PCN_Manager() throws InterruptedException {
         Landing_Page Landing_Obj = new Landing_Page(driver);
-        PCN_Manager_Page PCN_ManagerObj = new PCN_Manager_Page(driver);
+        PCN_Manager_Page PCN_Manager_Obj = new PCN_Manager_Page(driver);
 
         Landing_Obj.Z2D_Open_PCN_Manager();
         Landing_Obj.Z2D_Wait_General_Spinner_Disappear();
-        PCN_ManagerObj.Z2D_Dashboard_Tab_Total_PCNs_Visibility();
+        PCN_Manager_Obj.Z2D_Dashboard_Tab_Total_PCNs_Visibility();
 
-        if (driver.findElement(PCN_ManagerObj.Dashboard_Tab_Total_PCNs).isDisplayed()) {
-            Assert.assertTrue((driver.findElement(PCN_ManagerObj.Dashboard_Tab_Total_PCNs).isDisplayed()));
-            Assert.assertTrue((driver.findElement(PCN_ManagerObj.Dashboard_Tab_Requires_Action).isDisplayed()));
-            Assert.assertTrue((driver.findElement(PCN_ManagerObj.Dashboard_Tab_In_Progress).isDisplayed()));
-            Assert.assertTrue((driver.findElement(PCN_ManagerObj.Dashboard_Tab_Completed).isDisplayed()));
+        if (driver.findElement(PCN_Manager_Obj.Dashboard_Tab_Total_PCNs).isDisplayed()) {
+            Assert.assertTrue((driver.findElement(PCN_Manager_Obj.Dashboard_Tab_Total_PCNs).isDisplayed()));
+            Assert.assertTrue((driver.findElement(PCN_Manager_Obj.Dashboard_Tab_Requires_Action).isDisplayed()));
+            Assert.assertTrue((driver.findElement(PCN_Manager_Obj.Dashboard_Tab_In_Progress).isDisplayed()));
+            Assert.assertTrue((driver.findElement(PCN_Manager_Obj.Dashboard_Tab_Completed).isDisplayed()));
         } else {
             System.out.println("Assertion Dashboard Cards is Failed");
         }
         //WaitAllElement();
-        PCN_ManagerObj.Z2D_Open_Inbox_Tab();
+        PCN_Manager_Obj.Z2D_Open_Inbox_Tab();
         Landing_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        if (driver.findElement(PCN_ManagerObj.Inbox_Tab_Filter_Table).isDisplayed()) {
-            Assert.assertTrue((driver.findElement(PCN_ManagerObj.Inbox_Tab_Filter_Table).isDisplayed()));
+        if (driver.findElement(PCN_Manager_Obj.Inbox_Tab_Filter_Table).isDisplayed()) {
+            Assert.assertTrue((driver.findElement(PCN_Manager_Obj.Inbox_Tab_Filter_Table).isDisplayed()));
         } else {
             System.out.println("Assertion for Inbox Tab Filter Table is Failed");
         }
         //WaitAllElement();
-        PCN_ManagerObj.Z2D_Open_PCNs_Tab();
+        PCN_Manager_Obj.Z2D_Open_PCNs_Tab();
         Landing_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        if (driver.findElement(PCN_ManagerObj.PCNs_Tab_Filter_Table).isDisplayed()) {
-            Assert.assertTrue((driver.findElement(PCN_ManagerObj.PCNs_Tab_Filter_Table).isDisplayed()));
+        if (driver.findElement(PCN_Manager_Obj.PCNs_Tab_Filter_Table).isDisplayed()) {
+            Assert.assertTrue((driver.findElement(PCN_Manager_Obj.PCNs_Tab_Filter_Table).isDisplayed()));
         } else {
             System.out.println("Assertion for PCNs Tab Filter Table is Failed");
         }
         //WaitAllElement();
-        PCN_ManagerObj.Z2D_PCNs_First_PCN_Notification();
-        if (driver.findElement(PCN_ManagerObj.PCNs_First_PCN_Notification_PCN_ID).isDisplayed()) {
-            Assert.assertEquals(driver.findElement(PCN_ManagerObj.PCNs_First_PCN_Notification_PCN_ID).getText(), "Z2 PCN_ID");
+        PCN_Manager_Obj.Z2D_PCNs_First_PCN_Notification();
+        if (driver.findElement(PCN_Manager_Obj.PCNs_First_PCN_Notification_PCN_ID).isDisplayed()) {
+            Assert.assertEquals(driver.findElement(PCN_Manager_Obj.PCNs_First_PCN_Notification_PCN_ID).getText(), "Z2 PCN_ID");
         } else {
             System.out.println("Assertion for PCNs Tab First PCN Notification Z2 PCN_ID is Failed");
         }
         Thread.sleep(3000);
-        PCN_ManagerObj.Z2D_Back_from_PCN_Notification();
-        PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab();
+        PCN_Manager_Obj.Z2D_Back_from_PCN_Notification();
+        PCN_Manager_Obj.Z2D_Open_Impacted_Parts_Tab();
         Landing_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        if (driver.findElement(PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table).isDisplayed()) {
-            Assert.assertTrue((driver.findElement(PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table).isDisplayed()));
+        if (driver.findElement(PCN_Manager_Obj.Impacted_Parts_Tab_Filter_Table).isDisplayed()) {
+            Assert.assertTrue((driver.findElement(PCN_Manager_Obj.Impacted_Parts_Tab_Filter_Table).isDisplayed()));
         } else {
             System.out.println("Assertion for Impacted Parts Tab Filter Table is Failed");
         }

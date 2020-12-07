@@ -34,14 +34,14 @@ public class B_1_Data_Management  {
     @Severity(SeverityLevel.NORMAL)
     public void Data_Management() {
 
-        Data_Management_Page DManagement_Obj = new Data_Management_Page(driver);
-        DManagement_Obj.Z2D_Open_Data_Management();
-        Assert.assertEquals(driver.findElement(DManagement_Obj.Table_Name).getText(), "Name");
-        Assert.assertEquals(driver.findElement(DManagement_Obj.Table_User).getText(), "User");
-        Assert.assertEquals(driver.findElement(DManagement_Obj.Table_Of_file).getText(), "# of Files");
-        Assert.assertEquals(driver.findElement(DManagement_Obj.of_Suppliers).getText(), "# of Suppliers");
-        Assert.assertEquals(driver.findElement(DManagement_Obj.Table_Data_Created).getText(), "Date Created");
-        Assert.assertEquals(driver.findElement(DManagement_Obj.Table_Action).getText(), "Actions");
+        Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
+        Data_Management_Obj.Z2D_Open_Data_Management();
+        Assert.assertEquals(driver.findElement(Data_Management_Obj.Table_Name).getText(), "Name");
+        Assert.assertEquals(driver.findElement(Data_Management_Obj.Table_User).getText(), "User");
+        Assert.assertEquals(driver.findElement(Data_Management_Obj.Table_Of_file).getText(), "# of Files");
+        Assert.assertEquals(driver.findElement(Data_Management_Obj.of_Suppliers).getText(), "# of Suppliers");
+        Assert.assertEquals(driver.findElement(Data_Management_Obj.Table_Data_Created).getText(), "Date Created");
+        Assert.assertEquals(driver.findElement(Data_Management_Obj.Table_Action).getText(), "Actions");
 
     }
     @AfterClass(alwaysRun = true)
