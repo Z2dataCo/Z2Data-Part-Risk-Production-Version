@@ -1,13 +1,17 @@
 package SE_Page;
 
+import com.shaft.gui.browser.BrowserActions;
 import com.shaft.gui.element.ElementActions;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 
 public class Data_Management_Page {
@@ -24,7 +28,12 @@ public class Data_Management_Page {
     public Data_Management_Page(WebDriver driver) {
         this.driver = driver;
     }
-
+    public String ForeCast_URL = "https://parts.z2data.com/RiskManager/Forecast?BomId=119090";
+    public String Compliance_URL = "https://parts.z2data.com/RiskManager/Compliance?BomId=119090";
+    public String Mitigation_URL = "https://parts.z2data.com/RiskManager/Mitigation?BomId=119090";
+    public String Reports_URL = "https://parts.z2data.com/RiskManager/Report?BomId=119090";
+    public String Scrub_URL = "https://parts.z2data.com/RiskManager/Scrub?BomId=119090";
+    public String Prod_URL = "https://parts.z2data.com/RiskManager?BomId=119090";
 
     public By Data_Management_Tab = By.xpath("//a[contains(text(),'Data Management')]");
     public By Verification = By.xpath("//*[@id=\"z2page-head-bar\"]/div/h1/span/span");
@@ -196,27 +205,30 @@ public class Data_Management_Page {
     }
 
     public void Z2D_Move_To_Prod_BOM( ) {
-        driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
+        driver.get(Prod_URL);
     }
 
     public void Z2D_Move_to_Mitigation_BOM( )   {
-        driver.get("https://parts.z2data.com/RiskManager/Mitigation?BomId=119090");
+        driver.get(Mitigation_URL);
     }
 
     public void Z2D_Move_to_Forecast_BOM( )   {
-        driver.get("https://parts.z2data.com/RiskManager/Forecast?BomId=119090");
+        driver.get(ForeCast_URL);
     }
 
     public void Z2D_Move_to_Compliance_BOM( )   {
-        driver.get("https://parts.z2data.com/RiskManager/Compliance?BomId=119090");
+        driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
+        driver.get(Compliance_URL);
+        WebDriverWait WebWait = new WebDriverWait(driver, 90);
+        WebWait.until(ExpectedConditions.titleIs("Part Risk | Z2DATA"));
     }
 
     public void Z2D_Move_to_Reports_BOM( )   {
-        driver.get("https://parts.z2data.com/RiskManager/Report?BomId=119090");
+        driver.get(Reports_URL);
     }
 
     public void Z2D_Move_to_Scrub_BOM( )   {
-        driver.get("https://parts.z2data.com/RiskManager/Scrub?BomId=119090");
+        driver.get(Scrub_URL);
     }
 
     public void SetFile() {

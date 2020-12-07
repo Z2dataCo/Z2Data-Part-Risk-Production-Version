@@ -49,7 +49,7 @@ public class Login_Page {
         ElementActions.type(driver, Input_Text_Box, "Z2D.PR1@z2data.com");
         ElementActions.type(driver, Input_Pass, "Z2D.PR1@z2data.com");
         ElementActions.click(driver, SignIn_Btn);
-        WebDriverWait WebWait = new WebDriverWait(driver, 30);
+        WebDriverWait WebWait = new WebDriverWait(driver, 90);
         WebWait.until(ExpectedConditions.titleIs("Part Risk | Z2DATA"));
 
     }
