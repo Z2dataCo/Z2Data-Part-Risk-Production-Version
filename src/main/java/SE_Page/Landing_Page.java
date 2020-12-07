@@ -29,7 +29,7 @@ public class Landing_Page {
     public By Data_Management_Tab = By.linkText("Data Management");
     public By Value = By.xpath("//*[@id=\"ui-id-3\"]");
     public By IPN_Value = By.xpath("/html[1]/body[1]/ul[2]/li[2]/a[1]");
-    public By Supp_ChkBox = By.xpath("//*[@id=\"z2parametric-all\"]/div/div[2]/div[2]/div[1]/label/span[1]");
+    public By Supplier_Check_Box = By.xpath("//*[@id=\"z2parametric-all\"]/div/div[2]/div[2]/div[1]/label/span[1]");
     public By SpinnerZezo = By.id("progressDiv");
     public By MY_Account = By.xpath("//div//div[@class='usericon']");
     public By Logout = By.xpath("//body/div[@id='dropbg']/div[1]/div[2]/div[2]/a[3]/span[1]");
@@ -50,9 +50,13 @@ public class Landing_Page {
 
     //public List<WebElement> GeneralSpinner = driver.findElement(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]"));
     //public List<WebElement> SpinnerZezo2 =
-    public void Z2D_is_Clickable_of_Adv_Crosses_Value(){
+    public void Z2D_Adv_Crosses_Value_Clickability(){
         ElementActions.waitForElementToBePresent(driver, Adv_Crosses_Value,5,true);
     }
+    public void Z2D_Supplier_Check_Box_Clickability(){
+        ElementActions.waitForElementToBePresent(driver, Supplier_Check_Box,5,true);
+    }
+    
     public void Z2D_Wait_General_Spinner_Disappear( ) throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]")).size() != 0 && count < 40)) {
@@ -104,7 +108,7 @@ public class Landing_Page {
     }
 
     public void Z2D_input_Search( ) {
-        ElementActions.type(driver, Search_Input, "bav");
+        ElementActions.type(driver, Search_Input, "bav99");
     }
 
     public void Search_using_Parametric() {
@@ -154,7 +158,7 @@ public class Landing_Page {
     }
 
     public void Z2D_Check_Supplier() {
-        ElementActions.click(driver, Supp_ChkBox);
+        ElementActions.click(driver, Supplier_Check_Box);
     }
 
     public void Z2D_Click_Search() {

@@ -32,7 +32,7 @@ public class H_1_Advanced_Crosses  {
         Advanced_Crosses_Page Advanced_Crosses_Obj = new Advanced_Crosses_Page(driver);
 
         Landing_Obj.Z2D_Open_DDL_Menu();
-        Landing_Obj.Z2D_is_Clickable_of_Adv_Crosses_Value();
+        Landing_Obj.Z2D_Adv_Crosses_Value_Clickability();
         Landing_Obj.Z2D_Adv_Crosses();
         Landing_Obj.Z2D_input_Search();
         Landing_Obj.Z2D_Adv_Product();
