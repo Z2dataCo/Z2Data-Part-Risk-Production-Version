@@ -60,14 +60,14 @@ public class C_1_Existing_BOM_and_Switcher {
         Risk_Management_Obj.Z2D_Click_Forecast_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         Risk_Management_Obj.Z2D_Forecast_First_Filter_Clickability();
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Filter).isDisplayed());
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Second_Filter).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Filter).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Forecast_Ele_Second_Filter).isDisplayed());
         Risk_Management_Obj.Z2D_Switchers_Pipeline_Clickability();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         Risk_Management_Obj.Z2D_Forecast_First_Filter_Clickability();
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.First_Filter).isDisplayed());
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Second_Filter).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Filter).isDisplayed());
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Forecast_Ele_Second_Filter).isDisplayed());
 
         Risk_Management_Obj.Z2D_Click_Compliance_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();

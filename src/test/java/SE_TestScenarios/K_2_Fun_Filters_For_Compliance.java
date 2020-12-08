@@ -3,7 +3,6 @@ package SE_TestScenarios;
 
 import SE_Page.Data_Management_Page;
 import SE_Page.Login_Page;
-import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.WebDriver;

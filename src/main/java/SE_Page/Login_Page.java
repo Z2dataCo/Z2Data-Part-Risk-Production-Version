@@ -34,12 +34,6 @@ public class Login_Page {
     public By SignIn_Btn = By.name("button");
 
     public void Z2D_SignIn() {
-        /*Set_Text_Element_Text((driver.findElement(Input_Text_Box)),"Z2D.PR1@z2data.com");
-        Set_Text_Element_Text((driver.findElement(Input_Pass)),"Z2D.PR1@z2data.com");
-        Click_Button(driver.findElement(SignIn_Btn));
-        WebDriverWait WebWait = new WebDriverWait(driver, 30);
-        WebWait.until(ExpectedConditions.titleIs("Part Risk | Z2DATA"));*/
-
         ElementActions.type(driver, Input_Text_Box, "Z2D.PR1@z2data.com");
         ElementActions.type(driver, Input_Pass, "Z2D.PR1@z2data.com");
         ElementActions.click(driver, SignIn_Btn);
