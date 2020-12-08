@@ -34,24 +34,24 @@ public class AB_1_PCN_Search {
         PCN_Manager_Page PCN_Manager_Obj = new PCN_Manager_Page(driver);
 
         Landing_Obj.Z2D_Open_PCN_Manager();
-        PCN_Manager_Obj.Z2D_Wait_General_Spinner_Disappear();
-        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        PCN_Manager_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
+        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.isElementDisplayed(driver, PCN_Manager_Obj.Dashboard_Tab_Total_PCNs);
         PCN_Manager_Obj.Z2D_Open_PCNs_Tab();
-        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         PCN_Manager_Obj.Z2D_Search_PCN_ID();
-        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.isElementDisplayed(driver, PCN_Manager_Obj.Results_Table);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.Showing_Of_Total,PCN_Manager_Obj.Total_Results,5);
         String Search_Result = driver.findElement(PCN_Manager_Obj.First_Search_Result).getText();
         Assert.assertTrue(Search_Result.contains(PCN_Manager_Obj.PCN_ID));
 
         PCN_Manager_Obj.Z2D_Search_MPN_ID();
-        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.isElementDisplayed(driver, PCN_Manager_Obj.Results_Table);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.Showing_Of_Total,PCN_Manager_Obj.Total_Results,5);
         PCN_Manager_Obj.Z2D_Open_First_Search_Result();
-        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.FSP_Text,"",5);
         String Impacted_MPN_Data = driver.findElement(PCN_Manager_Obj.Impacted_MPN_Results).getText();
         Assert.assertTrue(Impacted_MPN_Data.contains(PCN_Manager_Obj.MPN_ID));

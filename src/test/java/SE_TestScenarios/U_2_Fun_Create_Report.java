@@ -1,12 +1,12 @@
 package SE_TestScenarios;
 
-import SE_Page.*;
+import SE_Page.Data_Management_Page;
+import SE_Page.Login_Page;
+import SE_Page.PCN_Manager_Page;
+import SE_Page.Risk_Management_Module;
 import com.github.javafaker.Faker;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.gui.element.ElementActions;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -54,14 +54,14 @@ public class U_2_Fun_Create_Report {
             Assert.assertEquals(Saved_Report, Name);}
 
         Risk_Management_Obj.Z2D_Reports_Preview_Report();
-        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Report_Window_Title,5,true);
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText(), ("Report Preview"));
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Download_Btn).getText(), ("Download"));
         Risk_Management_Obj.Z2D_Reports_Download_Report();
         Risk_Management_Obj.Z2D_Reports_Close_Preview();
         Risk_Management_Obj.Z2D_Reports_CustomReport();
-        Risk_Management_Obj.Z2D_Reports_Openlist();
+        Risk_Management_Obj.Z2D_Reports_Open_list();
         Risk_Management_Obj.Z2D_Reports_Delete_Report();
         Thread.sleep(3000);
         Assert.assertNotEquals(driver.findElement(Risk_Management_Obj.FirstRow).getText(), Name, "Verify to delete Report");

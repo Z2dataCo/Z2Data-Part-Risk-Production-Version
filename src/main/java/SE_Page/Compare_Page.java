@@ -4,11 +4,10 @@ import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 public class Compare_Page {
 
-    private WebDriver driver;
+    private final WebDriver driver;
     public JavascriptExecutor jse;
     public Compare_Page(WebDriver driver) {
         this.driver = driver;
@@ -43,7 +42,5 @@ public class Compare_Page {
     public void Z2D_Right_First_Row_Data_Visibility(){
         ElementActions.waitForElementToBePresent(driver, Right_First_Row_Data,5,true);
     }
-    /*public void Z2D_Set_Value_1(){ElementActions.click(driver,Value_Compare1);}
-    public void Z2D_Set_Value_2(){ElementActions.click(driver,Value_Compare2);}*/
 
 }

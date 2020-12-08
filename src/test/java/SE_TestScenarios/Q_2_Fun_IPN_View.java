@@ -13,6 +13,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static SE_Page.Risk_Management_Module.Switch_Tabs;
+
 public class Q_2_Fun_IPN_View {
 
     private WebDriver driver;
@@ -37,7 +39,7 @@ public class Q_2_Fun_IPN_View {
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         Landing_Obj.Z2D_Open_Data_Management();
-        Data_Management_Obj.Z2D_Spinner_to_Disappear();
+        Data_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Data_Management_Obj.Z2D_Search();
         boolean staleElement = true;
         while (staleElement) {
@@ -50,13 +52,13 @@ public class Q_2_Fun_IPN_View {
         }
         Data_Management_Obj.Z2D_Open_BOM();
 
-        Risk_Management_Obj.Switch_Tabs();
-        Risk_Management_Obj.Z2D_Parts_Clickability();
+        Switch_Tabs();
+        Risk_Management_Obj.Z2D_Parts_to_be_Clickable();
         Risk_Management_Obj.Z2D_Open_Parts();
-        Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+        Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_IPN_Table_Header_Visibility();
-        Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+        Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.IPN_Table_Header).getText().contains("IPN"));
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Product_Table_Header).getText().contains("Product"));
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Description_Table_Header).getText().contains("Description"));

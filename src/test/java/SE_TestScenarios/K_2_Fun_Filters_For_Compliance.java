@@ -35,12 +35,12 @@ public class K_2_Fun_Filters_For_Compliance {
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         Data_Management_Obj.Z2D_Move_to_Compliance_BOM();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
         ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Total_Filter_Results,5,true);
         String Total_Filter_Value = driver.findElement(Risk_Management_Obj.Total_Filter_Results).getText();
 //Risk_Management_Obj.Z2D_First_Check_Box_Filter_Clickability();
         Risk_Management_Obj.Z2D_Compliance_Click_on_First_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
         ElementActions.waitForTextToChange(driver,(Risk_Management_Obj.Total_Filter_Results),Total_Filter_Value,5);
         String FirstTotal = driver.findElement(Risk_Management_Obj.First_Filter_Total).getText();
         //Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Total_Filter_Results), FirstTotal);
@@ -49,7 +49,7 @@ public class K_2_Fun_Filters_For_Compliance {
 
         //Risk_Management_Obj.Z2D_Second_Check_Box_Filter_Clickability();
         Risk_Management_Obj.Z2D_Compliance_Click_on_Second_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
         ElementActions.waitForTextToChange(driver,(Risk_Management_Obj.Total_Filter_Results),AllTotal,5);
         String SecTotal = driver.findElement(Risk_Management_Obj.Second_Filter_Total).getText();
         // Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Showing_Of), "Showing 1-0 of");

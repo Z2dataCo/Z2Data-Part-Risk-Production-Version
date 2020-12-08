@@ -6,9 +6,6 @@ import SE_Page.PCN_Manager_Page;
 import SE_Page.Risk_Management_Module;
 import com.github.javafaker.Faker;
 import com.shaft.gui.browser.BrowserFactory;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -46,14 +43,14 @@ String Z2DataFakerFolder = faker.name().firstName() + "1";
         Data_Management_Obj.Z2D_Create_Folder();
         Data_Management_Obj.Z2D_Folder_Name(Z2DataFakerFolder);
         Data_Management_Obj.Z2D_Submit_Folder();
-        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
        // Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         String istRow = driver.findElement(Data_Management_Obj.is_Row).getText();
         Assert.assertEquals(istRow, Z2DataFakerFolder);
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
         if (istRow.equals(Z2DataFakerFolder)) {
-            Data_Management_Obj.DeleteBom();
-            Data_Management_Obj.DeleteConfirmation();
+            Data_Management_Obj.Z2D_Delete_BOM();
+            Data_Management_Obj.Z2D_Delete_Confirmation();
             if (!driver.getPageSource().contains(Z2DataFakerFolder)) {
                 Assert.assertNotEquals(istRow, Z2DataFakerFolder);
             }

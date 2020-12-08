@@ -43,13 +43,13 @@ public class AD_1_Check_Dashboard_Data {
         Data_Management_Obj.Z2D_Open_BOM();
         Risk_Management_Obj.Switch_Tabs();
         Risk_Management_Obj.Z2D_Open_Parts();
-        Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+        Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         int FixedNum = Integer.parseInt(driver.findElement(Risk_Management_Obj.fixednumber).getText());
         if (driver.findElement(Risk_Management_Obj.Last).isEnabled()) {
             int tableRows = Risk_Management_Obj.Z2D_Rows_Number();
-            Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+            Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
             Risk_Management_Obj.Z2D_Scrub_Last_Pagination();
-            Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+            Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
             int PaginationSize = Integer.parseInt(driver.findElement(Risk_Management_Obj.LastPage).getText());
             int Pagination = PaginationSize - 1;
             int SupTotal = Pagination * tableRows;
@@ -70,13 +70,13 @@ public class AD_1_Check_Dashboard_Data {
         }
         Risk_Management_Obj.Z2D_Click_Dashboard_Tab();
         Risk_Management_Obj.Z2D_Dashboard__HighRisk();
-        Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+        Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         int FixedNum1 = Integer.parseInt(driver.findElement(Risk_Management_Obj.fixednumber).getText());
         if (driver.findElement(Risk_Management_Obj.Last).isEnabled()) {
             int tableRows = Risk_Management_Obj.Z2D_Rows_Number();
             Thread.sleep(3000);
             Risk_Management_Obj.Z2D_Scrub_Last_Pagination();
-            Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+            Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
             int PaginationSize = Integer.parseInt(driver.findElement(Risk_Management_Obj.LastPage).getText());
             int Pagination = PaginationSize - 1;
             int SupTotal = Pagination * tableRows;

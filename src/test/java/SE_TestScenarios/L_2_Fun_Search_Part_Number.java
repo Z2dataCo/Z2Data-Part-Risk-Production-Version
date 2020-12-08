@@ -31,7 +31,7 @@ public class L_2_Fun_Search_Part_Number   {
 
         Landing_Obj.Z2D_Part_Number_Input_Search();
         Landing_Obj.Z2D_Click_Search();
-        Landing_Obj.Z2D_Supplier_Check_Box_Clickability();
+        Landing_Obj.Z2D_Supplier_Check_Box_to_be_Clickable();
         Landing_Obj.Z2D_Check_Supplier();
         Assert.assertEquals(driver.findElement(Landing_Obj.Part_Name).getText(), "bav99");
     }

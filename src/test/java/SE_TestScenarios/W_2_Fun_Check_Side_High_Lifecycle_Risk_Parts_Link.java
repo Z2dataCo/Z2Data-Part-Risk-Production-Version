@@ -2,10 +2,6 @@ package SE_TestScenarios;
 
 import SE_Page.*;
 import com.shaft.gui.browser.BrowserFactory;
-import com.shaft.gui.element.ElementActions;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -27,34 +23,35 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
-    @Test(description = "Check that side panel of Obsolete Parts in 3 Years shows parts that have forecast up to 3 years" , priority = 2)
-    public void Check_Side_Panel_High_Risk() throws InterruptedException {
 
+    @Test(description = "TS002 || Check that side panel of Obsolete Parts in 3 Years shows parts that have forecast up to 3 years", priority = 2)
+    public void Check_Side_Panel_High_Risk() throws InterruptedException {
+        Landing_Page Landing_Obj = new Landing_Page(driver);
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
         Obsolescence_Page Obsolescence_Obj = new Obsolescence_Page(driver);
 
-        Data_Management_Obj.Z2D_Open_Data_Management();
-        ElementActions.waitForElementToBePresent(driver,Data_Management_Obj.Search_Text_Input,5,true);
-        //Wait_Element_Visible(DManagementObj.Search_Text_Input);
+        Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
-        Thread.sleep(1000);
         Data_Management_Obj.Z2D_Open_BOM();
-        Thread.sleep(2000);
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM();
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM();
         }
-        Risk_Management_Obj.Z2D_Dashboard_Open_Reports();
+        Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
         Risk_Management_Obj.Z2D_Reports_Open_High_LifeCycle();
+
         if ("High Lifecycle Risk Parts" == driver.getPageSource()) {
-            if ((driver.findElement(Obsolescence_Obj.Last).isEnabled()))
+            if (driver.findElement(Obsolescence_Obj.Last).isEnabled())
                 Obsolescence_Obj.Z2D_Open_High_LifeCycle();
+
+        } else {
+
         }
-        Data_Management_Obj.Z2D_Spinner_to_Disappear();
+        Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Obsolescence_Obj.Z2D_Get_Last_Page();
         int CountOfTable = Obsolescence_Obj.Table_Size.size();
         int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
@@ -64,9 +61,16 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
         Assert.assertEquals(Count, AllOfRow);
-        Thread.sleep(2000);
-        Obsolescence_Obj.Z2D_NRND_Parts();
-        Data_Management_Obj.Z2D_Spinner_to_Disappear();
+        boolean staleElement1 = true;
+        while (staleElement1) {
+            try {
+                Obsolescence_Obj.Z2D_NRND_Parts();
+                staleElement1 = false;
+            } catch (Exception e) {
+                staleElement1 = true;
+            }
+        }
+        Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         int CountOfTable0 = Obsolescence_Obj.Table_Size.size();
         int Count0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
         int CountPagination0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
@@ -74,16 +78,15 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         int SubTotal0 = CountOfTable0 * CountPage0;
         int LastPage0 = Count0 - SubTotal0;
         int AllOfRow0 = LastPage0 + SubTotal0;
-        //System.out.println(AllOfRow0);
-        //System.out.println(Count0);
         Assert.assertEquals(Count0, AllOfRow0);
-        Risk_Management_Obj.Switch_Tabs();
     }
+
     @AfterClass(alwaysRun = true)
     public void TearDown() {
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
     }
+
 }
 
 

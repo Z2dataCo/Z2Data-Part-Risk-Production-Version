@@ -1,17 +1,15 @@
 package SE_TestScenarios;
 
-
-import SE_Page.Landing_Page;
 import SE_Page.Login_Page;
+import SE_Page.Submit_Ticket_Page;
 import com.shaft.gui.browser.BrowserFactory;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+public class AJ_1_Submit_Ticket   {
 
-public class M_2_Fun_Search_IPN {
     private WebDriver driver;
 
     @BeforeClass(alwaysRun = true)
@@ -26,17 +24,14 @@ public class M_2_Fun_Search_IPN {
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
+     @Test(description = "TS002 || Submit Ticket", priority = 2)
+    public void User_Submit_Ticket() {
+         Submit_Ticket_Page Submit_Ticket_Obj = new Submit_Ticket_Page(driver);
 
-    @Test(description = "TS002 || Validate To Search By IPN", priority = 2)
-    public void Search_by_IPN() {
-        Landing_Page Landing_Obj = new Landing_Page(driver);
-
-        Landing_Obj.Z2D_Open_Landing_Search_Menu();
-        Landing_Obj.Z2D_IPN_DDL();
-        Landing_Obj.Z2D_IPN_Input_Search();
-        Landing_Obj.Z2D_IPN_Value_Visibility();
-        Landing_Obj.Z2D_IPN_Value();
-        Assert.assertTrue(driver.getCurrentUrl().contains("IPN"));
+        Submit_Ticket_Obj.Z2D_Open_Submit_Ticket();
+        Submit_Ticket_Obj.Z2D_Type_Of_Issue();
+        Submit_Ticket_Obj.Z2D_Enter_Issue_Data( );
+        Submit_Ticket_Obj.Z2D_Close_Ticket();
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {

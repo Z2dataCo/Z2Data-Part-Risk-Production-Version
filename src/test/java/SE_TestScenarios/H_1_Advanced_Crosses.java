@@ -1,6 +1,5 @@
 package SE_TestScenarios;
 
-import SE_Page.Advanced_Crosses_Page;
 import SE_Page.Landing_Page;
 import SE_Page.Login_Page;
 import com.shaft.gui.browser.BrowserFactory;
@@ -29,18 +28,17 @@ public class H_1_Advanced_Crosses  {
     @Test(description = "TS002 || Validate To Search By Advanced Crosses\"", priority = 2)
     public void Advanced_Crosses() {
         Landing_Page Landing_Obj = new Landing_Page(driver);
-        Advanced_Crosses_Page Advanced_Crosses_Obj = new Advanced_Crosses_Page(driver);
 
-        Landing_Obj.Z2D_Open_DDL_Menu();
-        Landing_Obj.Z2D_Adv_Crosses_Value_Clickability();
+        Landing_Obj.Z2D_Open_Landing_Search_Menu();
+        Landing_Obj.Z2D_Adv_Crosses_Value_to_be_Clickable();
         Landing_Obj.Z2D_Adv_Crosses();
         Landing_Obj.Z2D_Advanced_Crosses_Input_Search();
         Landing_Obj.Z2D_Adv_Product();
-        Assert.assertTrue(driver.findElement(Advanced_Crosses_Obj.Total).getText().contains("Total"));
-        Assert.assertTrue(driver.findElement(Advanced_Crosses_Obj.Different_Input).getText().contains("Different Input"));
-        Assert.assertTrue(driver.findElement(Advanced_Crosses_Obj.Drop_in).getText().contains("Drop-In"));
-        Assert.assertTrue(driver.findElement(Advanced_Crosses_Obj.Drop_in_Same_Supplier).getText().contains("Drop-In Same Supplier"));
-        Assert.assertTrue(driver.findElement(Advanced_Crosses_Obj.Similar_Different_Package).getText().contains("Similar / Different Package"));
+        Assert.assertTrue(driver.findElement(Landing_Obj.Total).getText().contains("Total"));
+        Assert.assertTrue(driver.findElement(Landing_Obj.Different_Input).getText().contains("Different Input"));
+        Assert.assertTrue(driver.findElement(Landing_Obj.Drop_in).getText().contains("Drop-In"));
+        Assert.assertTrue(driver.findElement(Landing_Obj.Drop_in_Same_Supplier).getText().contains("Drop-In Same Supplier"));
+        Assert.assertTrue(driver.findElement(Landing_Obj.Similar_Different_Package).getText().contains("Similar / Different Package"));
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {
