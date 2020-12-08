@@ -1,6 +1,9 @@
 package SE_TestScenarios;
 
-import SE_Page.*;
+import SE_Page.Landing_Page;
+import SE_Page.Login_Page;
+import SE_Page.Risk_Management_Module;
+import SE_Page.Upload_BOM_Page;
 import com.shaft.gui.browser.BrowserFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

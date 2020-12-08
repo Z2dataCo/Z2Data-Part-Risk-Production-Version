@@ -1,8 +1,10 @@
 package SE_TestScenarios;
 
 
-import SE_Page.*;
-import SE_Page.Forecast_Page;
+import SE_Page.Data_Management_Page;
+import SE_Page.Login_Page;
+import SE_Page.Obsolescence_Page;
+import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -57,7 +59,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
 
         String Single_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_Second_Filter).getText();
         //System.out.println("Single_Source_Filter_Value : " + Single_Source_Filter_Value);
-        Wait_Element_Clickable(driver.findElement(Risk_Management_Obj.Forecast_Ele_Second_Filter));
+        Risk_Management_Obj.Z2D_Forecast_Second_Filter_Clickability();
 
         Risk_Management_Obj.Z2D_Forecast_Click_on_Second_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
@@ -91,7 +93,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
             //System.out.println(Opened_File_Name);
             //System.out.println(First_Row_Name);
             Assert.assertTrue(Opened_File_Name.contains(First_Row_Name), "Opened File is the same as Selected");
-            Wait_Element_Visible(driver.findElement(Obsolescence_Obj.Close_Slide));
+            Obsolescence_Obj.Z2D_Close_Slide_Visibility();
             Obsolescence_Obj.Z2D_Close_Slide();
         }
     }

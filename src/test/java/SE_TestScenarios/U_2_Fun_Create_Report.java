@@ -1,12 +1,12 @@
 package SE_TestScenarios;
 
-import SE_Page.*;
+import SE_Page.Data_Management_Page;
+import SE_Page.Login_Page;
+import SE_Page.PCN_Manager_Page;
+import SE_Page.Risk_Management_Module;
 import com.github.javafaker.Faker;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.gui.element.ElementActions;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -22,7 +22,7 @@ public class U_2_Fun_Create_Report {
     public void initialize_Global_Objects_and_Navigate() {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Page Login_Obj = new Login_Page(driver);
-        Login_Obj.navigateToURLForNavigationL();
+        Login_Obj.Navigate_To_URL_for_Navigation();
     }
 
     @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)

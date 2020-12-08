@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.hotkey.Keys;
 import org.testng.Assert;
+
 import java.util.ArrayList;
 
 
@@ -114,17 +115,17 @@ public class Risk_Management_Module {
     public By fixednumber = By.xpath("//*[@id=\"Information\"]/app-z2pagination/span/span[2]");
 
     //Forecast Page
-    public By First_Filter = By.xpath("//tbody/tr[1]/td[2]/a");
-    public By Second_Filter = By.xpath("//tbody/tr[2]/td[5]/a");
-    public By Third_Filter = By.xpath("//tbody/tr[3]/td[4]/a");
-    public By Fifth_Filter = By.xpath("//tbody/tr[5]/td[2]/a");
-    public By Forecast_First_Table_Data = By.xpath("//div[@class='z2tablemost']//tbody/tr[1]/td[1]//span");
-    public By File_Name = By.xpath("//*[@id=\"dropbg\"]/div/div/div[1]/div[1]/div[1]");
-    public By Graph2 = By.xpath("//*[@id=\"dashboard_content\"]/div/div/div[1]/app-dashboard-risk/div/div[1]");
-    public By TotalValue = By.xpath("//app-z2pagination/span/span[2]");
+    public By Forecast_Ele_First_Filter = By.xpath("//tbody/tr[1]/td[2]/a");
+    public By Forecast_Ele_Second_Filter = By.xpath("//tbody/tr[2]/td[5]/a");
+    public By Forecast_Ele_Third_Filter = By.xpath("//tbody/tr[3]/td[4]/a");
+    public By Forecast_Ele_Fifth_Filter = By.xpath("//tbody/tr[5]/td[2]/a");
+    public By Forecast_Ele_First_Table_Data = By.xpath("//div[@class='z2tablemost']//tbody/tr[1]/td[1]//span");
+    public By Forecast_Ele_File_Name = By.xpath("//*[@id=\"dropbg\"]/div/div/div[1]/div[1]/div[1]");
+    public By Forecast_Ele_Graph2 = By.xpath("//*[@id=\"dashboard_content\"]/div/div/div[1]/app-dashboard-risk/div/div[1]");
+    public By Forecast_Ele_Total_Value = By.xpath("//app-z2pagination/span/span[2]");
     public By ForeCast_Tab = By.xpath("//a[contains(text(),'Forecast')]");
     public By Spinner2 = By.xpath("//div[@style='border-color: silver silver silver rgb(51, 122, 183);']");
-    public By First_Row_Text = By.xpath("//div[@class='z2tablemost']//table/tbody/tr[1]/td[14]");
+    public By Forecast_Ele_First_Row_Text = By.xpath("//div[@class='z2tablemost']//table/tbody/tr[1]/td[14]");
     //public List<WebElement> Spinner = driver.findElements(By.xpath("//div[@style='border-color: silver silver silver rgb(51, 122, 183);']"));
     //public List<WebElement> Table_Columns = driver.findElements(By.xpath("//div[@class='z2tablemost']//table/tbody/tr[1]/td"));
     //public List<WebElement> Table_Rows = driver.findElements(By.xpath("//div[@class='z2tablemost']//table/tbody/tr"));
@@ -407,9 +408,11 @@ public class Risk_Management_Module {
     public void Z2D_Open_Parts() {
         ElementActions.click(driver, Parts);
     }
+
     public void Z2D_Parts_Clickability() {
         ElementActions.waitForElementToBePresent(driver, Parts, 5, true);
     }
+
     public void Z2D_Parts_Check_AVX() {
         ElementActions.click(driver, AVX_Filter);
     }
@@ -417,6 +420,7 @@ public class Risk_Management_Module {
     public void Z2D_Parts_Check_Fuses() {
         ElementActions.click(driver, Fuses_Filter);
     }
+
     public void Z2D_IPN_Table_Header_Visibility() {
         ElementActions.waitForElementToBePresent(driver, IPN_Table_Header, 5, true);
     }
@@ -426,10 +430,12 @@ public class Risk_Management_Module {
     public void Z2D_Scrub_Last_Pagination() {
         ElementActions.click(driver, Last);
     }
+
     public int Z2D_Scrub_Table_Rows() {
         driver.findElements(By.xpath("//*[@id=\"scrub_content\"]/div/table/tbody/tr")).size();
         return 0;
     }
+
     public void Z2D_Scrub_Last_Clickability() {
         ElementActions.waitForElementToBePresent(driver, Last, 5, true);
     }
@@ -437,8 +443,16 @@ public class Risk_Management_Module {
 
     //Forecast Page Methods
 
+    public void Z2D_Forecast_Ele_Graph2_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Forecast_Ele_Graph2, 5, true);
+    }
+
+    public void Z2D_Forecast_Ele_First_Row_Text_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Forecast_Ele_First_Row_Text, 5, true);
+    }
+
     public void Z2D_Forecast_Click_on_Graph() {
-        ElementActions.click(driver, Graph2);
+        ElementActions.click(driver, Forecast_Ele_Graph2);
     }
 
     public void Z2D_Forecast_Click_on_Forecast_Tab() {
@@ -451,18 +465,18 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Forecast_Click_on_Second_Filter() {
-        ElementActions.click(driver, Reports_Second_Filter);
+        ElementActions.click(driver, Forecast_Ele_Second_Filter);
     }
 
     public void Z2D_Forecast_Click_on_Third_Filter() {
-        ElementActions.click(driver, Reports_Third_Filter);
+        ElementActions.click(driver, Forecast_Ele_Third_Filter);
     }
 
     public void Z2D_Forecast_Click_on_Fifth_Filter() {
         boolean Intercepted = true;
         while (Intercepted) {
             try {
-                ElementActions.click(driver, Fifth_Filter);
+                ElementActions.click(driver, Forecast_Ele_Fifth_Filter);
                 Intercepted = false;
             } catch (ElementClickInterceptedException e) {
                 Intercepted = true;
@@ -472,7 +486,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Forecast_Click_on_First_Result() {
-        ElementActions.click(driver, Forecast_First_Table_Data);
+        ElementActions.click(driver, Forecast_Ele_First_Table_Data);
     }
 
     public int Z2D_Forecast_Table_Columns() {
@@ -498,25 +512,26 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Forecast_First_Filter_Clickability() {
-        ElementActions.waitForElementToBePresent(driver, First_Filter, 5, true);
+        ElementActions.waitForElementToBePresent(driver, Forecast_Ele_First_Filter, 5, true);
     }
 
     public void Z2D_Forecast_Second_Filter_Clickability() {
-        ElementActions.isElementClickable(driver, Second_Filter);
+        ElementActions.waitForElementToBePresent(driver, Forecast_Ele_Second_Filter, 5, true);
     }
 
     public void Z2D_Forecast_Third_Filter_Clickability() {
-        ElementActions.isElementClickable(driver, Third_Filter);
+        ElementActions.waitForElementToBePresent(driver, Forecast_Ele_Third_Filter, 5, true);
     }
 
     public void Z2D_Forecast_Fifth_Filter_Clickabilityp() {
-        ElementActions.isElementClickable(driver, Fifth_Filter);
+        ElementActions.waitForElementToBePresent(driver, Forecast_Ele_Fifth_Filter, 5, true);
     }
 
     //Compliance Page Methods
     public void Z2D_Compliance_Click_on_First_Filter() {
         ElementActions.click(driver, First_Check_Box_Filter);
     }
+
     public void Z2D_First_Check_Box_Filter_Clickability() {
         ElementActions.waitForElementToBePresent(driver, First_Check_Box_Filter, 5, true);
     }
@@ -534,6 +549,7 @@ public class Risk_Management_Module {
 
         }
     }
+
     public void Z2D_Second_Check_Box_Filter_Clickability() {
         ElementActions.waitForElementToBePresent(driver, Second_Check_Box_Filter, 5, true);
     }
@@ -562,11 +578,26 @@ public class Risk_Management_Module {
         ElementActions.click(driver, NRND_Parts);
     }
 
-    public void Z2D_Mitigation_Click_on_EndofLife_Filter() {
+    public void Z2D_Mitigation_NRND_Parts_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, NRND_Parts, 5, true);
+    }
+
+    public void Z2D_Mitigation_Click_on_End_of_Life_Filter() {
         ElementActions.click(driver, End_Of_Life_Parts);
     }
 
-    public void Z2D_Mitigation_Click_on_DropinCrosses() {
+    public void Z2D_Mitigation_End_Of_Life_Parts_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, End_Of_Life_Parts, 5, true);
+    }
+    public void Z2D_Mitigation_Suggested_Part_Label_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Suggested_Part_Label, 5, true);
+    }
+    public void Z2D_Mitigation_View_Drop_Crosses_Button_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, View_Drop_Crosses_Button, 5, true);
+    }
+
+
+    public void Z2D_Mitigation_Click_on_Drop_in_Crosses() {
         boolean Intercepted = true;
         while (Intercepted) {
 
@@ -600,7 +631,6 @@ public class Risk_Management_Module {
 
     public void Z2D_Mitigation_Scroll() throws InterruptedException {
         Scroll_to_Element(Recommendation_Option);
-        Thread.sleep(200);
     }
 
     public void Z2D_Mitigation_Click_on_View_Replacement_Button() {
@@ -626,11 +656,17 @@ public class Risk_Management_Module {
         ElementActions.click(driver, Check_Box2);
     }
 
-    public void Z2D_Reports_Save_Report() { ElementActions.click(driver, Save_Report); }
+    public void Z2D_Reports_Save_Report() {
+        ElementActions.click(driver, Save_Report);
+    }
 
-    public void Z2D_Reports_Enter_Report_Name(String Name) { ElementActions.type(driver, Report_Name, Name); }
+    public void Z2D_Reports_Enter_Report_Name(String Name) {
+        ElementActions.type(driver, Report_Name, Name);
+    }
 
-    public void Z2D_Reports_Confirm_Report() { ElementActions.click(driver, Confirm_Report); }
+    public void Z2D_Reports_Confirm_Report() {
+        ElementActions.click(driver, Confirm_Report);
+    }
 
     public void Z2D_Reports_Preview_Report() {
         ElementActions.click(driver, Preview);
@@ -707,11 +743,17 @@ public class Risk_Management_Module {
     }
 
 
-    public void Z2D_Reports_Openlist() { ElementActions.click(driver, Report_List); }
+    public void Z2D_Reports_Openlist() {
+        ElementActions.click(driver, Report_List);
+    }
 
-    public void Z2D_Reports_Delete_Report() { ElementActions.click(driver, DeleteReport); }
+    public void Z2D_Reports_Delete_Report() {
+        ElementActions.click(driver, DeleteReport);
+    }
 
-    public void Z2D_Reports_CustomReport() { ElementActions.click(driver, CusReport); }
+    public void Z2D_Reports_CustomReport() {
+        ElementActions.click(driver, CusReport);
+    }
 
     public void Z2D_Reports_Open_ConflictMinerals() {
         ElementActions.click(driver, ConflictMinerals);
