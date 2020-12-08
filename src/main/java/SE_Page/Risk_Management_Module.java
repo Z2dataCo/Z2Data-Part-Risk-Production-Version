@@ -621,17 +621,11 @@ public class Risk_Management_Module {
         ElementActions.click(driver, Check_Box2);
     }
 
-    public void Z2D_Reports_Save_Report() {
-        ElementActions.click(driver, Save_Report);
-    }
+    public void Z2D_Reports_Save_Report() { ElementActions.click(driver, Save_Report); }
 
-    public void Z2D_Reports_Enter_Report_Name(String Name) {
-        ElementActions.type(driver, Report_Name, Name);
-    }
+    public void Z2D_Reports_Enter_Report_Name(String Name) { ElementActions.type(driver, Report_Name, Name); }
 
-    public void Z2D_Reports_Confirm_Report() {
-        ElementActions.click(driver, Confirm_Report);
-    }
+    public void Z2D_Reports_Confirm_Report() { ElementActions.click(driver, Confirm_Report); }
 
     public void Z2D_Reports_Preview_Report() {
         ElementActions.click(driver, Preview);
@@ -708,18 +702,11 @@ public class Risk_Management_Module {
     }
 
 
-    public void Z2D_Reports_Openlist() {
-        ElementActions.click(driver, Report_List);
-    }
+    public void Z2D_Reports_Openlist() { ElementActions.click(driver, Report_List); }
 
-    public void Z2D_Reports_Delete_Report() {
-        ElementActions.click(driver, DeleteReport);
-    }
+    public void Z2D_Reports_Delete_Report() { ElementActions.click(driver, DeleteReport); }
 
-    public void Z2D_Reports_CustomReport() {
-        ElementActions.click(driver, CusReport);
-
-    }
+    public void Z2D_Reports_CustomReport() { ElementActions.click(driver, CusReport); }
 
     public void Z2D_Reports_Open_ConflictMinerals() {
         ElementActions.click(driver, ConflictMinerals);

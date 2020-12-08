@@ -39,6 +39,5 @@ public class A_1_Parametric_Search {
     public void TearDown() {
         driver.quit();
     }
-
 }
 
