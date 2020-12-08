@@ -5,6 +5,7 @@ import SE_Page.Data_Management_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
+import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -35,19 +36,23 @@ public class K_2_Fun_Filters_For_Compliance {
 
         Data_Management_Obj.Z2D_Move_to_Compliance_BOM();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
-        Risk_Management_Obj.Z2D_First_Check_Box_Filter_Clickability();
+        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Total_Filter_Results,5,true);
+        String Total_Filter_Value = driver.findElement(Risk_Management_Obj.Total_Filter_Results).getText();
+//Risk_Management_Obj.Z2D_First_Check_Box_Filter_Clickability();
         Risk_Management_Obj.Z2D_Compliance_Click_on_First_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
+        ElementActions.waitForTextToChange(driver,(Risk_Management_Obj.Total_Filter_Results),Total_Filter_Value,5);
         String FirstTotal = driver.findElement(Risk_Management_Obj.First_Filter_Total).getText();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Total_Filter_Results), FirstTotal);
+        //Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Total_Filter_Results), FirstTotal);
         String AllTotal = driver.findElement(Risk_Management_Obj.Total_Filter_Results).getText();
         Assert.assertEquals(FirstTotal, AllTotal);
 
-        Risk_Management_Obj.Z2D_Second_Check_Box_Filter_Clickability();
+        //Risk_Management_Obj.Z2D_Second_Check_Box_Filter_Clickability();
         Risk_Management_Obj.Z2D_Compliance_Click_on_Second_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
+        ElementActions.waitForTextToChange(driver,(Risk_Management_Obj.Total_Filter_Results),AllTotal,5);
         String SecTotal = driver.findElement(Risk_Management_Obj.Second_Filter_Total).getText();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Showing_Of), "Showing 1-0 of");
+        // Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Showing_Of), "Showing 1-0 of");
         String AllTotal2 = driver.findElement(Risk_Management_Obj.Total_Filter_Results).getText();
         Assert.assertEquals(AllTotal2, SecTotal);
     }
