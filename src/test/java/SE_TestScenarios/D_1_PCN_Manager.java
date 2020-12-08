@@ -35,7 +35,7 @@ public class D_1_PCN_Manager   {
         PCN_Manager_Page PCN_Manager_Obj = new PCN_Manager_Page(driver);
 
         Landing_Obj.Z2D_Open_PCN_Manager();
-        Landing_Obj.Z2D_Wait_General_Spinner_Disappear();
+        Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         PCN_Manager_Obj.Z2D_Dashboard_Tab_Total_PCNs_Visibility();
 
         if (driver.findElement(PCN_Manager_Obj.Dashboard_Tab_Total_PCNs).isDisplayed()) {
@@ -47,14 +47,14 @@ public class D_1_PCN_Manager   {
             System.out.println("Assertion Dashboard Cards is Failed");
         }
         PCN_Manager_Obj.Z2D_Open_Inbox_Tab();
-        Landing_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Landing_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         if (driver.findElement(PCN_Manager_Obj.Inbox_Tab_Filter_Table).isDisplayed()) {
             Assert.assertTrue((driver.findElement(PCN_Manager_Obj.Inbox_Tab_Filter_Table).isDisplayed()));
         } else {
             System.out.println("Assertion for Inbox Tab Filter Table is Failed");
         }
         PCN_Manager_Obj.Z2D_Open_PCNs_Tab();
-        Landing_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Landing_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         if (driver.findElement(PCN_Manager_Obj.PCNs_Tab_Filter_Table).isDisplayed()) {
             Assert.assertTrue((driver.findElement(PCN_Manager_Obj.PCNs_Tab_Filter_Table).isDisplayed()));
         } else {
@@ -66,10 +66,9 @@ public class D_1_PCN_Manager   {
         } else {
             System.out.println("Assertion for PCNs Tab First PCN Notification Z2 PCN_ID is Failed");
         }
-        Thread.sleep(3000);
         PCN_Manager_Obj.Z2D_Back_from_PCN_Notification();
         PCN_Manager_Obj.Z2D_Open_Impacted_Parts_Tab();
-        Landing_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Landing_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         if (driver.findElement(PCN_Manager_Obj.Impacted_Parts_Tab_Filter_Table).isDisplayed()) {
             Assert.assertTrue((driver.findElement(PCN_Manager_Obj.Impacted_Parts_Tab_Filter_Table).isDisplayed()));
         } else {

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PCN_Manager_Page {
 
-    private WebDriver driver;
+    private final WebDriver driver;
     public JavascriptExecutor jse;
 
     public PCN_Manager_Page(WebDriver driver) {
@@ -22,7 +22,6 @@ public class PCN_Manager_Page {
     public String MPN_ID = "FSP012-FHEN2";
     public String Total_Results = "Showing 1-21 of";
 
-    public By Dashboard_Tab = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]");
     public By Dashboard_Tab_Total_PCNs = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1]");
     public By Dashboard_Tab_Requires_Action = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h1[1]");
     public By Dashboard_Tab_In_Progress = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/h1[1]");
@@ -44,13 +43,13 @@ public class PCN_Manager_Page {
     public By Showing_Of_Total = By.xpath("//div[@id=\"PCNManagerPCNTab\"]/div[2]/div[1]/div[1]/div/span[1]");
     public By Impacted_MPN_Results = By.xpath("//*[@id=\"dataconfigrationtableTableView\"]/tr[48]/td[2]");
     public By FSP_Text = By.xpath("//*[@id=\"PCNManagerPCNTab\"]/div[3]/div/div/div/div[1]/div/div[2]/h4/span[2]");
-    public By SpinnerZezo = By.id("progressDiv");
+    public By Z2Data_Spinner_1 = By.id("progressDiv");
     // Impacted Parts
     public By Search_Btn = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]/a[1]");
     public By Supplier_CheckBox = By.xpath("//*[@id=\"DivAlertsFilterPCN\"]/div[1]/div[2]/div[1]/div/table/tbody/tr/td[4]/div/fieldset[1]/div/label/span/span");
 
 
-    public void Z2D_Wait_General_Spinner_Disappear() throws InterruptedException {
+    public void Z2D_Wait_Disappear_Z2Data_Spinner_0() throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]")).size() != 0 && count < 40)) {
             Thread.sleep(700);
@@ -58,14 +57,9 @@ public class PCN_Manager_Page {
         }
     }
 
-    public void Z2D_Wait_Invisibility_Of_Spinner_Zezo_1() {
+    public void Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1() {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
-        Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(SpinnerZezo)));
-    }
-
-
-    public void Z2D_Open_Dashboard_Tab() {
-        ElementActions.click(driver, Dashboard_Tab);
+        Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(Z2Data_Spinner_1)));
     }
 
     public void Z2D_Open_Inbox_Tab() {

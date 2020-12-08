@@ -33,14 +33,14 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         Data_Management_Obj.Z2D_Move_to_Mitigation_BOM();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Mitigation_Scroll();
-        while (Risk_Management_Obj.Added_Part_Label_List.size() != 0) {
+        while (Risk_Management_Obj.Added_Part_Label_List).size() != 0) {
             Risk_Management_Obj.Z2D_Mitigation_Click_on_Close_Button();
         }
         Risk_Management_Obj.Z2D_Mitigation_View_Drop_Crosses_Button_Visibility();
         Risk_Management_Obj.Z2D_Mitigation_Click_on_Drop_in_Crosses();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Mitigation_Suggested_Part_Label_Visibility();
         String Crosses_Part_Label = driver.findElement(Risk_Management_Obj.Suggested_Part_Label).getText();
         Risk_Management_Obj.Z2D_Mitigation_Click_on_Add_Part_Button();
@@ -50,8 +50,8 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
         Risk_Management_Obj.Z2D_Mitigation_Click_on_Close_Button();
 
         Risk_Management_Obj.Z2D_Mitigation_Click_on_View_Replacement_Button();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Wait_Element_Visible(driver.findElement(Risk_Management_Obj.Suggested_Part_Label));
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
+        Risk_Management_Obj.Z2D_Mitigation_Suggested_Part_Label_Visibility();
         String Replacement_Part_Label = driver.findElement(Risk_Management_Obj.Suggested_Part_Label).getText();
         Risk_Management_Obj.Z2D_Mitigation_Click_on_Add_Part_Button();
         String Added_part_Label2 = driver.findElement(Risk_Management_Obj.Added_Part_Label).getText();
@@ -71,9 +71,9 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
 
         String NRND_Parts = driver.findElement(Risk_Management_Obj.NRND_Parts).getText();
         System.out.println("NRND_Filter_Value : " + NRND_Parts);
-        Risk_Management_Obj.Z2D_Mitigation_NRND_Parts_Clickability();
+        Risk_Management_Obj.Z2D_Mitigation_NRND_Parts_to_be_Clickable();
         Risk_Management_Obj.Z2D_Mitigation_Click_on_NRND_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), "226");
         String TotalFilterValue2 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
         System.out.println("Total Filter Value : " + TotalFilterValue2);
@@ -81,9 +81,9 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
 
         String End_of_Life_Parts = driver.findElement(Risk_Management_Obj.End_Of_Life_Parts).getText();
         System.out.println("End_Of_Life_Parts : " + End_of_Life_Parts);
-        Risk_Management_Obj.Z2D_Mitigation_End_Of_Life_Parts_Clickability();
+        Risk_Management_Obj.Z2D_Mitigation_End_Of_Life_Parts_to_be_Clickable();
         Risk_Management_Obj.Z2D_Mitigation_Click_on_End_of_Life_Filter();
-        Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+        Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), "248");
         String TotalFilterValue3 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
         System.out.println("Total Filter Value : " + TotalFilterValue3);

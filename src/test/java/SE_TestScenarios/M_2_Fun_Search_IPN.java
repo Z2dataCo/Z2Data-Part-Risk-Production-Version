@@ -31,7 +31,7 @@ public class M_2_Fun_Search_IPN {
     public void Search_by_IPN() {
         Landing_Page Landing_Obj = new Landing_Page(driver);
 
-        Landing_Obj.Z2D_Open_DDL_Menu();
+        Landing_Obj.Z2D_Open_Landing_Search_Menu();
         Landing_Obj.Z2D_IPN_DDL();
         Landing_Obj.Z2D_IPN_Input_Search();
         Landing_Obj.Z2D_IPN_Value_Visibility();

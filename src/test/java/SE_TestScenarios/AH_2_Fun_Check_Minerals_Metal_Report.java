@@ -36,7 +36,7 @@ public class AH_2_Fun_Check_Minerals_Metal_Report  {
 
         Data_Management_Obj.Z2D_Move_to_Reports_BOM();
         Risk_Management_Obj.Z2D_Reports_Open_Minerals_Metal_Report();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
         Risk_Management_Obj.Z2D_Reports_Report_Window_Title_Visibility();
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText(), ("Conflict Minerals Metal"));
         Risk_Management_Obj.Z2D_Reports_Export_Button_Visibility();

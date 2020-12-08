@@ -33,7 +33,7 @@ public class Landing_Page {
     public By SpinnerZezo = By.id("progressDiv");
     public By MY_Account = By.xpath("//div//div[@class='usericon']");
     public By Logout = By.xpath("//body/div[@id='dropbg']/div[1]/div[2]/div[2]/a[3]/span[1]");
-    public By DDL_Type_Of_Search = By.xpath("//*[@id=\"main-search-bar\"]/div[1]");
+    public By Landing_Search_Menu = By.xpath("//*[@id=\"main-search-bar\"]/div[1]");
     public By Part_Number = By.xpath("//div[@id='dropbg']//a[contains(text(),'Part Number')]");
     public By Search_Btn = By.xpath("//button[@id='btnautoSearch']");
     public By Parametric_Menu = By.xpath("/html/body/div[3]/div[1]/ul/li[1]/a");
@@ -47,35 +47,41 @@ public class Landing_Page {
     public By PCN_Manager_Tab = By.linkText("PCN Manager");
     public By btn_search = By.xpath("//*[@id=\"btnautoSearch\"]/i");
     public By Remove_File = By.xpath("//a[contains(text(),'Remove file')]");
+    // Advanced Crosses Elements
+    public By Total = By.xpath("//*[@id=\"RemainMainPage\"]/adv-cross/div[1]/div/div[2]/div/div[1]/div");
+    public By Drop_in = By.xpath("//*[@id=\"RemainMainPage\"]/adv-cross/div[1]/div/div[2]/div/div[2]/div/div");
+    public By Drop_in_Same_Supplier = By.xpath("//*[@id=\"RemainMainPage\"]/adv-cross/div[1]/div/div[2]/div/div[3]/div/div/div[1]");
+    public By Different_Input = By.xpath("//*[@id=\"RemainMainPage\"]/adv-cross/div[1]/div/div[2]/div/div[4]/div/div");
+    public By Similar_Different_Package = By.xpath("//*[@id=\"RemainMainPage\"]/adv-cross/div[1]/div/div[2]/div/div[5]/div/div");
 
-    public void Z2D_Adv_Crosses_Value_Clickability(){
-        ElementActions.waitForElementToBePresent(driver, Adv_Crosses_Value,5,true);
-    }
-    public void Z2D_Supplier_Check_Box_Clickability(){
-        ElementActions.waitForElementToBePresent(driver, Supplier_Check_Box,5,true);
-    }
-    public void Z2D_IPN_Value_Visibility(){
-        ElementActions.waitForElementToBePresent(driver, IPN_Value,5,true);
+    public void Z2D_Adv_Crosses_Value_to_be_Clickable() {
+        ElementActions.waitForElementToBePresent(driver, Adv_Crosses_Value, 5, true);
     }
 
-    
-    public void Z2D_Wait_General_Spinner_Disappear( ) throws InterruptedException {
+    public void Z2D_Supplier_Check_Box_to_be_Clickable() {
+        ElementActions.waitForElementToBePresent(driver, Supplier_Check_Box, 5, true);
+    }
+
+    public void Z2D_IPN_Value_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, IPN_Value, 5, true);
+    }
+
+
+    public void Z2D_Wait_Disappear_Z2Data_Spinner_0() throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]")).size() != 0 && count < 40)) {
             Thread.sleep(700);
             count++;
         }
     }
-    public void Z2D_Wait_Invisibility_Of_Spinner_Zezo_1() {
+
+    public void Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1() {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOf(driver.findElement(SpinnerZezo)));
     }
-    public void Z2D_Wait_Invisibility_Of_Spinner_Zezo_2() {
-        WebDriverWait Wait = new WebDriverWait(driver, 100);
-        Wait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElements(By.xpath("//div[@id='dropbg']//div[@style='border-radius: 3px; background-color: rgba(0, 18, 59, 0.6);']"))));
-    }
+    
 
-    public void Z2D_Upload_BOM( ) throws AWTException {
+    public void Z2D_Upload_BOM() throws AWTException {
         ElementActions.click(driver, Upload_BOM_Btn);
         StringSelection strSelection = new StringSelection(System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx");
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -103,19 +109,21 @@ public class Landing_Page {
     }
 
     public void Z2D_Select_Part_Number(String SearchValue) {
-        ElementActions.click(driver, DDL_Type_Of_Search);
+        ElementActions.click(driver, Landing_Search_Menu);
         ElementActions.click(driver, Part_Number);
         ElementActions.type(driver, Search_Input, SearchValue);
         ElementActions.click(driver, Search_Btn);
     }
 
-    public void Z2D_Advanced_Crosses_Input_Search( ) {
+    public void Z2D_Advanced_Crosses_Input_Search() {
         ElementActions.type(driver, Search_Input, "bav");
     }
-    public void Z2D_Part_Number_Input_Search( ) {
+
+    public void Z2D_Part_Number_Input_Search() {
         ElementActions.type(driver, Search_Input, "bav99");
     }
-    public void Z2D_IPN_Input_Search( ) {
+
+    public void Z2D_IPN_Input_Search() {
         ElementActions.type(driver, Search_Input, "0.9902785216");
     }
 
@@ -129,8 +137,8 @@ public class Landing_Page {
         ElementActions.click(driver, Data_Management_Tab);
     }
 
-    public void Z2D_Open_DDL_Menu() {
-        ElementActions.click(driver, DDL_Type_Of_Search);
+    public void Z2D_Open_Landing_Search_Menu() {
+        ElementActions.click(driver, Landing_Search_Menu);
     }
 
     public void Z2D_Adv_Crosses() {
@@ -180,8 +188,5 @@ public class Landing_Page {
     public void Z2D_Logout() {
         ElementActions.click(driver, Logout);
     }
-
-
-
 
 }

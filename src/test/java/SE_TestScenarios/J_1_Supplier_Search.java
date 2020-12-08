@@ -44,7 +44,7 @@ public class J_1_Supplier_Search {
             }
         }
         Suppliers_Obj.Z2D_Click_Search();
-        Suppliers_Obj.Z2D_Spinner_to_Disappear();
+        Suppliers_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Assert.assertTrue(driver.findElement(Suppliers_Obj.SuppName).getText().contains("Toshiba"));
 
     }

@@ -35,11 +35,11 @@ public class O_2_Fun_Count_Of_Exact_Match {
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         Data_Management_Obj.Z2D_Move_to_Scrub_BOM();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
         int FixedNum = Integer.parseInt(driver.findElement(Risk_Management_Obj.FixedNumber).getText());
         if (driver.findElement(Risk_Management_Obj.Last).isEnabled()) {
             int tableRows = Risk_Management_Obj.Z2D_Scrub_Table_Rows();
-            Risk_Management_Obj.Z2D_Scrub_Last_Clickability();
+            Risk_Management_Obj.Z2D_Scrub_Last_to_be_Clickable();
             Risk_Management_Obj.Z2D_Scrub_Last_Pagination();
             int PaginationSize = Integer.parseInt(driver.findElement(Risk_Management_Obj.LastPage).getText());
             int Pagination = PaginationSize - 1;

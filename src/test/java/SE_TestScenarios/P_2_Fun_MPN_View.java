@@ -40,7 +40,7 @@ public class P_2_Fun_MPN_View   {
 
 
         Landing_Obj.Z2D_Open_Data_Management();
-        Data_Management_Obj.Z2D_Spinner_to_Disappear();
+        Data_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Data_Management_Obj.Z2D_Search();
         boolean staleElement = true;
         while (staleElement) {
@@ -53,9 +53,9 @@ public class P_2_Fun_MPN_View   {
         }
         Data_Management_Obj.Z2D_Open_BOM();
         Switch_Tabs();
-        Risk_Management_Obj.Z2D_Parts_Clickability();
+        Risk_Management_Obj.Z2D_Parts_to_be_Clickable();
         Risk_Management_Obj.Z2D_Open_Parts();
-        Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+        Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_IPN).getText(), "Uploaded IPN");
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_MPN).getText(), "Uploaded MPN");
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_Supplier).getText(), "Uploaded Supplier");

@@ -54,7 +54,7 @@ public class U_2_Fun_Create_Report {
             Assert.assertEquals(Saved_Report, Name);}
 
         Risk_Management_Obj.Z2D_Reports_Preview_Report();
-        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Report_Window_Title,5,true);
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText(), ("Report Preview"));
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Download_Btn).getText(), ("Download"));

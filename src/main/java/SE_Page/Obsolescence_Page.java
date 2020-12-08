@@ -83,7 +83,7 @@ public class Obsolescence_Page {
         ElementActions.click(driver, Last_Page_All_Obs);
     }
 
-    public void Z2D_Table_of_Data(WebDriver driver) {
+    public void Z2D_Table_of_Data( ) {
         for (int i = 1; i <= New_Data.size(); i++) {
             System.out.println(New_Data);
             String Data = driver.findElement(By.xpath("//table[@class='z2tableM table hoverrows table-bordered table-middle bigtitle text-left']/tbody/tr[" + i + "]/td[3]")).getText();

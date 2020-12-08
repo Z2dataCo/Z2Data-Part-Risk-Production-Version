@@ -1,13 +1,9 @@
 package SE_TestScenarios;
 
 import SE_Page.Data_Management_Page;
-import SE_Page.Landing_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -38,7 +34,7 @@ public class AE_2_Fun_Check_Smelters_Report {
 
         Data_Management_Obj.Z2D_Move_to_Reports_BOM();
         Risk_Management_Obj.Z2D_Reports_Open_Smelters_Report();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_2();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
         Risk_Management_Obj.Z2D_Reports_Report_Window_Title_Visibility();
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText(), ("Conflict Mineral Compliance by Smelter"));
         Risk_Management_Obj.Z2D_Reports_Export_Button_Visibility();

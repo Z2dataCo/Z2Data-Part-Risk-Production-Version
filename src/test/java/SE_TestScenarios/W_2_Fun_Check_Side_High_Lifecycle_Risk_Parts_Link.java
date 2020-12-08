@@ -1,28 +1,41 @@
 package SE_TestScenarios;
 
 import Com.PartRisk.Pages.*;
+import SE_Page.*;
+import com.shaft.gui.browser.BrowserFactory;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
-    Data_Management_Page DManagementObj;
-    Landing_Page LandObj;
-    Dashboard_Page DashboardObj;
-    Reports_Page ReportObj;
-    Obsolescence_Page Obsolescence_Obj;
+public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link   {
+    private WebDriver driver;
+
+    @BeforeClass(alwaysRun = true)
+    public void initialize_Global_Objects_and_Navigate() {
+        driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
+        Login_Page Login_Obj = new Login_Page(driver);
+        Login_Obj.Navigate_To_URL_for_Navigation();
+    }
+
+    @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)
+    public void Login() {
+        Login_Page Login_Obj = new Login_Page(driver);
+        Login_Obj.Z2D_SignIn();
+    }
 
     @Test(priority = 23)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check that side panel of Obsolete Parts in 3 Years shows parts that have forecast up to 3 years")
-    public void Check_Side_Panel_High_Risk() throws InterruptedException {
-        LandObj = new Landing_Page(driver);
-        DashboardObj = new Dashboard_Page(driver);
-        ReportObj = new Reports_Page(driver);
-        DManagementObj = new Data_Management_Page(driver);
-        Obsolescence_Obj = new Obsolescence_Page(driver);
+    public void Check_Side_Panel_High_Risk()   {
+        Landing_Page Landing_Obj = new Landing_Page(driver);
+        Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
+        Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
+        Obsolescence_Page Obsolescence_Obj = new Obsolescence_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
@@ -83,7 +96,11 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base
         Assert.assertEquals(Count0, AllOfRow0);
         Switch_Tabs();
     }
-
+    @AfterClass(alwaysRun = true)
+    public void TearDown() {
+        Login_Page Login_Obj = new Login_Page(driver);
+        Login_Obj.Tear_Down();
+    }
 
 }
 

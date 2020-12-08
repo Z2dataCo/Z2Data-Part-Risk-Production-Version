@@ -36,14 +36,14 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         Obsolescence_Page Obsolescence_Obj = new Obsolescence_Page(driver);
 
         Data_Management_Obj.Z2D_Move_to_Forecast_BOM();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_Switchers_Pipeline_Clickability();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
+        Risk_Management_Obj.Z2D_Switchers_Pipeline_to_be_Clickable();
         Risk_Management_Obj.Z2D_Select_Switcher();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         String Multi_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Filter).getText();
         //System.out.println("Multi_Source_Filter_Value : " + Multi_Source_Filter_Value);
         Risk_Management_Obj.Z2D_Forecast_Click_on_First_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), Multi_Source_Filter_Value);
         String TotalFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
         //System.out.println("Total Filter Value : " + TotalFilterValue);
@@ -59,10 +59,10 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
 
         String Single_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_Second_Filter).getText();
         //System.out.println("Single_Source_Filter_Value : " + Single_Source_Filter_Value);
-        Risk_Management_Obj.Z2D_Forecast_Second_Filter_Clickability();
+        Risk_Management_Obj.Z2D_Forecast_Second_Filter_to_be_Clickable();
 
         Risk_Management_Obj.Z2D_Forecast_Click_on_Second_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), Single_Source_Filter_Value);
         String TotalFilterValue2 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
         //System.out.println("Total Filter Value : " + TotalFilterValue2);
@@ -79,7 +79,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         String NA_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_Fifth_Filter).getText();
         //System.out.println("NA_Source_Filter_Value : " + NA_Source_Filter_Value);
         Risk_Management_Obj.Z2D_Forecast_Click_on_Fifth_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), NA_Source_Filter_Value);
         String TotalFilterValue3 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
         //System.out.println("Total Filter Value : " + TotalFilterValue3);

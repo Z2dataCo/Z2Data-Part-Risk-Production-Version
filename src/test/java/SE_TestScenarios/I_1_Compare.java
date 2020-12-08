@@ -36,7 +36,7 @@ public class I_1_Compare   {
         Compare_Page Compare_Obj = new Compare_Page(driver);
 
         Landing_Obj.Z2D_Open_Compare_Page();
-        Landing_Obj.Z2D_Wait_General_Spinner_Disappear();
+        Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Compare_Obj.Z2D_Input_Compare_1();
         boolean Stale_Element = true;
         while (Stale_Element) {
@@ -46,7 +46,7 @@ public class I_1_Compare   {
             } catch (Exception e) {
             }
         }
-        Landing_Obj.Z2D_Wait_General_Spinner_Disappear();
+        Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Compare_Obj.Z2D_Left_First_Row_Data_Visibility();
         Compare_Obj.Z2D_Input_Compare_2();
         boolean Stale_Element1 = true;
@@ -57,7 +57,7 @@ public class I_1_Compare   {
             } catch (Exception e) {
             }
         }
-        Landing_Obj.Z2D_Wait_General_Spinner_Disappear();
+        Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Compare_Obj.Z2D_Right_First_Row_Data_Visibility();
         Compare_Obj.Z2D_Select_Differences();
         Compare_Obj.Z2D_Select_Similarities();

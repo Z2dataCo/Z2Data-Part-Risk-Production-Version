@@ -44,7 +44,7 @@ public class N_2_Fun_Impacted_Parts   {
                 Stale_Element = true;
             }
         }
-        PCN_Manager_Obj.Z2D_Wait_General_Spinner_Disappear();
+        PCN_Manager_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         PCN_Manager_Obj.Z2D_Select_Supplier();
         Assert.assertEquals(driver.findElement(PCN_Manager_Obj.Search_Btn).getText(), "Search");
     }

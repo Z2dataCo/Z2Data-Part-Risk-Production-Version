@@ -76,11 +76,9 @@ public class Data_Management_Page {
     public By is_Row = By.xpath("//*[@class='table-responsive']//tbody/tr[1]/td[2]/a");
     public By Delete = By.xpath("//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/tbody/tr[1]/td[8]/div/app-datamanagement-boms-popups/div[1]/a[2]");
     public By Yes_Delete = By.xpath("/html/body/modal-container/div/div/div/button[1]");
-
     //public List<WebElement> Spinner = driver.findElements(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div"));
-    //public List<WebElement> Table_Rows = driver.findElements(By.xpath("//*[@id=\"scrub_content\"]/div/table/tbody/tr"));
 
-    public void Z2D_Spinner_to_Disappear() throws InterruptedException {
+    public void Z2D_Wait_Disappear_Z2Data_Spinner_0() throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div"))).size() != 0 && count < 40) {
             Thread.sleep(700);
@@ -88,28 +86,10 @@ public class Data_Management_Page {
         }
     }
 
-
     public void Z2D_Open_Data_Management() {
         ElementActions.click(driver, Data_Management_Tab);
         ElementActions.waitForElementToBePresent(driver, Table_Name, 5, true);
         ElementActions.isElementClickable(driver, Table_Name);
-    }
-
-    public void Z2D_Open_Scrub() {
-        ElementActions.click(driver, Scrub);
-    }
-
-
-    public void Z2D_Open_Forecast() {
-        ElementActions.click(driver, Forecast);
-    }
-
-    public void Z2D_Open_Mitigation() {
-        ElementActions.click(driver, Mitigation);
-    }
-
-    public void Z2D_Click_Search() {
-        ElementActions.click(driver, Search_Btn);
     }
 
     public void Z2D_Open_Folders() {
@@ -152,12 +132,11 @@ public class Data_Management_Page {
         ElementActions.click(driver, Search_Result);
     }
 
-
-    public void DeleteBom() {
+    public void Z2D_Delete_BOM() {
         ElementActions.click(driver, Delete);
     }
 
-    public void DeleteConfirmation() {
+    public void Z2D_Delete_Confirmation() {
         ElementActions.click(driver, Yes_Delete);
     }
 
@@ -167,24 +146,6 @@ public class Data_Management_Page {
 
     public void Z2D_Click_on_Parts() {
         ElementActions.click(driver, Parts_Btn);
-    }
-
-
-    public void Z2D_Hover_to_Status(WebDriver driver) throws InterruptedException, IOException {
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(0));
-        driver.close();
-        driver.switchTo().window(tabs2.get(1));
-        Thread.sleep(2000);
-        Scroll_To_Middle();
-        TakesScreenshot Screenshot = (TakesScreenshot) driver;
-        File scrFile = Screenshot.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "/Screenshots/FirstScreenshot.png"));
-        Thread.sleep(2000);
-        action = new Actions(driver);
-        action.moveByOffset(270, 488).perform();
-        Thread.sleep(2000);
-        action.click().build().perform();
     }
 
 

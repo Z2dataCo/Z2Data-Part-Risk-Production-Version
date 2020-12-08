@@ -35,15 +35,15 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         Data_Management_Obj.Z2D_Move_To_Prod_BOM();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
-        Risk_Management_Obj.Z2D_Forecast_Ele_Graph2_Clickability();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
+        Risk_Management_Obj.Z2D_Forecast_Ele_Graph2_to_be_Clickable();
         Risk_Management_Obj.Z2D_Click_Forecast_Tab();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
 
         String ActiveFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Filter).getText();
         //System.out.println("ActiveFilterValue" + ActiveFilterValue);
         Risk_Management_Obj.Z2D_Forecast_Click_on_First_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
         Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "Active");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "Active");
@@ -55,7 +55,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
         String EOLFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_Second_Filter).getText();
         //System.out.println("EOLFilterValue" + EOLFilterValue);
         Risk_Management_Obj.Z2D_Forecast_Click_on_Second_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
         Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "EOL");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "EOL");
@@ -67,7 +67,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
         String UnknownFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_Third_Filter).getText();
         //System.out.println("UnknownFilterValue" + UnknownFilterValue);
         Risk_Management_Obj.Z2D_Forecast_Click_on_Third_Filter();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
+        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
         Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "Unknown");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "Unknown");
