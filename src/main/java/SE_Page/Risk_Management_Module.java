@@ -137,6 +137,7 @@ public class Risk_Management_Module {
     public By First_Check_Box_Filter = By.xpath("//*[@id=\"z2parametric-all\"]/div/div[1]/div[2]/div[1]/label/span[1]");
     public By Second_Check_Box_Filter = By.xpath("//*[@id=\"z2parametric-all\"]/div/div[3]/div[2]/div[2]/label/span[1]");
 
+
     //Mitigation Page
     public By Switchers = By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div");
     public By Drop_Crosses = By.xpath("/tbody/tr[10]/td[4]/div[1]/a[1]");

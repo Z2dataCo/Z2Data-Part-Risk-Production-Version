@@ -22,7 +22,7 @@ public class Login_Page {
 
     public void navigateToURLForNavigationL() {
         driver.navigate().to(URL_for_Navigation);
-        //BrowserActions.navigateToURL(driver,URL_for_Navigation);
+        BrowserActions.navigateToURL(driver,URL_for_Navigation);
     }
 
     protected static void Set_Text_Element_Text(WebElement textElement, String value) {
