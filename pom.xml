@@ -101,6 +101,7 @@
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- AI POWERED ELEMENT IDENTIFICATION / VISUAL VALIDATION -->
@@ -320,12 +321,7 @@
             <artifactId>guava</artifactId>
             <version>30.0-jre</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>0.15</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 
     <build>
