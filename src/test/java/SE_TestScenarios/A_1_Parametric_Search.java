@@ -40,6 +40,5 @@ public class A_1_Parametric_Search {
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
     }
-
 }
 
