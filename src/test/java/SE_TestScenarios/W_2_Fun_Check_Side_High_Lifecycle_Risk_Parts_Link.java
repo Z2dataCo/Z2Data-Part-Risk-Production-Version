@@ -43,13 +43,9 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
         Risk_Management_Obj.Z2D_Reports_Open_High_LifeCycle();
-
         if ("High Lifecycle Risk Parts" == driver.getPageSource()) {
             if (driver.findElement(Obsolescence_Obj.Last).isEnabled())
                 Obsolescence_Obj.Z2D_Open_High_LifeCycle();
-
-        } else {
-
         }
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Obsolescence_Obj.Z2D_Get_Last_Page();
@@ -61,15 +57,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
         Assert.assertEquals(Count, AllOfRow);
-        boolean staleElement1 = true;
-        while (staleElement1) {
-            try {
-                Obsolescence_Obj.Z2D_NRND_Parts();
-                staleElement1 = false;
-            } catch (Exception e) {
-                staleElement1 = true;
-            }
-        }
+        Obsolescence_Obj.Z2D_NRND_Parts();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         int CountOfTable0 = Obsolescence_Obj.Table_Size.size();
         int Count0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());

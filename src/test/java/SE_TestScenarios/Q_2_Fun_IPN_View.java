@@ -13,7 +13,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static SE_Page.Risk_Management_Module.Switch_Tabs;
 
 public class Q_2_Fun_IPN_View {
 
@@ -41,18 +40,9 @@ public class Q_2_Fun_IPN_View {
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Data_Management_Obj.Z2D_Search();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                Data_Management_Obj.SetFile();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
+        Data_Management_Obj.SetFile();
         Data_Management_Obj.Z2D_Open_BOM();
-
-        Switch_Tabs();
+        Risk_Management_Obj.Switch_Tabs();
         Risk_Management_Obj.Z2D_Parts_to_be_Clickable();
         Risk_Management_Obj.Z2D_Open_Parts();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();

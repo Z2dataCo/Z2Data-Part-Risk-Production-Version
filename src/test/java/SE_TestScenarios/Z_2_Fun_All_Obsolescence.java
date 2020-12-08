@@ -35,15 +35,7 @@ public class Z_2_Fun_All_Obsolescence {
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                Data_Management_Obj.SetFile();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
+        Data_Management_Obj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM();
         } else {

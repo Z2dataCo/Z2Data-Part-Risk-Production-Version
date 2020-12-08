@@ -40,28 +40,28 @@ public class AF_2_Fun_Check_Supplier_Report   {
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText().contains("Conflict Mineral Compliance by Supplier"));
 
         String First_Filter = driver.findElement(Risk_Management_Obj.Reports_First_Filter).getText();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), First_Filter.replace(" Suppliers", ""));
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), First_Filter.replace(" Suppliers", ""));
         Assert.assertTrue(First_Filter.contains(driver.findElement(Risk_Management_Obj.Info_Total).getText()));
 
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Reports_Second_Filter_to_be_Clickable();
         Risk_Management_Obj.Z2D_Reports_Click_on_2nd_Filter();
         String Sec_Filter = driver.findElement(Risk_Management_Obj.Reports_Second_Filter).getText();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), Sec_Filter.replace(" Suppliers", ""));
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), Sec_Filter.replace(" Suppliers", ""));
         Assert.assertTrue(Sec_Filter.contains(driver.findElement(Risk_Management_Obj.Info_Total).getText()));
 
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Reports_Third_Filter_to_be_Clickable();
         Risk_Management_Obj.Z2D_Reports_Click_on_3rd_Filter();
         String Third_Filter = driver.findElement(Risk_Management_Obj.Reports_Third_Filter).getText();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), Third_Filter.replace(" Suppliers", ""));
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), Third_Filter.replace(" Suppliers", ""));
         Assert.assertTrue(Third_Filter.contains(driver.findElement(Risk_Management_Obj.Info_Total).getText()));
 
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Reports_Fourth_Filter_to_be_Clickable();
         Risk_Management_Obj.Z2D_Reports_Click_on_4th_Filter();
         String Fourth_Filter = driver.findElement(Risk_Management_Obj.Reports_Fourth_Filter).getText();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), Fourth_Filter.replace(" Suppliers", ""));
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), Fourth_Filter.replace(" Suppliers", ""));
         Assert.assertTrue(Fourth_Filter.contains(driver.findElement(Risk_Management_Obj.Info_Total).getText()));
     }
     @AfterClass(alwaysRun = true)

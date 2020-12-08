@@ -52,7 +52,6 @@ public class U_2_Fun_Create_Report {
             Risk_Management_Obj.Z2D_Reports_Re_Click_on_Saved_Reports_List();
             String Saved_Report = driver.findElement(Risk_Management_Obj.First_Report_Name).getText();
             Assert.assertEquals(Saved_Report, Name);}
-
         Risk_Management_Obj.Z2D_Reports_Preview_Report();
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Report_Window_Title,5,true);

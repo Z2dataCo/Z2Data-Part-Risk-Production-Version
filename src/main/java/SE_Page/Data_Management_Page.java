@@ -5,6 +5,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -12,7 +14,6 @@ public class Data_Management_Page {
 
     public JavascriptExecutor jse;
     private final WebDriver driver ;
-
     public Data_Management_Page(WebDriver driver) {
         this.driver = driver;
     }
@@ -73,7 +74,7 @@ public class Data_Management_Page {
     public By Total_Results_Shown = By.xpath("//div[@class='actionbar-right mr-1']//span[2]");
     public By Creat_Sub_Folder_Button = By.xpath("//span[contains(text(),'Create Sub Folder')]");
     public By Table_Body = By.xpath("//table[@class='table table-bordered table-striped bg-white mt-05 mb-0']/tbody");
-    //public List<WebElement> BOMs_Table = driver.findElements(By.xpath("//table[@class='table table-bordered table-striped bg-white mt-05 mb-0']/tbody/tr"));
+    public By BOMs_Table = By.xpath("//table[@class='table table-bordered table-striped bg-white mt-05 mb-0']/tbody/tr");
     int i = 2;
 
 

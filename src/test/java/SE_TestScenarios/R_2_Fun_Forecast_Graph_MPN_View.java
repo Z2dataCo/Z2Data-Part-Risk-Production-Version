@@ -41,39 +41,33 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
 
         String ActiveFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Filter).getText();
-        //System.out.println("ActiveFilterValue" + ActiveFilterValue);
         Risk_Management_Obj.Z2D_Forecast_Click_on_First_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "Active");
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "Active");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "Active");
         String TotalFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
-        //System.out.println("Total Filter Value : " + TotalFilterValue);
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), ActiveFilterValue);
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), ActiveFilterValue);
         Assert.assertEquals(TotalFilterValue, ActiveFilterValue);
 
         String EOLFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_Second_Filter).getText();
-        //System.out.println("EOLFilterValue" + EOLFilterValue);
         Risk_Management_Obj.Z2D_Forecast_Click_on_Second_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "EOL");
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "EOL");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "EOL");
         String TotalFilterValue2 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
-        //System.out.println("TotalFilterValue2 : " + TotalFilterValue2);
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), EOLFilterValue);
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), EOLFilterValue);
         Assert.assertEquals(TotalFilterValue2, EOLFilterValue);
 
         String UnknownFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_Third_Filter).getText();
-        //System.out.println("UnknownFilterValue" + UnknownFilterValue);
         Risk_Management_Obj.Z2D_Forecast_Click_on_Third_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "Unknown");
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "Unknown");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "Unknown");
         String TotalFilterValue3 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
-        //System.out.println("TotalFilterValue3 : " + TotalFilterValue3);
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), UnknownFilterValue);
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), UnknownFilterValue);
         Assert.assertEquals(TotalFilterValue3, UnknownFilterValue);
     }
 

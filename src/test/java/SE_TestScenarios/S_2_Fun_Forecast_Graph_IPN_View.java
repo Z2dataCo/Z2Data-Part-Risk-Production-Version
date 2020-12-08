@@ -41,12 +41,10 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         String Multi_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Filter).getText();
-        //System.out.println("Multi_Source_Filter_Value : " + Multi_Source_Filter_Value);
         Risk_Management_Obj.Z2D_Forecast_Click_on_First_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), Multi_Source_Filter_Value);
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), Multi_Source_Filter_Value);
         String TotalFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
-        //System.out.println("Total Filter Value : " + TotalFilterValue);
         Assert.assertEquals(TotalFilterValue, Multi_Source_Filter_Value);
         if (TotalFilterValue.equals("0")) {
             System.out.println("No Data for the Selected Filter");
@@ -58,14 +56,12 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         }
 
         String Single_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_Second_Filter).getText();
-        //System.out.println("Single_Source_Filter_Value : " + Single_Source_Filter_Value);
         Risk_Management_Obj.Z2D_Forecast_Second_Filter_to_be_Clickable();
 
         Risk_Management_Obj.Z2D_Forecast_Click_on_Second_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), Single_Source_Filter_Value);
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), Single_Source_Filter_Value);
         String TotalFilterValue2 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
-        //System.out.println("Total Filter Value : " + TotalFilterValue2);
         Assert.assertEquals(TotalFilterValue2, Single_Source_Filter_Value);
         if (TotalFilterValue2.equals("0")) {
             System.out.println("No Data for the Selected Filter");
@@ -77,12 +73,10 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         }
 
         String NA_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_Fifth_Filter).getText();
-        //System.out.println("NA_Source_Filter_Value : " + NA_Source_Filter_Value);
         Risk_Management_Obj.Z2D_Forecast_Click_on_Fifth_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-        Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), NA_Source_Filter_Value);
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), NA_Source_Filter_Value);
         String TotalFilterValue3 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
-        //System.out.println("Total Filter Value : " + TotalFilterValue3);
         Assert.assertEquals(TotalFilterValue3, NA_Source_Filter_Value);
         if (TotalFilterValue3.equals("0")) {
             System.out.println("No Data for the Selected Filter");
@@ -90,8 +84,6 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
             String First_Row_Name = driver.findElement(Risk_Management_Obj.First_Table_Data).getText();
             Risk_Management_Obj.Z2D_Forecast_Click_on_First_Result();
             String Opened_File_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_File_Name).getText();
-            //System.out.println(Opened_File_Name);
-            //System.out.println(First_Row_Name);
             Assert.assertTrue(Opened_File_Name.contains(First_Row_Name), "Opened File is the same as Selected");
             Obsolescence_Obj.Z2D_Close_Slide_Visibility();
             Obsolescence_Obj.Z2D_Close_Slide();

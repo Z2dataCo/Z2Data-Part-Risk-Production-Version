@@ -44,7 +44,6 @@ String Z2DataFakerFolder = faker.name().firstName() + "1";
         Data_Management_Obj.Z2D_Folder_Name(Z2DataFakerFolder);
         Data_Management_Obj.Z2D_Submit_Folder();
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-       // Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         String istRow = driver.findElement(Data_Management_Obj.is_Row).getText();
         Assert.assertEquals(istRow, Z2DataFakerFolder);
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();

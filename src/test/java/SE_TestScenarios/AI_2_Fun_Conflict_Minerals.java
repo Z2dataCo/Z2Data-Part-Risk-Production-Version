@@ -13,8 +13,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static SE_Page.Risk_Management_Module.Switch_Tabs;
-
 public class AI_2_Fun_Conflict_Minerals  {
 
     private WebDriver driver;
@@ -41,17 +39,9 @@ public class AI_2_Fun_Conflict_Minerals  {
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Type_Folder_Name();
-        boolean Stale_Element = true;
-        while (Stale_Element) {
-            try {
-               ElementActions.hoverAndClick(driver,Data_Management_Obj.Test_Folder,Data_Management_Obj.Test_Folder);
-                Stale_Element = false;
-            } catch (Exception e) {
-                Stale_Element = true;
-            }
-        }
+        ElementActions.hoverAndClick(driver,Data_Management_Obj.Test_Folder,Data_Management_Obj.Test_Folder);
         Data_Management_Obj.Z2D_Open_BOM();
-        Switch_Tabs();
+        Risk_Management_Obj.Switch_Tabs();
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Conflict_Minerals();
         Risk_Management_Obj.Z2D_Reports_Open_Con_Metals();

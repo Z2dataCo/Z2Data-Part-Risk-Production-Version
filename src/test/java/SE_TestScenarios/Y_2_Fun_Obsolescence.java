@@ -35,19 +35,11 @@ public class Y_2_Fun_Obsolescence  {
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                Data_Management_Obj.SetFile();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
-        if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
-            DManagementObj.Z2D_Move_To_Prod_BOM();
+        Data_Management_Obj.SetFile();
+           if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
+            Data_Management_Obj.Z2D_Move_To_Prod_BOM();
         } else {
-            DManagementObj.Z2D_Click_on_BOM();
+            Data_Management_Obj.Z2D_Click_on_BOM();
         }
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
@@ -55,26 +47,18 @@ public class Y_2_Fun_Obsolescence  {
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Obsolescence_Obj.Z2D_Get_Last_Page();
         int CountOfTable = Obsolescence_Obj.Table_Size.size();
-        int Count = Integer.parseInt(Obsolescence_Obj.Fixed_Number.getText());
-        int CountPagination = Integer.parseInt(Obsolescence_Obj.Next_Page.getText());
+        int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
+        int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;
         int SubTotal = CountOfTable * CountPage;
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
         Assert.assertEquals(Count, AllOfRow);
-        boolean staleElement1 = true;
-        while (staleElement1) {
-            try {
-                Obsolescence_Obj.Z2D_NRND_Parts();
-                staleElement1 = false;
-            } catch (Exception e) {
-                staleElement1 = true;
-            }
-        }
+        Obsolescence_Obj.Z2D_NRND_Parts();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         int CountOfTable0 = Obsolescence_Obj.Table_Size.size();
-        int Count0 = Integer.parseInt(Obsolescence_Obj.Fixed_Number.getText());
-        int CountPagination0 = Integer.parseInt(Obsolescence_Obj.Next_Page.getText());
+        int Count0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
+        int CountPagination0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage0 = CountPagination0 - 1;
         int SubTotal0 = CountOfTable0 * CountPage0;
         int LastPage0 = Count0 - SubTotal0;
@@ -108,8 +92,6 @@ public class Y_2_Fun_Obsolescence  {
             int LastPage2 = Count2 - SubTotal2;
             int AllOfRow2 = LastPage2 + SubTotal2;
             Thread.sleep(1000);
-            //System.out.println("Actual Result  " + AllOfRow2);
-            //System.out.println("Expected  " + Count2);
             Assert.assertEquals(Count2, AllOfRow2);
         }
         Obsolescence_Obj.Z2D_Close_Slide();
@@ -124,20 +106,11 @@ public class Y_2_Fun_Obsolescence  {
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                Data_Management_Obj.SetFile();
-                staleElement = false;
-            } catch (Exception e) {
-                staleElement = true;
-            }
-
-        }
+        Data_Management_Obj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
-            DManagementObj.Z2D_Move_To_Prod_BOM(driver);
+            Data_Management_Obj.Z2D_Move_To_Prod_BOM();
         } else {
-            DManagementObj.Z2D_Click_on_BOM();
+            Data_Management_Obj.Z2D_Click_on_BOM();
         }
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
@@ -147,14 +120,12 @@ public class Y_2_Fun_Obsolescence  {
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Row_3Y).getText(), "3 years");
         Obsolescence_Obj.Z2D_Get_Last_Page_For_3Y();
         int CountOfTable = Obsolescence_Obj.Table_Size.size();
-        int Count = Integer.parseInt(Obsolescence_Obj.Fixed_Number_For_3Y.getText());
-        int CountPagination = Integer.parseInt(Obsolescence_Obj.Next_Page.getText());
+        int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number_For_3Y).getText());
+        int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;
         int SubTotal = CountOfTable * CountPage;
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
-        //System.out.println("Actual Result For HighLifeCycle Tab: " + AllOfRow);
-        //System.out.println("Expected Result For HighLifeCycle Tab: " + Count);
         Assert.assertEquals(Count, AllOfRow);
         Obsolescence_Obj.Z2D_Close_Slide();
     }
@@ -169,19 +140,11 @@ public class Y_2_Fun_Obsolescence  {
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                Data_Management_Obj.SetFile();
-                staleElement = false;
-            } catch (Exception e) {
-                staleElement = true;
-            }
-        }
+        Data_Management_Obj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
-            DManagementObj.Z2D_Move_To_Prod_BOM(driver);
+            Data_Management_Obj.Z2D_Move_To_Prod_BOM();
         } else {
-            DManagementObj.Z2D_Click_on_BOM();
+            Data_Management_Obj.Z2D_Click_on_BOM();
         }
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
@@ -189,8 +152,8 @@ public class Y_2_Fun_Obsolescence  {
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Obsolescence_Obj.Z2D_Get_Last_Page_For_5Y();
         int CountOfTable = Obsolescence_Obj.Table_Size.size();
-        int Count = Integer.parseInt(Obsolescence_Obj.Fixed_Number_For_5Y.getText());
-        int CountPagination = Integer.parseInt(Obsolescence_Obj.Next_Page.getText());
+        int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number_For_5Y).getText());
+        int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;
         int SubTotal = CountOfTable * CountPage;
         int LastPage = Count - SubTotal;

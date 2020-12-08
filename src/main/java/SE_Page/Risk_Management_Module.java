@@ -156,7 +156,7 @@ public class Risk_Management_Module {
     public By Added_Part_Label = By.xpath("//tbody//tr[10]/td[3]//ul/div[2]//a/span");
     public By Card_Close_Button = By.xpath("//tbody/tr[10]/td[3]//div[1]/div[1]/span[1]");
     public By Table_Body = By.xpath("//table[@class='table table-bordered table-middle text-left bg-white tablehascards']//tbody");
-    public List<WebElement> Added_Part_Label_List = driver.findElements(By.xpath("//tbody//tr[10]/td[3]//ul/div[2]//a/span"));
+    public By Added_Part_Label_List = By.xpath("//tbody//tr[10]/td[3]//ul/div[2]//a/span");
 
     //Reports Page
     public By Check_Box1 = By.xpath("//span[contains(text(),'Z2 Part Number')]");
@@ -781,5 +781,9 @@ public class Risk_Management_Module {
         ElementActions.click(driver, ConflictMetals);
     }
 
+    public void Wait_Text_To_be(WebElement element, String Text) {
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
+        Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
+    }
 }
 
