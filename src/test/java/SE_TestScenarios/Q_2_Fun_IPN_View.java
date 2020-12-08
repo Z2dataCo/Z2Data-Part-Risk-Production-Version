@@ -13,8 +13,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static SE_Page.Risk_Management_Module.Switch_Tabs;
-
 public class Q_2_Fun_IPN_View {
 
     private WebDriver driver;
@@ -52,7 +50,7 @@ public class Q_2_Fun_IPN_View {
         }
         Data_Management_Obj.Z2D_Open_BOM();
 
-        Switch_Tabs();
+        Risk_Management_Obj.Switch_Tabs();
         Risk_Management_Obj.Z2D_Parts_Clickability();
         Risk_Management_Obj.Z2D_Open_Parts();
         Risk_Management_Obj.Z2D_Spinner_to_Disappear();

@@ -218,7 +218,7 @@ public class Risk_Management_Module {
         ElementActions.click(driver, Unfollow_Btn);
     }
 
-    public static void Switch_Tabs() {
+    public void Switch_Tabs() {
         ArrayList<String> tab2 = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tab2.get(0));
         driver.close();

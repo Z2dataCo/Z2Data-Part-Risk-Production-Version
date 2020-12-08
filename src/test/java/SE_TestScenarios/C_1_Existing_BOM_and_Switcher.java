@@ -8,8 +8,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static SE_Page.Risk_Management_Module.Switch_Tabs;
-
 public class C_1_Existing_BOM_and_Switcher {
     private WebDriver driver;
 
@@ -38,7 +36,7 @@ public class C_1_Existing_BOM_and_Switcher {
         Data_Management_Obj.Z2D_Type_Folder_Name();
         Data_Management_Obj.Z2D_Select_Folder();
         Data_Management_Obj.Z2D_Open_BOM();
-        Switch_Tabs();
+        Risk_Management_Obj.Switch_Tabs();
         Risk_Management_Obj.Z2D_Spinner_to_Disappear();
         Risk_Management_Obj.Z2D_High_Risk_Card_Clickability();
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.High_Risk_Card).isDisplayed());

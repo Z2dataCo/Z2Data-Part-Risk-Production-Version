@@ -11,8 +11,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static SE_Page.Risk_Management_Module.Switch_Tabs;
-
 public class AD_1_Check_Dashboard_Data {
 
     private WebDriver driver;
@@ -43,7 +41,7 @@ public class AD_1_Check_Dashboard_Data {
         Data_Management_Obj.Z2D_Type_Folder_Name();
         Data_Management_Obj.Z2D_Select_Folder();
         Data_Management_Obj.Z2D_Open_BOM();
-        Switch_Tabs();
+        Risk_Management_Obj.Switch_Tabs();
         Risk_Management_Obj.Z2D_Open_Parts();
         Risk_Management_Obj.Z2D_Spinner_to_Disappear();
         int FixedNum = Integer.parseInt(driver.findElement(Risk_Management_Obj.fixednumber).getText());
