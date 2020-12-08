@@ -1,11 +1,7 @@
 package SE_TestScenarios;
 
-import Com.PartRisk.Pages.*;
 import SE_Page.*;
 import com.shaft.gui.browser.BrowserFactory;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -13,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Z_2_Fun_All_Obsolescence   {
+public class Z_2_Fun_All_Obsolescence {
     private WebDriver driver;
 
     @BeforeClass(alwaysRun = true)
@@ -28,6 +24,7 @@ public class Z_2_Fun_All_Obsolescence   {
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
+
     @Test(description = "TS002 || Check that side panel of All Obsolescence PCNs shows all PCNs on the BOM", priority = 2)
     public void All_ObsolescencePage() {
 
@@ -37,7 +34,6 @@ public class Z_2_Fun_All_Obsolescence   {
         Obsolescence_Page Obsolescence_Obj = new Obsolescence_Page(driver);
 
         Landing_Obj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(Data_Management_Obj.Search_Text_Input);
         Data_Management_Obj.Z2D_Search();
         boolean staleElement = true;
         while (staleElement) {
@@ -53,24 +49,23 @@ public class Z_2_Fun_All_Obsolescence   {
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM();
         }
-        DashboardObj.Z2D_Open_Reports();
+        Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Obsolescence_Obj.Z2D_Product_Change();
         Obsolescence_Obj.Z2D_All_Obsolescence();
         Obsolescence_Obj.Z2D_Get_Last_Page_for_All_Obs();
         int CountOfTable = Obsolescence_Obj.Table_Size.size();
-        int Count = Integer.parseInt(Obsolescence_Obj.Fixed_Number_for_All_Obs.getText());
-        int CountPagination = Integer.parseInt(Obsolescence_Obj.Next_Page.getText());
+        int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number_for_All_Obs).getText());
+        int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;
         int SubTotal = CountOfTable * CountPage;
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
-        //System.out.println("Actual Result  " + AllOfRow);
-        //System.out.println("Expected Result  " + Count);
         Assert.assertEquals(Count, AllOfRow);
         Obsolescence_Obj.Z2D_Table_of_Data();
         Obsolescence_Obj.Z2D_Close_Slide();
 
     }
+
     @AfterClass(alwaysRun = true)
     public void TearDown() {
         Login_Page Login_Obj = new Login_Page(driver);
