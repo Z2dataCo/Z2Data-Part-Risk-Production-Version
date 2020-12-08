@@ -387,10 +387,6 @@ public class Risk_Management_Module {
 
     //Dashboard Page Method
 
-    public void Z2D_Dashboard_Open_Reports() {
-        ElementActions.click(driver, Reports);
-    }
-
     public void Z2D_Dashboard_Switches() {
         ElementActions.click(driver, Switches_Dashboard);
     }
@@ -647,6 +643,17 @@ public class Risk_Management_Module {
     }
 
     //Reports Page Methods
+    public void Z2D_Reports_Export_Button_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Export_Button, 5, true);
+    }
+    public void Z2D_Reports_Report_Window_Title_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, Report_Window_Title, 5, true);
+    }
+
+    public void Z2D_Reports_Open_Reports_Tab() {
+        ElementActions.click(driver, Reports);
+    }
+
     public void Z2D_Reports_Open_Create_Report() {
         ElementActions.click(driver, Create_Report);
     }
@@ -724,6 +731,16 @@ public class Risk_Management_Module {
     public void Z2D_Reports_Click_on_2nd_Filter() {
         ElementActions.click(driver, Reports_Second_Filter);
     }
+    public void Z2D_Reports_Second_Filter_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Reports_Second_Filter, 5, true);
+    }
+    public void Z2D_Reports_Third_Filter_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Reports_Third_Filter, 5, true);
+    }
+    public void Z2D_Reports_Fourth_Filter_Clickability() {
+        ElementActions.waitForElementToBePresent(driver, Reports_Fourth_Filter, 5, true);
+    }
+
 
     public void Z2D_Reports_Click_on_3rd_Filter() {
         ElementActions.click(driver, Reports_Third_Filter);
@@ -743,7 +760,7 @@ public class Risk_Management_Module {
     }
 
 
-    public void Z2D_Reports_Openlist() {
+    public void Z2D_Reports_Open_list() {
         ElementActions.click(driver, Report_List);
     }
 
@@ -755,11 +772,11 @@ public class Risk_Management_Module {
         ElementActions.click(driver, CusReport);
     }
 
-    public void Z2D_Reports_Open_ConflictMinerals() {
+    public void Z2D_Reports_Open_Conflict_Minerals() {
         ElementActions.click(driver, ConflictMinerals);
     }
 
-    public void Z2D_Reports_OpenConMetals() {
+    public void Z2D_Reports_Open_Con_Metals() {
         ElementActions.click(driver, ConflictMetals);
     }
 

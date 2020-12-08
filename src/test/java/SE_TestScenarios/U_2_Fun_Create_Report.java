@@ -61,7 +61,7 @@ public class U_2_Fun_Create_Report {
         Risk_Management_Obj.Z2D_Reports_Download_Report();
         Risk_Management_Obj.Z2D_Reports_Close_Preview();
         Risk_Management_Obj.Z2D_Reports_CustomReport();
-        Risk_Management_Obj.Z2D_Reports_Openlist();
+        Risk_Management_Obj.Z2D_Reports_Open_list();
         Risk_Management_Obj.Z2D_Reports_Delete_Report();
         Thread.sleep(3000);
         Assert.assertNotEquals(driver.findElement(Risk_Management_Obj.FirstRow).getText(), Name, "Verify to delete Report");

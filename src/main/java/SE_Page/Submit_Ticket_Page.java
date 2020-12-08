@@ -31,9 +31,9 @@ public class Submit_Ticket_Page {
         ElementActions.click(driver, Submit_Issue_Btn);
     }
 
-    public void Z2D_Enter_Issue_Data(String subject, String body) {
-        ElementActions.type(driver, Subject_Area, subject);
-        ElementActions.type(driver, Body, body);
+    public void Z2D_Enter_Issue_Data( ) {
+        ElementActions.type(driver, Subject_Area, "Test Automation");
+        ElementActions.type(driver, Body, "Issue Description");
         ElementActions.click(driver, Support_Btn);
     }
 
