@@ -18,7 +18,7 @@ public class AB_1_PCN_Search {
     public void initialize_Global_Objects_and_Navigate() {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Page Login_Obj = new Login_Page(driver);
-        Login_Obj.navigateToURLForNavigationL();
+        Login_Obj.Navigate_To_URL_for_Navigation();
     }
 
     @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)
@@ -43,7 +43,6 @@ public class AB_1_PCN_Search {
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         ElementActions.isElementDisplayed(driver, PCN_Manager_Obj.Results_Table);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.Showing_Of_Total,PCN_Manager_Obj.Total_Results,5);
-        //Wait_Text_To_be(driver.findElement(PCN_Manager_Obj.Showing_Of_Total), "Showing 1-3 of");
         String Search_Result = driver.findElement(PCN_Manager_Obj.First_Search_Result).getText();
         Assert.assertTrue(Search_Result.contains(PCN_Manager_Obj.PCN_ID));
 
@@ -51,18 +50,16 @@ public class AB_1_PCN_Search {
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         ElementActions.isElementDisplayed(driver, PCN_Manager_Obj.Results_Table);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.Showing_Of_Total,PCN_Manager_Obj.Total_Results,5);
-        //Wait_Text_Not_To_be(driver.findElement(PCN_Manager_Obj.Showing_Of_Total), "Showing 1-21 of");
         PCN_Manager_Obj.Z2D_Open_First_Search_Result();
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.FSP_Text,"",5);
-       // Wait_Text_To_be(driver.findElement(PCN_Manager_Obj.FSP_Text), "FSP Power Solution GmbH");
-        //PCN_Manager_Obj.Z2D_Move_To_Impacted_MPN();
         String Impacted_MPN_Data = driver.findElement(PCN_Manager_Obj.Impacted_MPN_Results).getText();
         Assert.assertTrue(Impacted_MPN_Data.contains(PCN_Manager_Obj.MPN_ID));
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        driver.quit();
+        Login_Page Login_Obj = new Login_Page(driver);
+        Login_Obj.Tear_Down();
     }
 
 }

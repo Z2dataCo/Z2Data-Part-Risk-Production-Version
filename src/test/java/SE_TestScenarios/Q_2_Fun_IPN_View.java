@@ -15,7 +15,8 @@ import org.testng.annotations.Test;
 
 import static SE_Page.Risk_Management_Module.Switch_Tabs;
 
-public class P_2_Fun_MPN_View   {
+public class Q_2_Fun_IPN_View {
+
     private WebDriver driver;
 
     @BeforeClass(alwaysRun = true)
@@ -30,14 +31,12 @@ public class P_2_Fun_MPN_View   {
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
-
-    @Test(description = "TS002 || Check selecting any status will affect on forecast graph ( MPN View )", priority = 2)
-    public void MPN_View() throws InterruptedException {
+    @Test(description = "TS002 || Check that parts tab have data appear and count of uploaded IPN (IPN View)", priority = 2)
+    public void IPN_View() throws InterruptedException {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
-
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Spinner_to_Disappear();
@@ -52,26 +51,27 @@ public class P_2_Fun_MPN_View   {
             }
         }
         Data_Management_Obj.Z2D_Open_BOM();
+
         Switch_Tabs();
         Risk_Management_Obj.Z2D_Parts_Clickability();
         Risk_Management_Obj.Z2D_Open_Parts();
         Risk_Management_Obj.Z2D_Spinner_to_Disappear();
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_IPN).getText(), "Uploaded IPN");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_MPN).getText(), "Uploaded MPN");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_Supplier).getText(), "Uploaded Supplier");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.IPN).getText(), "IPN");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Part_Number).getText(), "Part Number");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Supplier).getText(), "Supplier"); //hna
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Product).getText(), "Product");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Description).getText(), "Description");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Package).getText(), "Package");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.LifeCycle).getText(), "Lifecycle");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.RoHos).getText(), "RoHS");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Crosses).getText(), "Crosses");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Inventory).getText(), "Inventory");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.PCN).getText(), "PCN");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.PartScore).getText(), "Part Score");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Tags).getText(), "Tags");
+        Risk_Management_Obj.Z2D_Select_Switcher();
+        Risk_Management_Obj.Z2D_IPN_Table_Header_Visibility();
+        Risk_Management_Obj.Z2D_Spinner_to_Disappear();
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.IPN_Table_Header).getText().contains("IPN"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Product_Table_Header).getText().contains("Product"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Description_Table_Header).getText().contains("Description"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.ofMPNs_Table_Header).getText().contains("# of MPNs"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.OfSource_Table_Header).getText().contains("# of Sources"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Multi_Sourcing_Table_Header).getText().contains("Multi-Sourcing"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Package_Table_Header).getText().contains("Package"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.RoHS_Table_Header).getText().contains("RoHS"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Lead_Finish_Table_Header).getText().contains("Lead-finish"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Dimension_Table_Header).getText().contains("Dimension"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Crosses_Table_Header).getText().contains("Crosses"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.IPN_Lifecycl_Forecast_Table_Header).getText().contains("IPN Lifecycle Forecast"));
+        Assert.assertTrue(driver.findElement(Risk_Management_Obj.IPN_Risk_Table_Header).getText().contains("IPN Risk"));
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {

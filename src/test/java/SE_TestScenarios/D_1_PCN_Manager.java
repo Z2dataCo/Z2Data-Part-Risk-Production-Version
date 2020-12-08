@@ -18,7 +18,7 @@ public class D_1_PCN_Manager   {
     public void initialize_Global_Objects_and_Navigate() {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Page Login_Obj = new Login_Page(driver);
-        Login_Obj.navigateToURLForNavigationL();
+        Login_Obj.Navigate_To_URL_for_Navigation();
     }
 
     @Test(description = "TS001 || Login to Z2Data Part Risk",priority = 1)
@@ -46,7 +46,6 @@ public class D_1_PCN_Manager   {
         } else {
             System.out.println("Assertion Dashboard Cards is Failed");
         }
-        //WaitAllElement();
         PCN_Manager_Obj.Z2D_Open_Inbox_Tab();
         Landing_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         if (driver.findElement(PCN_Manager_Obj.Inbox_Tab_Filter_Table).isDisplayed()) {
@@ -54,7 +53,6 @@ public class D_1_PCN_Manager   {
         } else {
             System.out.println("Assertion for Inbox Tab Filter Table is Failed");
         }
-        //WaitAllElement();
         PCN_Manager_Obj.Z2D_Open_PCNs_Tab();
         Landing_Obj.Z2D_Wait_Invisibility_Of_Spinner_Zezo_1();
         if (driver.findElement(PCN_Manager_Obj.PCNs_Tab_Filter_Table).isDisplayed()) {
@@ -62,7 +60,6 @@ public class D_1_PCN_Manager   {
         } else {
             System.out.println("Assertion for PCNs Tab Filter Table is Failed");
         }
-        //WaitAllElement();
         PCN_Manager_Obj.Z2D_PCNs_First_PCN_Notification();
         if (driver.findElement(PCN_Manager_Obj.PCNs_First_PCN_Notification_PCN_ID).isDisplayed()) {
             Assert.assertEquals(driver.findElement(PCN_Manager_Obj.PCNs_First_PCN_Notification_PCN_ID).getText(), "Z2 PCN_ID");
@@ -81,6 +78,7 @@ public class D_1_PCN_Manager   {
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        driver.quit();
+        Login_Page Login_Obj = new Login_Page(driver);
+        Login_Obj.Tear_Down();
     }
 }

@@ -416,6 +416,10 @@ public class Risk_Management_Module {
     public void Z2D_Parts_Check_Fuses() {
         ElementActions.click(driver, Fuses_Filter);
     }
+    public void Z2D_IPN_Table_Header_Visibility() {
+        ElementActions.waitForElementToBePresent(driver, IPN_Table_Header, 5, true);
+    }
+
 
     // Scrub Page Methods
     public void Z2D_Scrub_Last_Pagination() {
