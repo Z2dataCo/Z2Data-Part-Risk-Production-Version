@@ -363,7 +363,7 @@
                 </dependencies>
                 <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>testng_Chrome.xml</suiteXmlFile>
+                            <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>
                     <failIfNoTests>false</failIfNoTests>
