@@ -21,7 +21,7 @@ public class Login_Page {
 
     public void Navigate_To_URL_for_Navigation() {
         driver.navigate().to(URL_for_Navigation);
-       // BrowserActions.navigateToURL`(driver,URL_for_Navigation);
+        //BrowserActions.navigateToURL(driver,URL_for_Navigation);
     }
     public void Tear_Down() {
         BrowserActions.closeCurrentWindow(driver);

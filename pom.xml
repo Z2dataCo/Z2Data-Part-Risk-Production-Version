@@ -61,7 +61,7 @@
         <jave-all-deps.version>3.0.1</jave-all-deps.version>
         <video-recorder-testng.version>2.0</video-recorder-testng.version>
         <!-- Build Commands-->
-        <installToLocalRepository>mvn clean install -DskipTests</installToLocalRepository>
+        <!--installToLocalRepository>mvn clean install -DskipTests</installToLocalRepository-->
         <publishJavaDocs>mvn resources:resources javadoc:javadoc scm-publish:publish-scm</publishJavaDocs>
     </properties>
 
@@ -188,86 +188,6 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
         </dependency>
-        <!-- REST ASSURED -->
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>${rest-assured.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>${json-simple.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.skyscreamer</groupId>
-            <artifactId>jsonassert</artifactId>
-            <version>${skyscreamer-jsonassert.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>eu.medsea.mimeutil</groupId>
-            <artifactId>mime-util</artifactId>
-            <version>${mime-util.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- REMOTE SSH -->
-        <dependency>
-            <groupId>com.jcraft</groupId>
-            <artifactId>jsch</artifactId>
-            <version>${jcraft-jsch.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.cverges</groupId>
-            <artifactId>expect4j</artifactId>
-            <version>${cverges-expect4j.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!-- DATABASE CONNECTORS -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector-java.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>${mssql-jdbc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ibm.db2.jcc</groupId>
-            <artifactId>db2jcc</artifactId>
-            <version>db2jcc4</version>
-        </dependency>
 
         <!-- VIDEO RECORDING -->
         <!-- https://mvnrepository.com/artifact/ws.schild/jave-all-deps -->
@@ -321,9 +241,7 @@
             <artifactId>guava</artifactId>
             <version>30.0-jre</version>
         </dependency>
-
     </dependencies>
-
     <build>
         <resources>
             <resource>
@@ -362,9 +280,9 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                        <suiteXmlFiles>
-                            <suiteXmlFile>testng_Chrome.xml</suiteXmlFile>
-                        </suiteXmlFiles>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>
                     <failIfNoTests>false</failIfNoTests>
                     <encoding>UTF-8</encoding>
@@ -379,7 +297,9 @@
                         </property>
                         <property>
                             <name>listener</name>
-                            <value>com.shaft.tools.listeners.AlterSuiteListener,com.shaft.tools.listeners.SuiteListener,com.shaft.tools.listeners.InvokedMethodListener,com.shaft.tools.listeners.CucumberFeatureListener</value>
+                            <value>
+                                com.shaft.tools.listeners.AlterSuiteListener,com.shaft.tools.listeners.SuiteListener,com.shaft.tools.listeners.InvokedMethodListener,com.shaft.tools.listeners.CucumberFeatureListener
+                            </value>
                         </property>
                     </properties>
                 </configuration>
