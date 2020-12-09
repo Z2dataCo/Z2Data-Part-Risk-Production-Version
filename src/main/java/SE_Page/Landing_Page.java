@@ -134,6 +134,7 @@ public class Landing_Page {
     }
 
     public void Z2D_Open_Data_Management() {
+        ElementActions.waitForElementToBePresent(driver,Data_Management_Tab,5,true);
         ElementActions.click(driver, Data_Management_Tab);
     }
 
