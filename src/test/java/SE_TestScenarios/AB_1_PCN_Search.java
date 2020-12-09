@@ -52,6 +52,7 @@ public class AB_1_PCN_Search {
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.Showing_Of_Total,PCN_Manager_Obj.Total_Results,5);
         PCN_Manager_Obj.Z2D_Open_First_Search_Result();
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
+        ElementActions.waitForElementToBePresent(driver,PCN_Manager_Obj.FSP_Text,5,true);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.FSP_Text,"",5);
         String Impacted_MPN_Data = driver.findElement(PCN_Manager_Obj.Impacted_MPN_Results).getText();
         Assert.assertTrue(Impacted_MPN_Data.contains(PCN_Manager_Obj.MPN_ID));
