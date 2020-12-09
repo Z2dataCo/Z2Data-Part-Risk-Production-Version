@@ -39,7 +39,7 @@ public class AI_2_Fun_Conflict_Minerals  {
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Type_Folder_Name();
-        ElementActions.hoverAndClick(driver,Data_Management_Obj.Test_Folder,Data_Management_Obj.Test_Folder);
+        ElementActions.click(driver,Data_Management_Obj.Test_Folder);
         Data_Management_Obj.Z2D_Open_BOM();
         Risk_Management_Obj.Switch_Tabs();
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
