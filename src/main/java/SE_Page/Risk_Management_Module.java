@@ -705,27 +705,27 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Reports_Open_Smelters_Report() {
-        ElementActions.hoverAndClick(driver, Conflict_Minerals_Tab, Conflict_Minerals_Tab);
+        ElementActions.click(driver, Conflict_Minerals_Tab);
         ElementActions.click(driver, Smelters_Report_button);
     }
 
     public void Z2D_Reports_Export_Report_Excel() {
         ElementActions.click(driver, Export_Button);
-        ElementActions.hoverAndClick(driver, Export_Selection, Export_Selection);
+        ElementActions.click(driver,Export_Selection);
     }
 
     public void Z2D_Reports_Open_Supplier_Report() {
-        ElementActions.hoverAndClick(driver, Conflict_Minerals_Tab, Conflict_Minerals_Tab);
+        ElementActions.click(driver, Conflict_Minerals_Tab);
         ElementActions.click(driver, Supplier_Report_Button);
     }
 
     public void Z2D_Reports_Open_Compliance_MPN_Report() {
-        ElementActions.hoverAndClick(driver, Conflict_Minerals_Tab, Conflict_Minerals_Tab);
+        ElementActions.click(driver, Conflict_Minerals_Tab);
         ElementActions.click(driver, Compliance_By_MPN_Report_Button);
     }
 
     public void Z2D_Reports_Open_Minerals_Metal_Report() {
-        ElementActions.hoverAndClick(driver, Conflict_Minerals_Tab, Conflict_Minerals_Tab);
+        ElementActions.click(driver, Conflict_Minerals_Tab);
         ElementActions.click(driver, Minerals_Metal_Report_Button);
     }
 

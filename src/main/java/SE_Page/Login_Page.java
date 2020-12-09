@@ -21,7 +21,7 @@ public class Login_Page {
 
     public void Navigate_To_URL_for_Navigation() {
         driver.navigate().to(URL_for_Navigation);
-        BrowserActions.navigateToURL(driver,URL_for_Navigation);
+       // BrowserActions.navigateToURL`(driver,URL_for_Navigation);
     }
     public void Tear_Down() {
         BrowserActions.closeCurrentWindow(driver);
@@ -32,9 +32,12 @@ public class Login_Page {
     public By SignIn_Btn = By.name("button");
 
     public void Z2D_SignIn() {
-        ElementActions.type(driver, Input_Text_Box, "Z2D.PR1@z2data.com");
-        ElementActions.type(driver, Input_Pass, "Z2D.PR1@z2data.com");
-        ElementActions.click(driver, SignIn_Btn);
+        driver.findElement(Input_Text_Box).sendKeys("Z2D.PR1@z2data.com");
+        driver.findElement(Input_Pass).sendKeys("Z2D.PR1@z2data.com");
+        driver.findElement(SignIn_Btn).click();
+        //ElementActions.type(driver, Input_Text_Box, "Z2D.PR1@z2data.com");
+        //ElementActions.type(driver, Input_Pass, "Z2D.PR1@z2data.com");
+        //ElementActions.click(driver, SignIn_Btn);
         WebDriverWait WebWait = new WebDriverWait(driver, 90);
         WebWait.until(ExpectedConditions.titleIs("Part Risk | Z2DATA"));
 
