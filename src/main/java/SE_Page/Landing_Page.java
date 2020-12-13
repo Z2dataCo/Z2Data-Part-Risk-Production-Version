@@ -31,7 +31,7 @@ public class Landing_Page {
     public By Data_Management_Tab = By.linkText("Data Management");
     public By Value = By.xpath("//*[@id=\"ui-id-3\"]");
     public By IPN_Value = By.xpath("/html[1]/body[1]/ul[2]/li[2]/a[1]");
-    public By Supplier_Check_Box = By.xpath("//*[@id=\"z2parametric-all\"]/div/div[2]/div[2]/div[1]/label/span[1]");
+    public By Supplier_Check_Box = By.xpath("//*[@id='DivPartDataFilter']//*[@id=\"z2parametric-all\"]/div/div[2]/div[2]/div[1]");
     public By SpinnerZezo = By.id("progressDiv");
     public By MY_Account = By.xpath("//div//div[@class='usericon']");
     public By Logout = By.xpath("//body/div[@id='dropbg']/div[1]/div[2]/div[2]/a[3]/span[1]");
