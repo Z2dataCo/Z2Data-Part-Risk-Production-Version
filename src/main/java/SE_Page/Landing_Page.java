@@ -1,9 +1,11 @@
 package SE_Page;
 
+import com.shaft.gui.browser.BrowserActions;
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -39,7 +41,7 @@ public class Landing_Page {
     public By Parametric_Menu = By.xpath("/html/body/div[3]/div[1]/ul/li[1]/a");
     public By Product = By.xpath("/html/body/div[3]/div[1]/ul/li[1]/div/div/div[1]/ul/li[1]/a");
     public By SupElement = By.xpath("//*[@id=\"ca1_Semiconductors\"]/ul/li[1]/ul/li/div[1]/div/div/a");
-    public By Adv_Crosses_Value = By.xpath("//*[@id=\"scopeOptionDiv\"]/ul/li[6]/a");
+    public By Adv_Crosses_Value = By.xpath("//div[@class='z2-searchbox-curcat dropcloned']//li[6]");
     public By IPN = By.xpath("//*[@id=\"scopeOptionDiv\"]/ul/li[2]/a");
     public By Compare_Tab = By.linkText("Compare");
     public By More_Tab = By.xpath("//a[contains(text(),'More')]");
@@ -147,7 +149,12 @@ public class Landing_Page {
     }
 
     public void Z2D_Adv_Product() {
-        ElementActions.click(driver, Value);
+        ElementActions.waitForElementToBePresent(driver,Value,5,true);
+        (driver.findElement(Value)).click();
+        //ElementActions.click(driver, Value);
+        WebDriverWait WebWait = new WebDriverWait(driver, 90);
+        WebWait.until(ExpectedConditions.titleIs("Part Risk | Z2DATA"));
+        ElementActions.waitForElementToBePresent(driver,Total,50,true);
     }
 
     public void Z2D_IPN_DDL() {

@@ -38,25 +38,13 @@ public class I_1_Compare   {
         Landing_Obj.Z2D_Open_Compare_Page();
         Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Compare_Obj.Z2D_Input_Compare_1();
-        boolean Stale_Element = true;
-        while (Stale_Element) {
-            try {
-                ElementActions.hoverAndClick(driver,Compare_Obj.Value_Compare1,Compare_Obj.Value_Compare1);
-                Stale_Element = false;
-            } catch (Exception e) {
-            }
-        }
+        ElementActions.waitForElementToBePresent(driver,Compare_Obj.Value_Compare1,5,true);
+        ElementActions.click(driver,Compare_Obj.Value_Compare1);
         Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Compare_Obj.Z2D_Left_First_Row_Data_Visibility();
         Compare_Obj.Z2D_Input_Compare_2();
-        boolean Stale_Element1 = true;
-        while (Stale_Element1) {
-            try {
-                ElementActions.hoverAndClick(driver,Compare_Obj.Value_Compare2,Compare_Obj.Value_Compare2);
-                Stale_Element1 = false;
-            } catch (Exception e) {
-            }
-        }
+        ElementActions.waitForElementToBePresent(driver,Compare_Obj.Value_Compare2,5,true);
+        ElementActions.click(driver,Compare_Obj.Value_Compare2);
         Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Compare_Obj.Z2D_Right_First_Row_Data_Visibility();
         Compare_Obj.Z2D_Select_Differences();
