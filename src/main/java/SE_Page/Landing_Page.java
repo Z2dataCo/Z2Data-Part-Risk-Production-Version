@@ -42,7 +42,7 @@ public class Landing_Page {
     public By Product = By.xpath("/html/body/div[3]/div[1]/ul/li[1]/div/div/div[1]/ul/li[1]/a");
     public By SupElement = By.xpath("//*[@id=\"ca1_Semiconductors\"]/ul/li[1]/ul/li/div[1]/div/div/a");
     public By Adv_Crosses_Value = By.xpath("//div[@class='z2-searchbox-curcat dropcloned']//li[6]");
-    public By IPN = By.xpath("//*[@id=\"scopeOptionDiv\"]/ul/li[2]/a");
+    public By IPN = By.xpath("//div[@id='dropbg']//a[@class='dropdown-item main-category'][normalize-space()='IPN']");
     public By Compare_Tab = By.linkText("Compare");
     public By More_Tab = By.xpath("//a[contains(text(),'More')]");
     public By Suppliers = By.xpath("//a[contains(text(),'Suppliers')]");
