@@ -45,7 +45,7 @@ public class Z_2_Fun_All_Obsolescence {
         Obsolescence_Obj.Z2D_Product_Change();
         Obsolescence_Obj.Z2D_All_Obsolescence();
         Obsolescence_Obj.Z2D_Get_Last_Page_for_All_Obs();
-        int CountOfTable = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number_for_All_Obs).getText());
         int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;

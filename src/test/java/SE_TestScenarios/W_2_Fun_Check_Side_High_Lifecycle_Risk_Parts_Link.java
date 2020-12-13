@@ -49,7 +49,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         }
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Obsolescence_Obj.Z2D_Get_Last_Page();
-        int CountOfTable = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
         int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;
@@ -59,7 +59,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         Assert.assertEquals(Count, AllOfRow);
         Obsolescence_Obj.Z2D_NRND_Parts();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
-        int CountOfTable0 = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable0 = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
         int CountPagination0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage0 = CountPagination0 - 1;

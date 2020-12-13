@@ -15,8 +15,13 @@ public class Risk_Management_Module {
     private static WebDriver driver;
     public JavascriptExecutor jse;
 
+    public Risk_Management_Module(WebDriver driver) {
+        this.driver = driver;
+        jse= (JavascriptExecutor) driver;
+    }
+
     public void Scroll_To_Middle() {
-        jse.executeScript("window.scrollBy(0,2000)");
+        jse.executeScript("window.scrollBy(0,1000)");
     }
 
     public void Scroll_to_Element(By element) throws InterruptedException {
@@ -28,9 +33,7 @@ public class Risk_Management_Module {
         jse.executeScript("scrollBy(0,2500)");
     }
 
-    public Risk_Management_Module(WebDriver driver) {
-        this.driver = driver;
-    }
+
 
     public By Dashboard_Tab = By.xpath("//a[contains(text(),'Dashboard')]");
     public By Scrub_Tab = By.xpath("//a[contains(text(),'Scrub')]");
@@ -458,7 +461,7 @@ public class Risk_Management_Module {
 
     public void Z2D_Forecast_Click_on_First_Filter() {
         Scroll_To_Middle();
-        ElementActions.click(driver, Reports_First_Filter);
+        ElementActions.click(driver, Forecast_Ele_First_Filter);
     }
 
     public void Z2D_Forecast_Click_on_Second_Filter() {
@@ -470,16 +473,8 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Forecast_Click_on_Fifth_Filter() {
-        boolean Intercepted = true;
-        while (Intercepted) {
-            try {
-                ElementActions.click(driver, Forecast_Ele_Fifth_Filter);
-                Intercepted = false;
-            } catch (ElementClickInterceptedException e) {
-                Intercepted = true;
-            }
+        ElementActions.click(driver, Forecast_Ele_Fifth_Filter);
 
-        }
     }
 
     public void Z2D_Forecast_Click_on_First_Result() {

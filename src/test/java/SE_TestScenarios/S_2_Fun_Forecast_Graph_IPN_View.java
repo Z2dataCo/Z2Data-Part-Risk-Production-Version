@@ -6,6 +6,7 @@ import SE_Page.Login_Page;
 import SE_Page.Obsolescence_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
+import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -49,7 +50,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         if (TotalFilterValue.equals("0")) {
             System.out.println("No Data for the Selected Filter");
         } else {
-            String First_Row_Name = driver.findElement(Risk_Management_Obj.First_Table_Data).getText();
+            String First_Row_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Table_Data).getText();
             Risk_Management_Obj.Z2D_Forecast_Click_on_First_Result();
             String Opened_File_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_File_Name).getText();
             Assert.assertTrue(Opened_File_Name.contains(First_Row_Name), "Opened File is the same as Selected");
@@ -66,7 +67,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         if (TotalFilterValue2.equals("0")) {
             System.out.println("No Data for the Selected Filter");
         } else {
-            String First_Row_Name = driver.findElement(Risk_Management_Obj.First_Table_Data).getText();
+            String First_Row_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Table_Data).getText();
             Risk_Management_Obj.Z2D_Forecast_Click_on_First_Result();
             String Opened_File_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_File_Name).getText();
             Assert.assertTrue(Opened_File_Name.contains(First_Row_Name), "Opened File is the same as Selected");
@@ -81,7 +82,8 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         if (TotalFilterValue3.equals("0")) {
             System.out.println("No Data for the Selected Filter");
         } else {
-            String First_Row_Name = driver.findElement(Risk_Management_Obj.First_Table_Data).getText();
+            ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Forecast_Ele_First_Table_Data,5,true);
+            String First_Row_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Table_Data).getText();
             Risk_Management_Obj.Z2D_Forecast_Click_on_First_Result();
             String Opened_File_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_File_Name).getText();
             Assert.assertTrue(Opened_File_Name.contains(First_Row_Name), "Opened File is the same as Selected");

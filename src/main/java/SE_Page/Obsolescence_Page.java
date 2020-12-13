@@ -33,8 +33,8 @@ public class Obsolescence_Page {
     public By Product_Change_Notices = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li[6]/a/div[2]");
     public By Last_Page_All_Obs = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[9] ");
     public By Fixed_Number_for_All_Obs = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/app-z2pagination/span/span[2]");
-    public List<WebElement> Table_Size = driver.findElements(By.xpath("//table/tbody/tr"));
-    public List<WebElement> New_Data = driver.findElements(By.xpath("c"));
+    public By Table_Size = By.xpath("//table/tbody/tr");
+    public By New_Data = By.xpath("c");
 
     public void Z2D_Open_High_LifeCycle() {
         ElementActions.click(driver, High_LifeCycle_Risk);
@@ -84,7 +84,7 @@ public class Obsolescence_Page {
     }
 
     public void Z2D_Table_of_Data( ) {
-        for (int i = 1; i <= New_Data.size(); i++) {
+        for (int i = 1; i <= driver.findElements(New_Data).size(); i++) {
             System.out.println(New_Data);
             String Data = driver.findElement(By.xpath("//table[@class='z2tableM table hoverrows table-bordered table-middle bigtitle text-left']/tbody/tr[" + i + "]/td[3]")).getText();
             Assert.assertTrue(Data.contains("Obsolescence"));

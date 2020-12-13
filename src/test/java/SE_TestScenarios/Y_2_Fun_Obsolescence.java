@@ -46,7 +46,7 @@ public class Y_2_Fun_Obsolescence  {
         Risk_Management_Obj.Z2D_Reports_Open_High_LifeCycle();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Obsolescence_Obj.Z2D_Get_Last_Page();
-        int CountOfTable = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
         int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;
@@ -56,7 +56,7 @@ public class Y_2_Fun_Obsolescence  {
         Assert.assertEquals(Count, AllOfRow);
         Obsolescence_Obj.Z2D_NRND_Parts();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
-        int CountOfTable0 = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable0 = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
         int CountPagination0 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage0 = CountPagination0 - 1;
@@ -66,7 +66,7 @@ public class Y_2_Fun_Obsolescence  {
         Assert.assertEquals(Count0, AllOfRow0);
         Obsolescence_Obj.Z2D_Obsolete_Parts();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
-        int CountOfTable1 = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable1 = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count1 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
         int CountPagination1 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage1 = CountPagination1 - 1;
@@ -78,7 +78,7 @@ public class Y_2_Fun_Obsolescence  {
         Obsolescence_Obj.Z2D_Last_by_Parts();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         int CountPagination2 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
-        int CountOfTable2 = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable2 = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count2 = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number).getText());
         if (CountPagination2 <= 1) {
             int SubTotal2 = CountOfTable2 * CountPagination2;
@@ -119,7 +119,7 @@ public class Y_2_Fun_Obsolescence  {
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Row_Active).getText(), "Active");
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Row_3Y).getText(), "3 years");
         Obsolescence_Obj.Z2D_Get_Last_Page_For_3Y();
-        int CountOfTable = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number_For_3Y).getText());
         int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;
@@ -151,7 +151,7 @@ public class Y_2_Fun_Obsolescence  {
         Risk_Management_Obj.Z2D_Reports_Open_Obsolete_5Years();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Obsolescence_Obj.Z2D_Get_Last_Page_For_5Y();
-        int CountOfTable = Obsolescence_Obj.Table_Size.size();
+        int CountOfTable = driver.findElements(Obsolescence_Obj.Table_Size).size();
         int Count = Integer.parseInt(driver.findElement(Obsolescence_Obj.Fixed_Number_For_5Y).getText());
         int CountPagination = Integer.parseInt(driver.findElement(Obsolescence_Obj.Next_Page).getText());
         int CountPage = CountPagination - 1;

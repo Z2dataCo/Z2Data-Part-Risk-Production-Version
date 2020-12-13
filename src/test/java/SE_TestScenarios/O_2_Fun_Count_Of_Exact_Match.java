@@ -5,6 +5,7 @@ import SE_Page.Data_Management_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
+import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -36,6 +37,7 @@ public class O_2_Fun_Count_Of_Exact_Match {
 
         Data_Management_Obj.Z2D_Move_to_Scrub_BOM();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
+        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.FixedNumber,5,true);
         int FixedNum = Integer.parseInt(driver.findElement(Risk_Management_Obj.FixedNumber).getText());
         if (driver.findElement(Risk_Management_Obj.Last).isEnabled()) {
             int tableRows = Risk_Management_Obj.Z2D_Scrub_Table_Rows();
