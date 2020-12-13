@@ -51,12 +51,9 @@ String Z2DataFakerFolder = faker.name().firstName() + "1";
             Data_Management_Obj.Z2D_Delete_BOM();
             Data_Management_Obj.Z2D_Delete_Confirmation();
             if (!driver.getPageSource().contains(Z2DataFakerFolder)) {
-                Assert.assertNotEquals(istRow, Z2DataFakerFolder);
-            }
+                Assert.assertNotEquals(istRow, Z2DataFakerFolder); }
         } else {
-            System.out.println("Folder not Exist");
-        }
-
+            System.out.println("Folder not Exist"); }
     }
 
     @AfterClass(alwaysRun = true)
