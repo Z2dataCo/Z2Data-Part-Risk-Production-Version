@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class Login_Page {
     private final WebDriver driver;
     public String URL_for_Navigation = "https://parts.z2data.com";
@@ -20,6 +22,7 @@ public class Login_Page {
     public JavascriptExecutor jse;
 
     public void Navigate_To_URL_for_Navigation() {
+        driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.navigate().to(URL_for_Navigation);
         //BrowserActions.navigateToURL(driver,URL_for_Navigation);
     }

@@ -172,14 +172,17 @@ public class Data_Management_Page {
     }
 
     public void Z2D_Move_To_Prod_BOM() {
+        driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Prod_URL);
     }
 
     public void Z2D_Move_to_Mitigation_BOM() {
+        driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Mitigation_URL);
     }
 
     public void Z2D_Move_to_Forecast_BOM() {
+        driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(ForeCast_URL);
     }
 
@@ -191,10 +194,12 @@ public class Data_Management_Page {
     }
 
     public void Z2D_Move_to_Reports_BOM() {
+        driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Reports_URL);
     }
 
     public void Z2D_Move_to_Scrub_BOM() {
+        driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Scrub_URL);
     }
 
