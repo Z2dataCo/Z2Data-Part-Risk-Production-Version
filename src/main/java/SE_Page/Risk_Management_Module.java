@@ -152,7 +152,7 @@ public class Risk_Management_Module {
     public By End_Of_Life_Parts = By.xpath("//div[@class='z2-scorecard scorecard-parts']/div[4]/div[2]/div[1]");
     public By Selected_Part_Number = By.xpath("//tbody//tr[10]/td[1]//a/span");
     public By View_Drop_Crosses_Button = By.xpath("//tbody//tr[10]/td[4]//div[1]/a");
-    public By Recommendation_Option = By.xpath("//tbody//tr[8]/td[4]//div[1]//span");
+    public By Recommendation_Option = By.xpath("//*[@id=\"mitiMPNTable\"]/tbody/tr[8]/td[4]/div/div/span");
     public By View_Replacement_Button = By.xpath("//tbody//tr[10]/td[4]//div[2]/a");
     public By Suggested_Part_Label = By.xpath("//div[@id='dropbg']//table[2]/tbody/tr[1]/td[2]/div");
     public By Add_Part_Button = By.xpath("//*[@id]//tr[1]//button[contains(text(),'Add Part ')]");
@@ -622,7 +622,9 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Mitigation_Scroll() throws InterruptedException {
-        Scroll_to_Element(Recommendation_Option);
+        ElementActions.waitForElementToBePresent(driver,Recommendation_Option,5,true);
+        jse.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(Recommendation_Option));
+        Thread.sleep(500);
     }
 
     public void Z2D_Mitigation_Click_on_View_Replacement_Button() {
