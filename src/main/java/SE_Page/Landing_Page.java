@@ -141,6 +141,7 @@ public class Landing_Page {
     }
 
     public void Z2D_Open_Landing_Search_Menu() {
+        ElementActions.waitForElementToBePresent(driver,Landing_Search_Menu,5,true);
         ElementActions.click(driver, Landing_Search_Menu);
     }
 

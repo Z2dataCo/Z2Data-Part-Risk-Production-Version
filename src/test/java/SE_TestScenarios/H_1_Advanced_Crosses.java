@@ -35,7 +35,7 @@ public class H_1_Advanced_Crosses  {
         Landing_Obj.Z2D_Advanced_Crosses_Input_Search();
         Landing_Obj.Z2D_Adv_Product();
         Assert.assertTrue(driver.findElement(Landing_Obj.Total).getText().contains("Total"));
-        Assert.assertTrue(driver.findElement(Landing_Obj.Different_Input).getText().contains("Different Input"));
+        Assert.assertTrue(driver.findElement(Landing_Obj.Different_Input).getText().contains("Different Pinout"));
         Assert.assertTrue(driver.findElement(Landing_Obj.Drop_in).getText().contains("Drop-In"));
         Assert.assertTrue(driver.findElement(Landing_Obj.Drop_in_Same_Supplier).getText().contains("Drop-In Same Supplier"));
         Assert.assertTrue(driver.findElement(Landing_Obj.Similar_Different_Package).getText().contains("Similar / Different Package"));
