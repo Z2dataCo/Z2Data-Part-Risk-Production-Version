@@ -2,6 +2,7 @@ package SE_TestScenarios;
 
 import SE_Page.*;
 import com.shaft.gui.browser.BrowserFactory;
+import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -116,6 +117,7 @@ public class Y_2_Fun_Obsolescence  {
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolete_3Years();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
+        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Row_Active,5,true);
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Row_Active).getText(), "Active");
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Row_3Y).getText(), "3 years");
         Obsolescence_Obj.Z2D_Get_Last_Page_For_3Y();
