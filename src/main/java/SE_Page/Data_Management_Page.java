@@ -199,6 +199,7 @@ public class Data_Management_Page {
     }
 
     public void SetFile() {
+        ElementActions.waitForElementToBePresent(driver,Test_Folder,5,true);
         ElementActions.click(driver, Test_Folder);
     }
 
