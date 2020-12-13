@@ -749,12 +749,12 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Reports_Click_on_Saved_Reports_List() {
-        ElementActions.hoverAndClick(driver, DDL_Report, DDL_Report);
+        ElementActions.click(driver,DDL_Report);
     }
 
     public void Z2D_Reports_Re_Click_on_Saved_Reports_List() {
         ElementActions.keyPress(driver, DDL_Report, Keys.ESC);
-        ElementActions.hoverAndClick(driver, DDL_Report, DDL_Report);
+        ElementActions.click(driver,DDL_Report);
     }
 
 
