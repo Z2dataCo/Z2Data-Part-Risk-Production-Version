@@ -12,8 +12,8 @@ public class Compare_Page {
     public Compare_Page(WebDriver driver) {
         this.driver = driver;
     }
-    public By Compare1 = By.id("part_autocom_0");
-    public By Compare2 = By.id("part_autocom_1");
+    public By Compare1 = By.xpath("//app-compareparts[1]/div[2]/div/table//th[2]//input[1]");
+    public By Compare2 = By.xpath("//app-compareparts[1]/div[2]/div/table//th[3]//input[1]");
     public By Value_Compare1 = By.xpath("//li[1]//a[@class='z2tableA-singline ui-menu-item-wrapper'][1]");
     public By Value_Compare2 = By.xpath("//body[1]/div[5]/app-root[1]/div[3]/app-compare[1]/div[1]/div[1]/app-compareparts[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[3]/div[1]/app-part-autocomplete[1]/div[1]/div[1]/ul[1]/li[1]/a[1]");
     public By Differences = By.xpath("//*[@id=\"headerEl\"]/div/div/a[2]");
