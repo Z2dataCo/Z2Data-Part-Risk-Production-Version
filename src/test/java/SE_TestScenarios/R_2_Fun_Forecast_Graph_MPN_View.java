@@ -36,7 +36,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
 
         Data_Management_Obj.Z2D_Move_To_Prod_BOM();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-        Risk_Management_Obj.Z2D_Forecast_Ele_Graph2_to_be_Clickable();
+        //Risk_Management_Obj.Z2D_Forecast_Ele_Graph2_to_be_Clickable();
         Risk_Management_Obj.Z2D_Click_Forecast_Tab();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
 
