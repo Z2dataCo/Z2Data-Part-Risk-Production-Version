@@ -41,6 +41,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         Risk_Management_Obj.Z2D_Switchers_Pipeline_to_be_Clickable();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
+        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Forecast_Ele_First_Filter,5,true);
         String Multi_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Filter).getText();
         Risk_Management_Obj.Z2D_Forecast_Click_on_First_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();

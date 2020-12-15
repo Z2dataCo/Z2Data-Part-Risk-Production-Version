@@ -321,7 +321,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Scrub_Tab() {
-        ElementActions.hover(driver, Scrub_Tab);
+        //ElementActions.hover(driver, Scrub_Tab);
         ElementActions.click(driver, Scrub_Tab);
     }
 
@@ -330,7 +330,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Forecast_Tab() {
-        ElementActions.hover(driver, Forecast_Tab);
+        //ElementActions.hover(driver, Forecast_Tab);
         ElementActions.click(driver, Forecast_Tab);
     }
 
@@ -339,7 +339,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Compliance_Tab() {
-        ElementActions.hover(driver, Compliance_Tab);
+        //ElementActions.hover(driver, Compliance_Tab);
         ElementActions.click(driver, Compliance_Tab);
     }
 
@@ -348,7 +348,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Mitigation_Tab() {
-        ElementActions.hover(driver, Mitigation_Tab);
+        //ElementActions.hover(driver, Mitigation_Tab);
         ElementActions.click(driver, Mitigation_Tab);
     }
 
@@ -357,7 +357,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Reports_Tab() {
-        ElementActions.hover(driver, Reports_Tab);
+        //ElementActions.hover(driver, Reports_Tab);
         ElementActions.click(driver, Reports_Tab);
     }
 
@@ -366,7 +366,7 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Parts_Tab() {
-        ElementActions.hover(driver, Parts_Tab);
+        //ElementActions.hover(driver, Parts_Tab);
         ElementActions.click(driver, Parts_Tab);
         Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.isElementClickable(driver, First_CheckBox);
@@ -378,15 +378,7 @@ public class Risk_Management_Module {
 
     public void Z2D_Select_Switcher() throws InterruptedException {
         Thread.sleep(1000);
-        boolean Intercepted = true;
-        while (Intercepted) {
-            try {
-                ElementActions.click(driver, Switchers_Pipeline);
-                Intercepted = false;
-            } catch (ElementClickInterceptedException e) {
-                Intercepted = true;
-            }
-        }
+        ElementActions.click(driver, Switchers_Pipeline);
     }
 
     //Dashboard Page Method
@@ -582,7 +574,7 @@ public class Risk_Management_Module {
         ElementActions.waitForElementToBePresent(driver, End_Of_Life_Parts, 5, true);
     }
     public void Z2D_Mitigation_Suggested_Part_Label_Visibility() {
-        ElementActions.waitForElementToBePresent(driver, Suggested_Part_Label, 5, true);
+        ElementActions.waitForElementToBePresent(driver, Suggested_Part_Label, 10, true);
     }
     public void Z2D_Mitigation_View_Drop_Crosses_Button_Visibility() {
         ElementActions.waitForElementToBePresent(driver, View_Drop_Crosses_Button, 5, true);
@@ -590,17 +582,7 @@ public class Risk_Management_Module {
 
 
     public void Z2D_Mitigation_Click_on_Drop_in_Crosses() {
-        boolean Intercepted = true;
-        while (Intercepted) {
-
-            try {
-                ElementActions.click(driver, View_Drop_Crosses_Button);
-                Thread.sleep(200);
-                Intercepted = false;
-            } catch (ElementClickInterceptedException | InterruptedException e) {
-                Intercepted = true;
-            }
-        }
+        ElementActions.click(driver, View_Drop_Crosses_Button);
     }
 
     public void Z2D_Mitigation_Click_on_Add_Part_Button() throws InterruptedException {
