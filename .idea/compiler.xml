@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PartRisk" target="11" />
+      <module name="PartRisk" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
