@@ -2,13 +2,11 @@ package SE_Page;
 
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class Compare_Page {
 
     private final WebDriver driver;
-    public JavascriptExecutor jse;
     public Compare_Page(WebDriver driver) {
         this.driver = driver;
     }

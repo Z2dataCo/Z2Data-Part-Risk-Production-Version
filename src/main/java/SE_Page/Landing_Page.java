@@ -1,11 +1,8 @@
 package SE_Page;
 
-import com.shaft.gui.browser.BrowserActions;
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,7 +13,6 @@ import java.awt.event.KeyEvent;
 
 public class Landing_Page {
     private WebDriver driver;
-    public JavascriptExecutor jse;
 
     public Landing_Page(WebDriver driver) {
         this.driver = driver;
@@ -24,7 +20,6 @@ public class Landing_Page {
 
     public By Z2data_Logo_1 = By.xpath("//body/div[2]/div[1]/a[1]");
     public By Z2data_Logo_2 = By.xpath("/html/body/div[1]/div[1]/span");
-    public By Verification_MSG = By.xpath("//*[@id=\"tblPartData\"]/tr/td[3]/a");
     public By Upload_BOM_Btn = By.id("UploadBOMTrigger");
     public By Part_Name = By.xpath("//*[@id=\"z2page-head-bar\"]/div/h1/span/span");
     public By Search_Input = By.id("txtMainBarSearch");

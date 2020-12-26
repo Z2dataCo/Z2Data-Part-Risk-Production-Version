@@ -1,12 +1,14 @@
 package SE_Page;
 
 import com.shaft.gui.element.ElementActions;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -26,47 +28,30 @@ public class Data_Management_Page {
     public String Prod_URL = "https://parts.z2data.com/RiskManager?BomId=119090";
 
     public By Data_Management_Tab = By.xpath("//a[contains(text(),'Data Management')]");
-    public By Verification = By.xpath("//*[@id=\"z2page-head-bar\"]/div/h1/span/span");
-    public By Verify_BOMs = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li/a[1]/div[2]");
-    public By Verify_AVL = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li/a[2]/div[2]");
-    public By Part_Correction = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li/a[3]/div[2]");
-    public By Data_Setting = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li/a[4]/div[2]");
     public By Table_Name = By.xpath("//div[@id='main_start_page']//th[2]");
     public By Table_User = By.xpath("//div[@id='main_start_page']//th[3]");
     public By Table_Of_file = By.xpath("//div[@id='main_start_page']//th[4]");
-    public By Table_Of_Parts = By.xpath("//div[@id='main_start_page']//th[5]");
-    public By Table_Of_Supplier = By.xpath("//body//th[6]");
     public By Table_Data_Created = By.xpath("//body//th[7]");
     public By Table_Action = By.xpath("//body//th[8]");
     public By Folder_Name = By.xpath("//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/tbody/tr[4]/td[2]/a");
-    public By Upload_BOM_Folder = By.xpath("//div[@id='reportToHide']//div//div//div//div//app-uploadbom//a");
     public By My_Folder = By.xpath("//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/tbody/tr[8]/td[2]/a");
     public By My_BOM = By.xpath(" //*[@id=\"reportToHide\"]/div[2]/div[3]/app-subfolders-boms/div[1]/table/tbody/tr[16]/td[2]/a[1]");
     public By of_Suppliers = By.xpath("//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/thead/tr/th[6]");
     public By Search_Text_Input = By.cssSelector("#divSearchFolders > input");
     public By Folder_Name_Input = By.xpath("//body[1]/div[9]/div[1]/div[1]/div[2]/form[1]/table[1]/tbody[1]/tr[1]/td[2]/input[1]");
     public By Test_Folder = By.xpath("//*[@id=\"divSearchFolders\"]/div/ul/li[2]/a");
-    public By Graph = By.xpath("//div//div[@class='z2-scorecard-each bg-white pt-05 cursornormal'][1]");
     public By Create_Folder = By.xpath("//*[@id=\"DMCreatefolder\"]/span/span");
-    public By Search_Btn = By.id("FolderAutoCompleteSearch");
     public By Search_Result = By.xpath("//*[@id='divSearchFolders']//li[2]/a");
     public By Select_BOM = By.xpath("//tbody/tr[2]//td[2]/a[1]");
     public By Select_Proud_Test_BOM = By.xpath("//a[contains(text(),'TAP_BOM_Proud_Test')]");
     public By Parts_Btn = By.xpath("//a[contains(text(),'Parts')]");
     public By Create_Folder_Btn = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/form/button");
     public By BOM_Folder = By.xpath("//tbody/tr[20]/td[2]/a[1]");
-    public By BOM = By.xpath("//tbody/tr[1]/td[2]/a[1]");
     public By BOM_Prod_Test = By.partialLinkText("TAP_BOM_Proud_Te");
-    public By Forecast = By.linkText("Forecast");
-    public By Mitigation = By.linkText("Mitigation");
-    public By Scrub = By.linkText("Scrub");
-    public By Spinner2 = By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div");
-    public By Next_Page = By.xpath("//*[@id=\"scrub_content\"]/div/div[2]/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[5]/a");
     public By Next_Btn = By.linkText("Next");
     public By is_Row = By.xpath("//*[@class='table-responsive']//tbody/tr[1]/td[2]/a");
     public By Delete = By.xpath("//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/tbody/tr[1]/td[8]/div/app-datamanagement-boms-popups/div[1]/a[2]");
     public By Yes_Delete = By.xpath("/html/body/modal-container/div/div/div/button[1]");
-    //public List<WebElement> Spinner = driver.findElements(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div"));
 
     //Delete BOM Elements
     public By Yes_Button = By.xpath("/html/body/modal-container/div/div/div/button[1]");
@@ -74,7 +59,6 @@ public class Data_Management_Page {
     public By Total_Results_Shown = By.xpath("//div[@class='actionbar-right mr-1']//span[2]");
     public By Creat_Sub_Folder_Button = By.xpath("//span[contains(text(),'Create Sub Folder')]");
     public By Table_Body = By.xpath("//table[@class='table table-bordered table-striped bg-white mt-05 mb-0']/tbody");
-    public By BOMs_Table = By.xpath("//table[@class='table table-bordered table-striped bg-white mt-05 mb-0']/tbody/tr");
     int i = 2;
 
 

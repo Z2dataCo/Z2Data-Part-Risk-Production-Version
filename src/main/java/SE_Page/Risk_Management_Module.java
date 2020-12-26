@@ -8,11 +8,10 @@ import org.sikuli.hotkey.Keys;
 import org.testng.Assert;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Risk_Management_Module {
-    private static WebDriver driver;
+    private final WebDriver driver;
     public JavascriptExecutor jse;
 
     public Risk_Management_Module(WebDriver driver) {
@@ -130,9 +129,6 @@ public class Risk_Management_Module {
     public By ForeCast_Tab = By.xpath("//a[contains(text(),'Forecast')]");
     public By Spinner2 = By.xpath("//div[@style='border-color: silver silver silver rgb(51, 122, 183);']");
     public By Forecast_Ele_First_Row_Text = By.xpath("//div[@class='z2tablemost']//table/tbody/tr[1]/td[14]");
-    //public List<WebElement> Spinner = driver.findElements(By.xpath("//div[@style='border-color: silver silver silver rgb(51, 122, 183);']"));
-    //public List<WebElement> Table_Columns = driver.findElements(By.xpath("//div[@class='z2tablemost']//table/tbody/tr[1]/td"));
-    //public List<WebElement> Table_Rows = driver.findElements(By.xpath("//div[@class='z2tablemost']//table/tbody/tr"));
 
     //Compliance Page
     public By First_Filter_Total = By.xpath("//*[@id=\"z2parametric-all\"]/div/div[1]/div[2]/div[1]/label/span[2]");
@@ -321,7 +317,6 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Scrub_Tab() {
-        //ElementActions.hover(driver, Scrub_Tab);
         ElementActions.click(driver, Scrub_Tab);
     }
 
@@ -330,7 +325,6 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Forecast_Tab() {
-        //ElementActions.hover(driver, Forecast_Tab);
         ElementActions.click(driver, Forecast_Tab);
     }
 
@@ -339,7 +333,6 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Compliance_Tab() {
-        //ElementActions.hover(driver, Compliance_Tab);
         ElementActions.click(driver, Compliance_Tab);
     }
 
@@ -348,7 +341,6 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Mitigation_Tab() {
-        //ElementActions.hover(driver, Mitigation_Tab);
         ElementActions.click(driver, Mitigation_Tab);
     }
 
@@ -357,7 +349,6 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Click_Reports_Tab() {
-        //ElementActions.hover(driver, Reports_Tab);
         ElementActions.click(driver, Reports_Tab);
     }
 
@@ -484,7 +475,6 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Forecast_Get_Table_Data(WebDriver driver, String Assertion) {
-        WebDriverWait Wait = new WebDriverWait(driver, 30);
         int Row_Size = Z2D_Forecast_Table_Rows();
         int Column_Size = Z2D_Forecast_Table_Columns();
         System.out.println("number of Rows are" + Row_Size);

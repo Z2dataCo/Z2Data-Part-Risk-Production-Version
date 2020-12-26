@@ -3,7 +3,6 @@ package SE_Page;
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PCN_Manager_Page {
 
     private final WebDriver driver;
-    public JavascriptExecutor jse;
 
     public PCN_Manager_Page(WebDriver driver) {
         this.driver = driver;
@@ -30,7 +28,6 @@ public class PCN_Manager_Page {
     public By Inbox_Tab_Filter_Table = By.xpath("//*[@id=\"DivInBoxFilterPCN\"]/div[1]/div[2]");
     public By PCNs_Tab = By.xpath("//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]");
     public By PCNs_Tab_Filter_Table = By.xpath("//*[@id=\"DivPcnsTabFilterPCN\"]/div[1]/div[2]");
-    public By PCNs_Tab_Filter_Table_Header = By.xpath("//*[@id=\"DivPcnsTabFilterPCN\"]/div[1]/div[2]/div[1]/div/table/thead/tr/th[1]");
     public By PCNs_Select_First_PCN_Notification = By.xpath("//*[@id=\"3760\"]/td[1]");
     public By PCNs_First_PCN_Notification_PCN_ID = By.xpath("//td[contains(text(),'Z2 PCN_ID')]");
     public By PCNs_Notification_Back = By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h4[1]/a[1]");
@@ -52,7 +49,6 @@ public class PCN_Manager_Page {
     public void Z2D_Wait_Disappear_Z2Data_Spinner_0() throws InterruptedException {
         int count = 0;
         while ((driver.findElements(By.xpath("//*[@id=\"progressDiv\"]/div/div/div[2]")).size() != 0 && count < 40)) {
-            Thread.sleep(700);
             count++;
         }
     }

@@ -2,17 +2,12 @@ package SE_Page;
 
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
-import java.util.List;
 
 public class Obsolescence_Page {
 
-    private WebDriver driver;
-    public JavascriptExecutor jse;
+    private final WebDriver driver;
     public Obsolescence_Page(WebDriver driver) {
         this.driver = driver;
     }

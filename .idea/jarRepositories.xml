@@ -26,5 +26,10 @@
       <option name="name" value="SpringSource Enterprise Bundle Repository - External Bundle Releases" />
       <option name="url" value="http://repository.springsource.com/maven/bundles/external" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="jenkins-ci-releases" />
+      <option name="name" value="jenkins-ci-releases" />
+      <option name="url" value="https://repo.jenkins-ci.org/releases/" />
+    </remote-repository>
   </component>
 </project>

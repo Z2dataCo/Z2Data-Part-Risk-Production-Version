@@ -2,12 +2,10 @@ package SE_Page;
 
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class Submit_Ticket_Page {
     private final WebDriver driver;
-    public JavascriptExecutor jse;
     public Submit_Ticket_Page(WebDriver driver) {
         this.driver = driver;
     }

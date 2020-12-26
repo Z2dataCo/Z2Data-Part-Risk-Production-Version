@@ -1,7 +1,6 @@
 package SE_Page;
 
 import com.shaft.gui.browser.BrowserActions;
-import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

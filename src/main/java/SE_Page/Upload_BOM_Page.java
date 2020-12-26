@@ -3,12 +3,10 @@ package SE_Page;
 import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class Upload_BOM_Page {
     private final WebDriver driver;
-    public JavascriptExecutor jse;
 
     public Upload_BOM_Page(WebDriver driver) {
         this.driver = driver;
@@ -19,16 +17,11 @@ public class Upload_BOM_Page {
     public By Select_BOM_Folder = By.xpath("//*[@id=\"selectedFolderName\"]");
     public By Supplier = By.xpath("//*[@id=\"bommapUL\"]/li[2]/a");
     public By Finish_Btn = By.id("btnSaveBom");
-    public By Remove_File_Link = By.xpath("//*[@id=\"bomdropzone\"]/div[2]/a");
-    public By BOM_Text = By.xpath("//*[@id=\"DivUploadBomMapCols\"]/div[1]/div[1]/h2");
-    public By MPN_MSG = By.xpath("//*[@id=\"DivUploadBomMapCols\"]/div[3]/table/thead/tr/td[2]/a/span");
-    public By Assert_For_Part_Number = By.xpath("//*[@id=\"z2page-head-bar\"]/div/h1/span");
     public By Selection = By.xpath("//thead/tr[1]/td[2]");
     public By Next_Step = By.xpath("//*[@id=\"DivUploadBomMapCols\"]/div[1]/div[3]/div/button[2]");
     public By Mapped_IPN = By.xpath("//*[@id=\"bommapUL\"]/li[4]/a");
     public By Selected_Folder = By.id("37753_anchor");
     public By Column2 = By.xpath("//*[@id=\"DivUploadBomMapCols\"]/div[3]/table/thead/tr/td[3]");
-    public By Spinner_Zezo = By.id("progressDiv");
 
     public void Z2D_Click_Next() {
         boolean Intercepted = true;
