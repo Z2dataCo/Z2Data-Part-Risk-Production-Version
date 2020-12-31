@@ -27,30 +27,30 @@
     <orderEntry type="library" name="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" level="application" />
     <orderEntry type="library" name="org.testng.TESTNG_CONTAINER" level="application" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.11" level="project" />
-    <orderEntry type="library" name="Maven: io.github.mohabmohie:SHAFT_ENGINE:4.4.20201006" level="project" />
-    <orderEntry type="library" name="Maven: io.appium:java-client:7.3.0" level="project" />
-    <orderEntry type="library" name="Maven: cglib:cglib:3.2.12" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm:7.1" level="project" />
-    <orderEntry type="library" name="Maven: commons-validator:commons-validator:1.6" level="project" />
-    <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.2" level="project" />
-    <orderEntry type="library" name="Maven: commons-digester:commons-digester:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: io.github.mohabmohie:SHAFT_ENGINE:4.4.20201206" level="project" />
+    <orderEntry type="library" name="Maven: io.appium:java-client:7.4.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: cglib:cglib:3.3.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.ow2.asm:asm:7.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: commons-validator:commons-validator:1.7" level="project" />
+    <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: commons-digester:commons-digester:2.1" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.1.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.1.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.1.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.1.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.1.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.1.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: io.rest-assured:rest-assured:4.3.1" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:3.0.3" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-xml:3.0.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-context:5.3.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-aop:5.3.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-beans:5.3.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-core:5.3.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-jcl:5.3.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-expression:5.3.1" level="project" />
+    <orderEntry type="library" name="Maven: io.rest-assured:rest-assured:4.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:3.0.6" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-xml:3.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.3" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest:2.1" level="project" />
     <orderEntry type="library" name="Maven: org.ccil.cowan.tagsoup:tagsoup:1.2.1" level="project" />
-    <orderEntry type="library" name="Maven: io.rest-assured:json-path:4.3.1" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-json:3.0.3" level="project" />
-    <orderEntry type="library" name="Maven: io.rest-assured:rest-assured-common:4.3.1" level="project" />
-    <orderEntry type="library" name="Maven: io.rest-assured:xml-path:4.3.1" level="project" />
+    <orderEntry type="library" name="Maven: io.rest-assured:json-path:4.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-json:3.0.6" level="project" />
+    <orderEntry type="library" name="Maven: io.rest-assured:rest-assured-common:4.3.2" level="project" />
+    <orderEntry type="library" name="Maven: io.rest-assured:xml-path:4.3.2" level="project" />
     <orderEntry type="library" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-impl:2.3.3" level="project" />
@@ -64,26 +64,26 @@
     <orderEntry type="library" name="Maven: commons-net:commons-net:3.3" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.tcljava:com.springsource.tcl.lang.jacl:1.4.1" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.tcljava:com.springsource.tcl.lang:1.4.1" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.21" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.22" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
-    <orderEntry type="library" name="Maven: com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre14" level="project" />
+    <orderEntry type="library" name="Maven: com.microsoft.sqlserver:mssql-jdbc:9.1.1.jre15-preview" level="project" />
     <orderEntry type="library" name="Maven: postgresql:postgresql:9.1-901-1.jdbc4" level="project" />
     <orderEntry type="library" name="Maven: com.ibm.db2.jcc:db2jcc:db2jcc4" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-java:6.8.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-core:6.8.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-gherkin:6.8.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-gherkin-messages:6.8.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:messages:13.1.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-java:6.9.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-core:6.9.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-gherkin:6.9.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-gherkin-messages:6.9.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:messages:13.2.0" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:tag-expressions:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-expressions:10.3.0" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:datatable:3.5.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-plugin:6.8.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:docstring:6.8.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-plugin:6.9.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:docstring:6.9.0" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:html-formatter:9.0.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:create-meta:2.0.2" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:create-meta:2.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-testng:6.8.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-picocontainer:6.8.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-testng:6.9.0" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-picocontainer:6.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.picocontainer:picocontainer:2.15" level="project" />
     <orderEntry type="library" name="Maven: org.testng:testng:7.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.beust:jcommander:1.78" level="project" />

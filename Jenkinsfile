@@ -6,7 +6,7 @@ pipeline {
             matrix {
                 agent {
                     dockerfile {
-                        label "docker"
+                        label "Dockerfile"
 
                         additionalBuildArgs """
                             --build-arg JAVA_VERSION=$JAVA \

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>PartRisk</groupId>
     <artifactId>PartRisk</artifactId>
-    <version>4.4.20201130</version>
+    <version>4.4.20201206</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Selenium Hybrid Automation Framework for Testing [SHAFT]</description>
     <url>https://github.com/MohabMohie/SHAFT_ENGINE</url>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>io.github.mohabmohie</groupId>
             <artifactId>SHAFT_ENGINE</artifactId>
-            <version>4.4.20201006</version>
+            <version>4.4.20201206</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -278,6 +278,8 @@
                     <encoding>UTF-8</encoding>
                     <maxmem>10240m</maxmem>
                     <meminitial>10240m</meminitial>
+                    <source>14</source>
+                    <target>14</target>
                 </configuration>
             </plugin>
             <plugin>
