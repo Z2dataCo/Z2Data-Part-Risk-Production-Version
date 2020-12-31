@@ -11,7 +11,6 @@ pipeline {
                         additionalBuildArgs """
                             --build-arg JAVA_VERSION=$JAVA \
                             --build-arg MAVEN_VERSION=$MAVEN \
-                            --build-arg USER_UID=\$(id -u) \
                             -t mymaven:${MAVEN}-jdk-${JAVA}
                         """.stripIndent().trim()
 
