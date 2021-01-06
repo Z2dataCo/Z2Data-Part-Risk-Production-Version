@@ -8,12 +8,6 @@ pipeline {
                     dockerfile {
                         label "Dockerfile"
 
-                        additionalBuildArgs """
-                            --build-arg JAVA_VERSION=$JAVA \
-                            --build-arg MAVEN_VERSION=$MAVEN \
-                            -t mymaven:${MAVEN}-jdk-${JAVA}
-                        """.stripIndent().trim()
-
                         args "-v /tmp/maven:/home/jenkins/.m2"
                     }
                 }
@@ -36,7 +30,7 @@ pipeline {
                     }
                     stage("Test") {
                         steps {
-                            sh "mvn test -P coverage"
+                            sh "mvn test "
                         }
                     }
                 }
