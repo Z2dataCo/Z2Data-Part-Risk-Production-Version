@@ -1,39 +1,30 @@
 pipeline {
-  agent any
-
-  stages {
-    stage("Build") {
-      steps {
-        sh 'mvn -v'
-      }
-    }
-
-    stage("Testing") {
-      parallel {
-        stage("Unit Tests") {
-          agent { docker 'openjdk:15.0.1-jdk-alpine' }
-          steps {
-            sh 'java -version'
-          }
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
         }
-        stage("Functional Tests") {
-          agent { docker 'openjdk:15.0.1-jdk-alpine' }
-          steps {
-            sh 'java -version'
-          }
-        }
-        stage("Integration Tests") {
-          steps {
-            sh 'java -version'
-          }
-        }
-      }
     }
-
-    stage("Deploy") {
-      steps {
-        echo "Deploy!"
-      }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    testng 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+            }
+        }
     }
-  }
 }
