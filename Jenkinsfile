@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent any
     stages {
         stage('Build') {
             steps {
@@ -15,11 +10,7 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-            post {
-                always {
-                    testng 'target/surefire-reports/*.xml'
-                }
-            }
+
         }
         stage('Deliver') {
             steps {
