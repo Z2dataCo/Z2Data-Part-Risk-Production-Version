@@ -18,7 +18,7 @@ public class A_1_Parametric_Search {
     @BeforeClass(alwaysRun = true)
     public void initialize_Global_Objects_and_Navigate() {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
-        Login_Page Login_Obj = new Login_Page(driver);
+       Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation();
     }
 

@@ -68,10 +68,10 @@
     <dependencies>
         <!-- TESTNG DEPENDENCIES -->
         <dependency>
-            <groupId>io.github.mohabmohie</groupId>
-            <artifactId>SHAFT_ENGINE</artifactId>
-            <version>4.4.20201206</version>
-        </dependency>
+        <groupId>io.github.mohabmohie</groupId>
+        <artifactId>SHAFT_ENGINE</artifactId>
+        <version>4.4.20201206</version>
+    </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
