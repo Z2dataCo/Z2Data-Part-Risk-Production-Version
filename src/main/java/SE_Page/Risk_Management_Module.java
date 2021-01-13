@@ -170,7 +170,7 @@ public class Risk_Management_Module {
     public By ObsoleteParts_5Y = By.linkText("Obsolete Parts in 5 Years");
     public By Row_Active = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/table/tbody/tr[32]/td[5]/div");
     public By Row_3Y = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/table/tbody/tr[18]/td[8]/div");
-    public By Create_Report = By.xpath("//*[@id=\"z2-2cols-leftpanel\"]/ul/li[3]/a/div[2]");
+    public By Create_Report = By.xpath("//div[@class='ulllinks-text'][normalize-space()='Create Report']");
     public By Save_Report = By.xpath("//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/app-riskreport[1]/div[1]/app-riskreportmpn[1]/div[1]/div[2]/div[1]/div[1]/div[1]/app-createreport[1]/app-run-create-reports[1]/div[1]/div[1]/div[1]/button[1]");
     public By Report_Name = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[2]/input");
     public By Confirm_Report = By.xpath("//body/div[@id='dropbg']/div[1]/div[1]/div[2]/button[1]");
