@@ -5,6 +5,7 @@ import SE_Page.Data_Management_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
+import com.shaft.gui.element.ElementActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -33,7 +34,8 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
         Data_Management_Obj.Z2D_Move_to_Mitigation_BOM();
-        Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
+        //Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
+        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.NRND_Parts,5,true);
         String NRND_Parts = driver.findElement(Risk_Management_Obj.NRND_Parts).getText().replace(" Parts","");
         String End_of_Life_Parts = driver.findElement(Risk_Management_Obj.End_Of_Life_Parts).getText().replace(" Parts","");
         Risk_Management_Obj.Z2D_Mitigation_Scroll();
