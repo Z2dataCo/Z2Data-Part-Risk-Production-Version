@@ -2,6 +2,11 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="central-2" />
+      <option name="name" value="central-2" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
@@ -30,6 +35,11 @@
       <option name="id" value="jenkins-ci-releases" />
       <option name="name" value="jenkins-ci-releases" />
       <option name="url" value="https://repo.jenkins-ci.org/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="automatest-artifactory" />
+      <option name="name" value="automatest-artifactory" />
+      <option name="url" value="https://automatest.jfrog.io/artifactory/SHAFT_ENGINE" />
     </remote-repository>
   </component>
 </project>
