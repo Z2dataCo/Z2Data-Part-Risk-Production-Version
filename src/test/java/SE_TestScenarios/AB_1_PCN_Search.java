@@ -19,15 +19,10 @@ public class AB_1_PCN_Search {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation();
-    }
-
-    @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)
-    public void Login() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
 
-    @Test(description = "TS002 || Check MPN Search Functionality using PCN Id & MPN", priority = 2)
+    @Test(description = "TS001 || Check MPN Search Functionality using PCN Id & MPN", priority = 1)
     public void PCN_Search() throws InterruptedException {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);

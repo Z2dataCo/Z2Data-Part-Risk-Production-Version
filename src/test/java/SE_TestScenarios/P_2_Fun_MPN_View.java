@@ -21,21 +21,15 @@ public class P_2_Fun_MPN_View   {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation();
-    }
-
-    @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)
-    public void Login() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
 
-    @Test(description = "TS002 || Check selecting any status will affect on forecast graph ( MPN View )", priority = 2)
+    @Test(description = "TS001 || Check selecting any status will affect on forecast graph ( MPN View )", priority = 1)
     public void MPN_View() throws InterruptedException {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
-
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();

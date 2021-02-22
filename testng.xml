@@ -1,33 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="5"  name="D:/IdeaProjects/Part Risk E2E New SE/src/test/java/SE_TestScenarios">
+    <test name="Z2Data Part Risk Cycle 1" verbose="10">
         <classes>
-            <class name="SE_TestScenarios.AB_1_PCN_Search">
-                <methods>
-                    <include name="Login"/>
-                    <include name="PCN_Search"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.AC_1_Upload_BOM_and_Switcher">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Upload_BOM_and_Switcher"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.AD_1_Check_Dashboard_Data">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Dashboard_Data"/>
-                </methods>
-            </class>
-
-            <class name="SE_TestScenarios.AJ_1_Submit_Ticket">
-                <methods>
-                    <include name="Login"/>
-                    <include name="User_Submit_Ticket"/>
-                </methods>
-            </class>
             <class name="SE_TestScenarios.A_1_Parametric_Search">
                 <methods>
                     <include name="Login"/>
@@ -88,6 +63,35 @@
                     <include name="Search_for_Supplier"/>
                 </methods>
             </class>
+            <class name="SE_TestScenarios.AB_1_PCN_Search">
+                <methods>
+                    <include name="Login"/>
+                    <include name="PCN_Search"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.AC_1_Upload_BOM_and_Switcher">
+                <methods>
+                    <include name="Login"/>
+                    <include name="Upload_BOM_and_Switcher"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.AD_1_Check_Dashboard_Data">
+                <methods>
+                    <include name="Login"/>
+                    <include name="Dashboard_Data"/>
+                </methods>
+            </class>
+
+            <class name="SE_TestScenarios.AJ_1_Submit_Ticket">
+                <methods>
+                    <include name="Login"/>
+                    <include name="User_Submit_Ticket"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test  name="Z2Data Part Risk Cycle 2" verbose="10">
+        <classes>
             <class name="SE_TestScenarios.K_2_Fun_Filters_For_Compliance">
                 <methods>
                     <include name="Login"/>

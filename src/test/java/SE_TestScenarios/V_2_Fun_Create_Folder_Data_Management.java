@@ -22,16 +22,10 @@ String Z2DataFakerFolder = faker.name().firstName() + "1";
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation();
-    }
-
-    @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)
-    public void Login() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
 
-
-    @Test(description = "TS002 || Validate To Create Folder In Data Management",priority = 2)
+    @Test(description = "TS001 || Validate To Create Folder In Data Management",priority = 1)
     public void Create_Folder_in_Data_Management() throws InterruptedException {
 
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);

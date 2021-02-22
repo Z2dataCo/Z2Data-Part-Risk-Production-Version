@@ -21,15 +21,10 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation();
-    }
-
-    @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)
-    public void Login() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
 
-    @Test(description = "TS002 || Validate Forecast tab Table IPN View Check table's data", priority = 2)
+    @Test(description = "TS001 || Validate Forecast tab Table IPN View Check table's data", priority = 1)
     public void ForeCast_Graph_IPN_View() throws InterruptedException {
 
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);

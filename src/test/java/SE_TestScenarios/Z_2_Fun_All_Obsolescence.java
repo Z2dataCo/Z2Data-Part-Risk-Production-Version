@@ -17,15 +17,10 @@ public class Z_2_Fun_All_Obsolescence {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation();
-    }
-
-    @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)
-    public void Login() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Z2D_SignIn();
     }
 
-    @Test(description = "TS002 || Check that side panel of All Obsolescence PCNs shows all PCNs on the BOM", priority = 2)
+    @Test(description = "TS001 || Check that side panel of All Obsolescence PCNs shows all PCNs on the BOM", priority = 1)
     public void All_ObsolescencePage() {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);

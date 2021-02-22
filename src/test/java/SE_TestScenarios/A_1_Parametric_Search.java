@@ -18,17 +18,13 @@ public class A_1_Parametric_Search {
     @BeforeClass(alwaysRun = true)
     public void initialize_Global_Objects_and_Navigate() {
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
-       Login_Page Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation();
-    }
-
-    @Test(description = "TS001 || Login to Z2Data Part Risk", priority = 1)
-    public void Login() {
         Login_Page Login_Obj = new Login_Page(driver);
+        Login_Obj.Navigate_To_URL_for_Navigation();
         Login_Obj.Z2D_SignIn();
     }
 
-    @Test(description = "TS002 || Validate Parametric Search", priority = 2)
+
+    @Test(description = "TS001 || Validate Parametric Search", priority = 1)
     public void Parametric_Search() {
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Landing_Obj.Search_using_Parametric();
