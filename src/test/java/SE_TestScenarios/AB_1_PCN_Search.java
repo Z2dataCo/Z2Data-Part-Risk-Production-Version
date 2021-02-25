@@ -30,8 +30,9 @@ public class AB_1_PCN_Search {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Check MPN Search Functionality using PCN Id & MPN", priority = 1)
-    public void PCN_Search() throws InterruptedException {
+    public void PCN_Search(String Environment) throws InterruptedException {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);
         PCN_Manager_Page PCN_Manager_Obj = new PCN_Manager_Page(driver);
@@ -42,14 +43,14 @@ public class AB_1_PCN_Search {
         ElementActions.isElementDisplayed(driver, PCN_Manager_Obj.Dashboard_Tab_Total_PCNs);
         PCN_Manager_Obj.Z2D_Open_PCNs_Tab();
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-        PCN_Manager_Obj.Z2D_Search_PCN_ID();
+        PCN_Manager_Obj.Z2D_Search_PCN_ID(Environment);
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.isElementDisplayed(driver, PCN_Manager_Obj.Results_Table);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.Showing_Of_Total,PCN_Manager_Obj.Total_Results,5);
         String Search_Result = driver.findElement(PCN_Manager_Obj.First_Search_Result).getText();
-        Assert.assertTrue(Search_Result.contains(PCN_Manager_Obj.PCN_ID));
+        Assert.assertTrue(Search_Result.contains(Variables.getCellData("PCN_ID", "Value")));
 
-        PCN_Manager_Obj.Z2D_Search_MPN_ID();
+        PCN_Manager_Obj.Z2D_Search_MPN_ID(Environment);
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.isElementDisplayed(driver, PCN_Manager_Obj.Results_Table);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.Showing_Of_Total,PCN_Manager_Obj.Total_Results,5);
@@ -58,7 +59,7 @@ public class AB_1_PCN_Search {
         ElementActions.waitForElementToBePresent(driver,PCN_Manager_Obj.FSP_Text,5,true);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.FSP_Text,"",5);
         String Impacted_MPN_Data = driver.findElement(PCN_Manager_Obj.Impacted_MPN_Results).getText();
-        Assert.assertTrue(Impacted_MPN_Data.contains(PCN_Manager_Obj.MPN_ID));
+        Assert.assertTrue(Impacted_MPN_Data.contains(Variables.getCellData("MPN_ID", "Value")));
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {

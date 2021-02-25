@@ -43,7 +43,7 @@ public class Y_2_Fun_Obsolescence  {
            if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
-            Data_Management_Obj.Z2D_Click_on_BOM();
+            Data_Management_Obj.Z2D_Click_on_BOM(Environment);
         }
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
@@ -115,7 +115,7 @@ public class Y_2_Fun_Obsolescence  {
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
-            Data_Management_Obj.Z2D_Click_on_BOM();
+            Data_Management_Obj.Z2D_Click_on_BOM(Environment);
         }
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
@@ -151,7 +151,7 @@ public class Y_2_Fun_Obsolescence  {
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
-            Data_Management_Obj.Z2D_Click_on_BOM();
+            Data_Management_Obj.Z2D_Click_on_BOM(Environment);
         }
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();

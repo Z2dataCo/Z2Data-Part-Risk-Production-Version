@@ -38,6 +38,7 @@ public class Data_Management_Page {
     public By Search_Result = By.xpath("//*[@id='divSearchFolders']//li[2]/a");
     public By Select_BOM = By.xpath("//tbody/tr[2]//td[2]/a[1]");
     public By Select_Proud_Test_BOM = By.xpath("//a[contains(text(),'TAP_BOM_Proud_Test')]");
+    public By Select_Prod_Test_Bom = By.xpath(("//a[contains(text(),'TAP_BOM_Prod_Test')]"));
     public By Parts_Btn = By.xpath("//a[contains(text(),'Parts')]");
     public By Create_Folder_Btn = By.xpath("//*[@id=\"dropbg\"]/div/div/div[2]/form/button");
     public By BOM_Folder = By.xpath("//tbody/tr[20]/td[2]/a[1]");
@@ -145,8 +146,11 @@ public class Data_Management_Page {
         ElementActions.click(driver, BOM_Prod_Test);
     }
 
-    public void Z2D_Click_on_BOM() {
-        ElementActions.click(driver, Select_Proud_Test_BOM);
+    public void Z2D_Click_on_BOM(String Environment) {
+        if (Environment.equalsIgnoreCase("Production")){
+        ElementActions.click(driver, Select_Proud_Test_BOM);}
+        else {
+            ElementActions.click(driver, Select_Prod_Test_Bom);}
     }
 
     public void Z2D_Move_To_Prod_BOM(String Environment) {
