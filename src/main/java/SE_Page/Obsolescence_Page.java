@@ -58,6 +58,7 @@ public class Obsolescence_Page {
     public void Z2D_Close_Slide() {
         ElementActions.click(driver, Close_Slide);
     }
+
     public void Z2D_Close_Slide_Visibility() {
         ElementActions.waitForElementToBePresent(driver, Close_Slide, 5, true);
     }

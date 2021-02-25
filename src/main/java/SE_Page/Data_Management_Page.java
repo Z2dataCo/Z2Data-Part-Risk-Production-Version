@@ -16,22 +16,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Data_Management_Page {
 
-    public JavascriptExecutor jse;
     private final WebDriver driver ;
     private ExcelFileManager Variables;
 
-
-
-    public Data_Management_Page(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public String ForeCast_URL = "https://parts.z2data.com/RiskManager/Forecast?BomId=119090";
-    public String Compliance_URL = "https://parts.z2data.com/RiskManager/Compliance?BomId=119090";
-    public String Mitigation_URL = "https://parts.z2data.com/RiskManager/Mitigation?BomId=119090";
-    public String Reports_URL = "https://parts.z2data.com/RiskManager/Report?BomId=119090";
-    public String Scrub_URL = "https://parts.z2data.com/RiskManager/Scrub?BomId=119090";
-    public String Prod_URL = "https://parts.z2data.com/RiskManager?BomId=119090";
+    public Data_Management_Page(WebDriver driver) { this.driver = driver; }
 
     public By Data_Management_Tab = By.xpath("//a[contains(text(),'Data Management')]");
     public By Table_Name = By.xpath("//div[@id='main_start_page']//th[2]");
