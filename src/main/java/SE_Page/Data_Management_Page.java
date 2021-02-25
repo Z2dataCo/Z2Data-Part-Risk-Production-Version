@@ -1,6 +1,7 @@
 package SE_Page;
 
 import com.shaft.gui.element.ElementActions;
+import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +18,10 @@ public class Data_Management_Page {
 
     public JavascriptExecutor jse;
     private final WebDriver driver ;
+    private ExcelFileManager Variables;
+
+
+
     public Data_Management_Page(WebDriver driver) {
         this.driver = driver;
     }
@@ -155,9 +161,13 @@ public class Data_Management_Page {
         ElementActions.click(driver, Select_Proud_Test_BOM);
     }
 
-    public void Z2D_Move_To_Prod_BOM() {
+    public void Z2D_Move_To_Prod_BOM(String Environment) {
+        if (Environment.equalsIgnoreCase("Production")) {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
+        else{
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
-        driver.get(Prod_URL);
+        driver.get(Variables.getCellData("Pom_Dashboard_URL","Value"));
     }
 
     public void Z2D_Move_to_Mitigation_BOM() {
@@ -236,4 +246,6 @@ public class Data_Management_Page {
         }
 
     }
+
+
 }

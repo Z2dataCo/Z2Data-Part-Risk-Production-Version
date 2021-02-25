@@ -27,8 +27,9 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Check that side panel of Obsolete Parts in 3 Years shows parts that have forecast up to 3 years", priority = 1)
-    public void Check_Side_Panel_High_Risk() throws InterruptedException {
+    public void Check_Side_Panel_High_Risk(String Environment) throws InterruptedException {
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
@@ -39,7 +40,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         Data_Management_Obj.SetFile();
         Data_Management_Obj.Z2D_Open_BOM();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
-            Data_Management_Obj.Z2D_Move_To_Prod_BOM();
+            Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM();
         }

@@ -28,8 +28,9 @@ public class Z_2_Fun_All_Obsolescence {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Check that side panel of All Obsolescence PCNs shows all PCNs on the BOM", priority = 1)
-    public void All_ObsolescencePage() {
+    public void All_ObsolescencePage(String Environment) {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
@@ -40,7 +41,7 @@ public class Z_2_Fun_All_Obsolescence {
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
-            Data_Management_Obj.Z2D_Move_To_Prod_BOM();
+            Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM();
         }
@@ -58,7 +59,6 @@ public class Z_2_Fun_All_Obsolescence {
         Assert.assertEquals(Count, AllOfRow);
         Obsolescence_Obj.Z2D_Table_of_Data();
         Obsolescence_Obj.Z2D_Close_Slide();
-
     }
 
     @AfterClass(alwaysRun = true)

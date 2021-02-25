@@ -28,8 +28,9 @@ public class Y_2_Fun_Obsolescence  {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Check that side panel of High Lifecycle Risk Parts link shows high risk part && Count Table in All Tabs", priority = 1)
-    public void Check_Side_Panel_High_Risk() throws InterruptedException {
+    public void Check_Side_Panel_High_Risk(String Environment) throws InterruptedException {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
@@ -40,7 +41,7 @@ public class Y_2_Fun_Obsolescence  {
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
            if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
-            Data_Management_Obj.Z2D_Move_To_Prod_BOM();
+            Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM();
         }
@@ -100,8 +101,9 @@ public class Y_2_Fun_Obsolescence  {
         Obsolescence_Obj.Z2D_Close_Slide();
     }
 
+    @Parameters("Environment")
     @Test(description = "TS003 || Check that side panel of Obsolete Parts in 3 Years shows parts that have forecast up to 3 years", priority = 3)
-    public void Obsolete_Parts_in_3_Years() throws InterruptedException {
+    public void Obsolete_Parts_in_3_Years(String Environment) throws InterruptedException {
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
@@ -111,7 +113,7 @@ public class Y_2_Fun_Obsolescence  {
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
-            Data_Management_Obj.Z2D_Move_To_Prod_BOM();
+            Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM();
         }
@@ -134,8 +136,9 @@ public class Y_2_Fun_Obsolescence  {
         Obsolescence_Obj.Z2D_Close_Slide();
     }
 
+    @Parameters("Environment")
     @Test(description = "TS004 || Check that side panel of Obsolete Parts in 5 Years shows parts that have forecast up to 5 years", priority = 4)
-    public void Obsolete_Part_IN_5_Years() throws InterruptedException {
+    public void Obsolete_Part_IN_5_Years(String Environment) throws InterruptedException {
 
         Landing_Page Landing_Obj = new Landing_Page(driver);
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
@@ -146,7 +149,7 @@ public class Y_2_Fun_Obsolescence  {
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
-            Data_Management_Obj.Z2D_Move_To_Prod_BOM();
+            Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM();
         }

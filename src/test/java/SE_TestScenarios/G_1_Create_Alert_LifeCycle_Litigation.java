@@ -31,12 +31,13 @@ public class G_1_Create_Alert_LifeCycle_Litigation {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Validate creating alert by selecting LifeCycle & Litigation", priority = 1)
-    public void Create_Alert_LifeCycle_Litigation() throws InterruptedException {
+    public void Create_Alert_LifeCycle_Litigation(String Environment) throws InterruptedException {
         Data_Management_Page DManagement_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
-        DManagement_Obj.Z2D_Move_To_Prod_BOM();
+        DManagement_Obj.Z2D_Move_To_Prod_BOM(Environment);
         Risk_Management_Obj.Z2D_Followed_Text_to_be_Clickable();
         if (driver.findElement(Risk_Management_Obj.Followed_Text).getText().equals("Followed")) {
             Risk_Management_Obj.Z2D_Click_Followed_Btn();
