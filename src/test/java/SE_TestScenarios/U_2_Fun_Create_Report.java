@@ -34,13 +34,14 @@ public class U_2_Fun_Create_Report {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Validate To Create , Review Report And Download", priority = 1)
-    public void Create_Report_Download() throws InterruptedException {
+    public void Create_Report_Download(String Environment) throws InterruptedException {
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
         PCN_Manager_Page PCN_Manager_Obj = new PCN_Manager_Page(driver);
 
-        Data_Management_Obj.Z2D_Move_to_Reports_BOM();
+        Data_Management_Obj.Z2D_Move_to_Reports_BOM(Environment);
         ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Create_Report,10,true);
         Risk_Management_Obj.Z2D_Reports_Open_Create_Report();
         Risk_Management_Obj.Z2D_Reports_Select_Parameter();

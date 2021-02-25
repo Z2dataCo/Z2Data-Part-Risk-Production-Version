@@ -31,13 +31,13 @@ public class K_2_Fun_Filters_For_Compliance {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Validate Filter on Compliance Page &  Check table's data", priority = 1)
-
-    public void Filters_For_Compliance()   {
+    public void Filters_For_Compliance(String Environment)   {
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
-        Data_Management_Obj.Z2D_Move_to_Compliance_BOM();
+        Data_Management_Obj.Z2D_Move_to_Compliance_BOM(Environment);
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
         ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Total_Filter_Results,5,true);
         String Total_Filter_Value = driver.findElement(Risk_Management_Obj.Total_Filter_Results).getText();

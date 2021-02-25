@@ -31,12 +31,13 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Check Mitigation Filters & Data in MPN View", priority = 1)
-    public void Mitigation_Filters_and_Data_MPN_View() throws InterruptedException {
+    public void Mitigation_Filters_and_Data_MPN_View(String Environment) throws InterruptedException {
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
-        Data_Management_Obj.Z2D_Move_to_Mitigation_BOM();
+        Data_Management_Obj.Z2D_Move_to_Mitigation_BOM(Environment);
         //Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.NRND_Parts,5,true);
         String NRND_Parts = driver.findElement(Risk_Management_Obj.NRND_Parts).getText().replace(" Parts","");

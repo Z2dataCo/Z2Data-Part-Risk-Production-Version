@@ -32,14 +32,15 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
+    @Parameters("Environment")
     @Test(description = "TS001 || Validate Forecast tab Table IPN View Check table's data", priority = 1)
-    public void ForeCast_Graph_IPN_View() throws InterruptedException {
+    public void ForeCast_Graph_IPN_View(String Environment) throws InterruptedException {
 
         Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
         Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
         Obsolescence_Page Obsolescence_Obj = new Obsolescence_Page(driver);
 
-        Data_Management_Obj.Z2D_Move_to_Forecast_BOM();
+        Data_Management_Obj.Z2D_Move_to_Forecast_BOM(Environment);
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Switchers_Pipeline_to_be_Clickable();
         Risk_Management_Obj.Z2D_Select_Switcher();
