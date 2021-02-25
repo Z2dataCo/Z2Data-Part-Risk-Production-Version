@@ -2,6 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test name="Z2Data Part Risk Cycle 1" verbose="10">
+        <parameter
+                name="Environment" value="Production">
+        </parameter>
         <classes>
             <class name="SE_TestScenarios.A_1_Parametric_Search">
                 <methods>
