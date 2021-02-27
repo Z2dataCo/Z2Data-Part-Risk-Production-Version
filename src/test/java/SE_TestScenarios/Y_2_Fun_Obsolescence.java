@@ -6,14 +6,16 @@ import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class Y_2_Fun_Obsolescence  {
     private WebDriver driver;
     private ExcelFileManager Variables;
+    private Login_Page Login_Obj ;
+    private Landing_Page Landing_Obj ;
+    private Data_Management_Page Data_Management_Obj;
+    private Risk_Management_Module Risk_Management_Obj;
+    private Obsolescence_Page Obsolescence_Obj;
 
     @BeforeClass(alwaysRun = true)
     @Parameters("Environment")
@@ -31,11 +33,6 @@ public class Y_2_Fun_Obsolescence  {
     @Parameters("Environment")
     @Test(description = "TS001 || Check that side panel of High Lifecycle Risk Parts link shows high risk part && Count Table in All Tabs", priority = 1)
     public void Check_Side_Panel_High_Risk(String Environment) throws InterruptedException {
-
-        Landing_Page Landing_Obj = new Landing_Page(driver);
-        Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
-        Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
-        Obsolescence_Page Obsolescence_Obj = new Obsolescence_Page(driver);
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
@@ -104,10 +101,6 @@ public class Y_2_Fun_Obsolescence  {
     @Parameters("Environment")
     @Test(description = "TS003 || Check that side panel of Obsolete Parts in 3 Years shows parts that have forecast up to 3 years", priority = 3)
     public void Obsolete_Parts_in_3_Years(String Environment) throws InterruptedException {
-        Landing_Page Landing_Obj = new Landing_Page(driver);
-        Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
-        Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
-        Obsolescence_Page Obsolescence_Obj = new Obsolescence_Page(driver);
 
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
@@ -140,11 +133,6 @@ public class Y_2_Fun_Obsolescence  {
     @Test(description = "TS004 || Check that side panel of Obsolete Parts in 5 Years shows parts that have forecast up to 5 years", priority = 4)
     public void Obsolete_Part_IN_5_Years(String Environment) throws InterruptedException {
 
-        Landing_Page Landing_Obj = new Landing_Page(driver);
-        Data_Management_Page Data_Management_Obj = new Data_Management_Page(driver);
-        Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
-        Obsolescence_Page Obsolescence_Obj = new Obsolescence_Page(driver);
-
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
@@ -172,8 +160,15 @@ public class Y_2_Fun_Obsolescence  {
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
+    }
+    @BeforeMethod(alwaysRun = true)
+    public void BeforeMethod(){
+        Login_Obj = new Login_Page(driver);
+        Landing_Obj = new Landing_Page(driver);
+        Data_Management_Obj = new Data_Management_Page(driver);
+        Risk_Management_Obj = new Risk_Management_Module(driver);
+        Obsolescence_Obj = new Obsolescence_Page(driver);
     }
 }
 
