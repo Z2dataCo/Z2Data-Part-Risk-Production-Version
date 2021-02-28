@@ -1,23 +1,21 @@
 package SE_TestScenarios;
 
 
-import SE_Page.Compare_Page;
-import SE_Page.Landing_Page;
-import SE_Page.Login_Page;
+import SE_Page.*;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class I_1_Compare   {
     private WebDriver driver;
     private ExcelFileManager Variables;
+    private Login_Page Login_Obj;
+    private Landing_Page Landing_Obj;
+    private Compare_Page Compare_Obj;
 
     @BeforeClass(alwaysRun = true)
     @Parameters("Environment")
@@ -27,16 +25,12 @@ public class I_1_Compare   {
         else{
             Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
 
     @Test(description = "TS001 || Validate To Compare between Item", priority = 1)
     public void Compare_Parts() throws InterruptedException {
-
-        Landing_Page Landing_Obj = new Landing_Page(driver);
-        Compare_Page Compare_Obj = new Compare_Page(driver);
 
         Landing_Obj.Z2D_Open_Compare_Page();
         Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
@@ -74,7 +68,12 @@ public class I_1_Compare   {
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
+    }
+    @BeforeMethod
+    public void BeforeMethod() {
+        Login_Obj = new Login_Page(driver);
+        Landing_Obj = new Landing_Page(driver);
+        Compare_Obj = new Compare_Page(driver);
     }
 }

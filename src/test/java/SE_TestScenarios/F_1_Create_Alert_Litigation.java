@@ -2,20 +2,21 @@ package SE_TestScenarios;
 
 
 import SE_Page.Data_Management_Page;
+import SE_Page.Landing_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class F_1_Create_Alert_Litigation {
     private WebDriver driver;
     private ExcelFileManager Variables;
+    private Login_Page Login_Obj;
+    private Risk_Management_Module Risk_Management_Obj;
+    private Data_Management_Page Data_Management_Obj;
 
     @BeforeClass(alwaysRun = true)
     @Parameters("Environment")
@@ -33,10 +34,8 @@ public class F_1_Create_Alert_Litigation {
     @Parameters("Environment")
     @Test(description = "TS001 || Validate creating alert by selecting Litigation only", priority = 1)
     public void Create_Alert_Litigation() throws InterruptedException {
-        Data_Management_Page DManagement_Obj = new Data_Management_Page(driver);
-        Risk_Management_Module Risk_Management_Obj = new Risk_Management_Module(driver);
 
-        DManagement_Obj.Z2D_Move_To_Prod_BOM("Environment");
+        Data_Management_Obj.Z2D_Move_To_Prod_BOM("Environment");
         Risk_Management_Obj.Z2D_Followed_Text_to_be_Clickable();
         if (driver.findElement(Risk_Management_Obj.Followed_Text).getText().equals("Followed")) {
             Risk_Management_Obj.Z2D_Click_Followed_Btn();
@@ -59,7 +58,13 @@ public class F_1_Create_Alert_Litigation {
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
+    }
+
+    @BeforeMethod
+    public void BeforeMethod() {
+        Login_Obj = new Login_Page(driver);
+        Data_Management_Obj = new Data_Management_Page(driver);
+        Risk_Management_Obj = new Risk_Management_Module(driver);
     }
 }

@@ -8,14 +8,14 @@ import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class AB_1_PCN_Search {
     private WebDriver driver;
     private ExcelFileManager Variables;
+    private Landing_Page Landing_Obj;
+    private PCN_Manager_Page PCN_Manager_Obj;
+    private Login_Page Login_Obj;
 
     @BeforeClass(alwaysRun = true)
     @Parameters("Environment")
@@ -25,7 +25,6 @@ public class AB_1_PCN_Search {
         else{
             Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
@@ -34,8 +33,6 @@ public class AB_1_PCN_Search {
     @Test(description = "TS001 || Check MPN Search Functionality using PCN Id & MPN", priority = 1)
     public void PCN_Search(String Environment) throws InterruptedException {
 
-        Landing_Page Landing_Obj = new Landing_Page(driver);
-        PCN_Manager_Page PCN_Manager_Obj = new PCN_Manager_Page(driver);
 
         Landing_Obj.Z2D_Open_PCN_Manager();
         PCN_Manager_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
@@ -63,8 +60,13 @@ public class AB_1_PCN_Search {
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
+    }
+    @BeforeMethod
+    public void BeforeMethod(){
+        Login_Obj = new Login_Page(driver);
+        Landing_Obj = new Landing_Page(driver);
+        PCN_Manager_Obj = new PCN_Manager_Page(driver);
     }
 
 }
