@@ -41,6 +41,7 @@ public class A_1_Parametric_Search {
     public void TearDown() {
         Login_Obj.Tear_Down();
     }
+
     @BeforeMethod(alwaysRun = true)
     public void BeforeMethod(){
         Landing_Obj  = new Landing_Page(driver);

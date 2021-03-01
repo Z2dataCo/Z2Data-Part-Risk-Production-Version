@@ -30,7 +30,6 @@ public class D_1_PCN_Manager   {
     @Test(description = "TS001 || Validate Scenario using PCN Manager",priority = 1)
 
     public void PCN_Manager() throws InterruptedException {
-
         Landing_Obj.Z2D_Open_PCN_Manager();
         Landing_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         PCN_Manager_Obj.Z2D_Dashboard_Tab_Total_PCNs_Visibility();
@@ -75,7 +74,6 @@ public class D_1_PCN_Manager   {
 
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
     }
 

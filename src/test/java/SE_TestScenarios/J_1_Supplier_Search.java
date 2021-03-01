@@ -50,6 +50,7 @@ public class J_1_Supplier_Search {
     public void TearDown() {
         Login_Obj.Tear_Down();
     }
+
     @BeforeMethod
     public void BeforeMethod() {
         Login_Obj = new Login_Page(driver);

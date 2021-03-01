@@ -62,6 +62,7 @@ public class G_1_Create_Alert_LifeCycle_Litigation {
     public void TearDown() {
         Login_Obj.Tear_Down();
     }
+
     @BeforeMethod
     public void BeforeMethod() {
         Login_Obj = new Login_Page(driver);

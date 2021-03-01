@@ -92,7 +92,6 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
 
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
     }
 

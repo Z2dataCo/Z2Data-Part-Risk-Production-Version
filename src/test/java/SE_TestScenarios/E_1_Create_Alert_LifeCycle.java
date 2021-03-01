@@ -58,7 +58,6 @@ public class E_1_Create_Alert_LifeCycle {
     }
     @AfterClass(alwaysRun = true)
     public void TearDown() {
-        Login_Page Login_Obj = new Login_Page(driver);
         Login_Obj.Tear_Down();
     }
 
