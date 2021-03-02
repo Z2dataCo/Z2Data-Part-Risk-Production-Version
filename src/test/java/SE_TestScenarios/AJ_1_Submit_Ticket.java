@@ -27,7 +27,7 @@ public class AJ_1_Submit_Ticket {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
-    @Test(description = "TS001 || Submit Ticket", priority = 1)
+    @Test(description = "TS001 || Submit Ticket", priority = 1,enabled = false)
     public void User_Submit_Ticket() {
 
         Submit_Ticket_Obj.Z2D_Open_Submit_Ticket();
