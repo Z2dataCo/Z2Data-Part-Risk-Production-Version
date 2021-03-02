@@ -56,7 +56,7 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.13" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.13" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: cglib:cglib:3.3.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.ow2.asm:asm:7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:7.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-validator:commons-validator:1.7" level="project" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-digester:commons-digester:2.1" level="project" />
@@ -258,5 +258,25 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.github.mifmif:generex:1.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: dk.brics.automaton:automaton:1.11-8" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:20.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:maven-surefire-common:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-api:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-logger-api:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-extensions-api:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-booter:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-extensions-spi:3.0.0-M5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-toolchain:3.0-alpha-2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.shared:maven-artifact-transfer:0.11.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.shared:maven-common-artifact-filters:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-model:3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-api:3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.sisu:sisu-inject-plexus:1.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-classworlds:2.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.sisu:sisu-inject-bean:1.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.sisu:sisu-guice:noaop:2.1.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.shared:maven-shared-utils:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-java:1.0.5" level="project" />
+    <orderEntry type="library" name="Maven: com.thoughtworks.qdox:qdox:2.0-M9" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-shared-utils:3.0.0-M4" level="project" />
   </component>
 </module>
