@@ -15,7 +15,7 @@ public class AB_1_PCN_Search {
     private ExcelFileManager Variables;
     private Landing_Page Landing_Obj;
     private PCN_Manager_Page PCN_Manager_Obj;
-    private Login_Page Login_Obj;
+    public Login_Page Login_Obj;
 
     @BeforeClass(alwaysRun = true)
     @Parameters("Environment")
@@ -25,6 +25,7 @@ public class AB_1_PCN_Search {
         else{
             Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
+        Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
@@ -55,16 +56,15 @@ public class AB_1_PCN_Search {
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         ElementActions.waitForElementToBePresent(driver,PCN_Manager_Obj.FSP_Text,5,true);
         ElementActions.waitForTextToChange(driver,PCN_Manager_Obj.FSP_Text,"",5);
-        String Impacted_MPN_Data = driver.findElement(PCN_Manager_Obj.Impacted_MPN_Results).getText();
-        Assert.assertTrue(Impacted_MPN_Data.contains(Variables.getCellData("MPN_ID", "Value")));
+        System.out.println(PCN_Manager_Obj.Impacted_MPN_Data() + " this is what is got");
+        Assert.assertTrue(PCN_Manager_Obj.Impacted_MPN_Data().contains(Variables.getCellData("MPN_ID", "Value")));
     }
-    @AfterClass(alwaysRun = true)
+    @AfterClass()
     public void TearDown() {
         Login_Obj.Tear_Down();
     }
     @BeforeMethod
     public void BeforeMethod(){
-        Login_Obj = new Login_Page(driver);
         Landing_Obj = new Landing_Page(driver);
         PCN_Manager_Obj = new PCN_Manager_Page(driver);
     }

@@ -5,8 +5,11 @@ import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 
 public class PCN_Manager_Page {
@@ -124,7 +127,9 @@ public class PCN_Manager_Page {
         ElementActions.click(driver, Supplier_CheckBox);
     }
 
-
+    public String Impacted_MPN_Data() {
+        return  driver.findElement(Impacted_MPN_Results).getText();
+        }
 }
 
 

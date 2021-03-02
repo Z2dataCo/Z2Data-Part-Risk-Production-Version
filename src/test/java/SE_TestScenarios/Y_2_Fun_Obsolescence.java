@@ -25,6 +25,7 @@ public class Y_2_Fun_Obsolescence  {
         else{
             Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
+        Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
@@ -36,7 +37,7 @@ public class Y_2_Fun_Obsolescence  {
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
-           if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
+           if (!(" TAP_BOM_Proud_Test".equals(driver.getPageSource()))) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM(Environment);
@@ -104,7 +105,7 @@ public class Y_2_Fun_Obsolescence  {
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
-        if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
+        if (!(" TAP_BOM_Proud_Test".equals(driver.getPageSource()))) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM(Environment);
@@ -135,7 +136,7 @@ public class Y_2_Fun_Obsolescence  {
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
-        if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
+        if (!(" TAP_BOM_Proud_Test".equals(driver.getPageSource()))) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM(Environment);

@@ -24,6 +24,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         else{
             Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
+        Login_Obj = new Login_Page(driver);
         Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
     }
@@ -36,7 +37,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
         Data_Management_Obj.Z2D_Open_BOM();
-        if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
+        if (!(" TAP_BOM_Proud_Test".equals(driver.getPageSource()))) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM(Environment);
@@ -44,7 +45,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link {
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
         Risk_Management_Obj.Z2D_Reports_Open_High_LifeCycle();
-        if ("High Lifecycle Risk Parts" == driver.getPageSource()) {
+        if ("High Lifecycle Risk Parts".equals(driver.getPageSource())) {
             if (driver.findElement(Obsolescence_Obj.Last).isEnabled())
                 Obsolescence_Obj.Z2D_Open_High_LifeCycle();
         }
