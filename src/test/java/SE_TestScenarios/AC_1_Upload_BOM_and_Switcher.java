@@ -26,16 +26,17 @@ public class AC_1_Upload_BOM_and_Switcher {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
-    @Test(description = "TS001 || Validate User Upload BOM", priority = 1,enabled = false)
+    @Test(description = "TS001 || Validate User Upload BOM", priority = 1, enabled = false)
     public void Upload_BOM_and_Switcher() throws AWTException, InterruptedException {
 
         Landing_Obj.Z2D_Upload_BOM();
@@ -109,12 +110,14 @@ public class AC_1_Upload_BOM_and_Switcher {
         Assert.assertEquals((driver.findElement(By.xpath("//a[contains(text(),'Reports')]"))).getText(), "Reports");
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
     }
-    @AfterClass(alwaysRun = true,enabled = false)
+
+    @AfterClass(alwaysRun = true, enabled = false)
     public void TearDown() {
         Login_Obj.Tear_Down();
     }
+
     @BeforeMethod
-    public void BeforeMethod(){
+    public void BeforeMethod() {
         Login_Obj = new Login_Page(driver);
         Landing_Obj = new Landing_Page(driver);
         Upload_BOM_Obj = new Upload_BOM_Page(driver);

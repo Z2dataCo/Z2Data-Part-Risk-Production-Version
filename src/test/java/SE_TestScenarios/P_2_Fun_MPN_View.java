@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 
-public class P_2_Fun_MPN_View   {
+public class P_2_Fun_MPN_View {
     private WebDriver driver;
     private ExcelFileManager Variables;
     private Login_Page Login_Obj;
@@ -24,13 +24,14 @@ public class P_2_Fun_MPN_View   {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
     @Test(description = "TS001 || Check selecting any status will affect on forecast graph ( MPN View )", priority = 1)
@@ -62,6 +63,7 @@ public class P_2_Fun_MPN_View   {
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.PartScore).getText(), "Part Score");
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Tags).getText(), "Tags");
     }
+
     @AfterClass(alwaysRun = true)
     public void TearDown() {
         Login_Obj.Tear_Down();

@@ -10,28 +10,30 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class AG_2_Fun_Check_Compliance_MPN_Report   {
+public class AG_2_Fun_Check_Compliance_MPN_Report {
     private WebDriver driver;
     private ExcelFileManager Variables;
     private Login_Page Login_Obj;
-    private  Risk_Management_Module Risk_Management_Obj;
+    private Risk_Management_Module Risk_Management_Obj;
     private Data_Management_Page Data_Management_Obj;
 
     @BeforeClass(alwaysRun = true)
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
+
     @Parameters("Environment")
     @Test(description = "TS001 || Check Conflict Minerals Reports : Compliance MPN Reports", priority = 1)
-    public void Check_Compliance_Report(String Environment)  {
+    public void Check_Compliance_Report(String Environment) {
 
         Data_Management_Obj.Z2D_Move_to_Reports_BOM(Environment);
         Risk_Management_Obj.Z2D_Reports_Open_Compliance_MPN_Report();
@@ -64,12 +66,14 @@ public class AG_2_Fun_Check_Compliance_MPN_Report   {
         Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), Fourth_Filter.replace(" Parts", ""));
         Assert.assertTrue(Fourth_Filter.contains(driver.findElement(Risk_Management_Obj.Info_Total).getText()));
     }
+
     @AfterClass(alwaysRun = true)
     public void TearDown() {
         Login_Obj.Tear_Down();
     }
+
     @BeforeMethod
-    public void BeforeMethod(){
+    public void BeforeMethod() {
         Login_Obj = new Login_Page(driver);
         Risk_Management_Obj = new Risk_Management_Module(driver);
         Data_Management_Obj = new Data_Management_Page(driver);

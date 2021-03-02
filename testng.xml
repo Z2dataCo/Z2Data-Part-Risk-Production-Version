@@ -1,187 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="Z2Data Part Risk Cycle 1" verbose="10">
-        <parameter
-                name="Environment" value="Production">
-        </parameter>
+    <test verbose="2" preserve-order="true"
+          name="D:/IdeaProjects/Z2Data-Part-Risk-Production-Version/src/test/java/SE_TestScenarios">
+        <parameter name="Environment" value="Production"/>
         <classes>
-            <class name="SE_TestScenarios.A_1_Parametric_Search">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Parametric_Search"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.B_1_Data_Management">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Data_Management"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.C_1_Existing_BOM_and_Switcher">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Existing_BOM_and_Switcher"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.D_1_PCN_Manager">
-                <methods>
-                    <include name="Login"/>
-                    <include name="PCN_Manager"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.E_1_Create_Alert_LifeCycle">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Create_Alert_LifeCycle"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.F_1_Create_Alert_Litigation">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Create_Alert_Litigation"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.G_1_Create_Alert_LifeCycle_Litigation">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Create_Alert_LifeCycle_Litigation"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.H_1_Advanced_Crosses">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Advanced_Crosses"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.I_1_Compare">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Compare_Parts"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.J_1_Supplier_Search">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Search_for_Supplier"/>
-                </methods>
-            </class>
             <class name="SE_TestScenarios.AB_1_PCN_Search">
                 <methods>
-                    <include name="Login"/>
                     <include name="PCN_Search"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.AC_1_Upload_BOM_and_Switcher">
                 <methods>
-                    <include name="Login"/>
                     <include name="Upload_BOM_and_Switcher"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.AD_1_Check_Dashboard_Data">
                 <methods>
-                    <include name="Login"/>
                     <include name="Dashboard_Data"/>
                 </methods>
             </class>
-
+            <class name="SE_TestScenarios.AE_2_Fun_Check_Smelters_Report">
+                <methods>
+                    <include name="Check_Smelters_Report"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.AF_2_Fun_Check_Supplier_Report">
+                <methods>
+                    <include name="Check_Supplier_Report"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.AG_2_Fun_Check_Compliance_MPN_Report">
+                <methods>
+                    <include name="Check_Compliance_Report"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.AH_2_Fun_Check_Minerals_Metal_Report">
+                <methods>
+                    <include name="Check_Minerals_Report"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.AI_2_Fun_Conflict_Minerals">
+                <methods>
+                    <include name="Check_Report_Gold_Tantalum_Tin_Tungsten_Cobalt"/>
+                </methods>
+            </class>
             <class name="SE_TestScenarios.AJ_1_Submit_Ticket">
                 <methods>
-                    <include name="Login"/>
                     <include name="User_Submit_Ticket"/>
                 </methods>
             </class>
-        </classes>
-    </test>
-    <test  name="Z2Data Part Risk Cycle 2" verbose="10">
-        <classes>
+            <class name="SE_TestScenarios.A_1_Parametric_Search">
+                <methods>
+                    <include name="Parametric_Search"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.B_1_Data_Management">
+                <methods>
+                    <include name="Data_Management"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.C_1_Existing_BOM_and_Switcher">
+                <methods>
+                    <include name="Existing_BOM_and_Switcher"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.D_1_PCN_Manager">
+                <methods>
+                    <include name="PCN_Manager"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.E_1_Create_Alert_LifeCycle">
+                <methods>
+                    <include name="Create_Alert_LifeCycle"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.F_1_Create_Alert_Litigation">
+                <methods>
+                    <include name="Create_Alert_Litigation"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.G_1_Create_Alert_LifeCycle_Litigation">
+                <methods>
+                    <include name="Create_Alert_LifeCycle_Litigation"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.H_1_Advanced_Crosses">
+                <methods>
+                    <include name="Advanced_Crosses"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.I_1_Compare">
+                <methods>
+                    <include name="Compare_Parts"/>
+                </methods>
+            </class>
+            <class name="SE_TestScenarios.J_1_Supplier_Search">
+                <methods>
+                    <include name="Search_for_Supplier"/>
+                </methods>
+            </class>
             <class name="SE_TestScenarios.K_2_Fun_Filters_For_Compliance">
                 <methods>
-                    <include name="Login"/>
                     <include name="Filters_For_Compliance"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.L_2_Fun_Search_Part_Number">
                 <methods>
-                    <include name="Login"/>
                     <include name="Search_with_Part_Number"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.M_2_Fun_Search_IPN">
                 <methods>
-                    <include name="Login"/>
                     <include name="Search_by_IPN"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.N_2_Fun_Impacted_Parts">
                 <methods>
-                    <include name="Login"/>
                     <include name="Impacted_Parts"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.O_2_Fun_Count_Of_Exact_Match">
                 <methods>
-                    <include name="Login"/>
                     <include name="Count_Exact_Match_in_Scrub"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.P_2_Fun_MPN_View">
                 <methods>
-                    <include name="Login"/>
                     <include name="MPN_View"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.Q_2_Fun_IPN_View">
                 <methods>
-                    <include name="Login"/>
                     <include name="IPN_View"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.R_2_Fun_Forecast_Graph_MPN_View">
                 <methods>
-                    <include name="Login"/>
                     <include name="Forecast_Graph_MPN_View"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.S_2_Fun_Forecast_Graph_IPN_View">
                 <methods>
-                    <include name="Login"/>
                     <include name="ForeCast_Graph_IPN_View"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.T_2_Fun_Mitigation_Filters_and_Data_MPN_View">
                 <methods>
-                    <include name="Login"/>
                     <include name="Mitigation_Filters_and_Data_MPN_View"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.U_2_Fun_Create_Report">
                 <methods>
-                    <include name="Login"/>
                     <include name="Create_Report_Download"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.V_2_Fun_Create_Folder_Data_Management">
                 <methods>
-                    <include name="Login"/>
                     <include name="Create_Folder_in_Data_Management"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link">
                 <methods>
-                    <include name="Login"/>
                     <include name="Check_Side_Panel_High_Risk"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.X_2_Fun_Delete_BOMs">
                 <methods>
-                    <include name="Login"/>
                     <include name="Delete_BOMs"/>
                 </methods>
             </class>
             <class name="SE_TestScenarios.Y_2_Fun_Obsolescence">
                 <methods>
-                    <include name="Login"/>
                     <include name="Check_Side_Panel_High_Risk"/>
                     <include name="Obsolete_Parts_in_3_Years"/>
                     <include name="Obsolete_Part_IN_5_Years"/>
@@ -189,38 +179,7 @@
             </class>
             <class name="SE_TestScenarios.Z_2_Fun_All_Obsolescence">
                 <methods>
-                    <include name="Login"/>
                     <include name="All_ObsolescencePage"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.AE_2_Fun_Check_Smelters_Report">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Check_Smelters_Report"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.AF_2_Fun_Check_Supplier_Report">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Check_Supplier_Report"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.AG_2_Fun_Check_Compliance_MPN_Report">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Check_Compliance_Report"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.AH_2_Fun_Check_Minerals_Metal_Report">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Check_Minerals_Report"/>
-                </methods>
-            </class>
-            <class name="SE_TestScenarios.AI_2_Fun_Conflict_Minerals">
-                <methods>
-                    <include name="Login"/>
-                    <include name="Check_Report_Gold_Tantalum_Tin_Tungsten_Cobalt"/>
                 </methods>
             </class>
         </classes>

@@ -1,6 +1,9 @@
 package SE_TestScenarios;
 
-import SE_Page.*;
+import SE_Page.Data_Management_Page;
+import SE_Page.Login_Page;
+import SE_Page.PCN_Manager_Page;
+import SE_Page.Risk_Management_Module;
 import com.github.javafaker.Faker;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.gui.element.ElementActions;
@@ -23,20 +26,21 @@ public class U_2_Fun_Create_Report {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
     @Parameters("Environment")
     @Test(description = "TS001 || Validate To Create , Review Report And Download", priority = 1)
     public void Create_Report_Download(String Environment) throws InterruptedException {
         Data_Management_Obj.Z2D_Move_to_Reports_BOM(Environment);
-        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Create_Report,10,true);
+        ElementActions.waitForElementToBePresent(driver, Risk_Management_Obj.Create_Report, 10, true);
         Risk_Management_Obj.Z2D_Reports_Open_Create_Report();
         Risk_Management_Obj.Z2D_Reports_Select_Parameter();
         Risk_Management_Obj.Z2D_Reports_Save_Report();
@@ -45,7 +49,7 @@ public class U_2_Fun_Create_Report {
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
         Risk_Management_Obj.Z2D_Reports_Preview_Report();
         PCN_Manager_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Report_Window_Title,5,true);
+        ElementActions.waitForElementToBePresent(driver, Risk_Management_Obj.Report_Window_Title, 5, true);
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText(), ("Report Preview"));
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Download_Btn).getText(), ("Download"));
         //Risk_Management_Obj.Z2D_Reports_Download_Report();
@@ -55,10 +59,11 @@ public class U_2_Fun_Create_Report {
         Risk_Management_Obj.Z2D_Reports_Delete_Report();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
         driver.navigate().refresh();
-        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.FirstRow,5,true);
+        ElementActions.waitForElementToBePresent(driver, Risk_Management_Obj.FirstRow, 5, true);
         Assert.assertNotEquals(driver.findElement(Risk_Management_Obj.FirstRow).getText(), Name, "Verify to delete Report");
         System.out.println("Report: " + Name + " Is Deleted");
-}
+    }
+
     @AfterClass(alwaysRun = true)
     public void TearDown() {
         driver.quit();

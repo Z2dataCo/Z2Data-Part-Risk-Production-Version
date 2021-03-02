@@ -12,11 +12,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class AI_2_Fun_Conflict_Minerals  {
+public class AI_2_Fun_Conflict_Minerals {
     private WebDriver driver;
     private ExcelFileManager Variables;
     private Login_Page Login_Obj;
-    private  Risk_Management_Module Risk_Management_Obj;
+    private Risk_Management_Module Risk_Management_Obj;
     private Data_Management_Page Data_Management_Obj;
     private Landing_Page Landing_Obj;
 
@@ -25,20 +25,21 @@ public class AI_2_Fun_Conflict_Minerals  {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
     @Test(description = "TS001 || Check Report Gold Tantalum Tin Tungsten Cobalt", priority = 1)
-    public void Check_Report_Gold_Tantalum_Tin_Tungsten_Cobalt()   {
+    public void Check_Report_Gold_Tantalum_Tin_Tungsten_Cobalt() {
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Type_Folder_Name();
-        ElementActions.click(driver,Data_Management_Obj.Test_Folder);
+        ElementActions.click(driver, Data_Management_Obj.Test_Folder);
         Data_Management_Obj.Z2D_Open_BOM();
         Risk_Management_Obj.Switch_Tabs();
         Risk_Management_Obj.Z2D_Reports_Open_Reports_Tab();
@@ -46,12 +47,14 @@ public class AI_2_Fun_Conflict_Minerals  {
         Risk_Management_Obj.Z2D_Reports_Open_Con_Metals();
         Assert.assertEquals(driver.findElement(Risk_Management_Obj.Tungsten).getText(), "Tungsten");
     }
+
     @AfterClass(alwaysRun = true)
     public void TearDown() {
         Login_Obj.Tear_Down();
     }
+
     @BeforeMethod
-    public void BeforeMethod(){
+    public void BeforeMethod() {
         Login_Obj = new Login_Page(driver);
         Risk_Management_Obj = new Risk_Management_Module(driver);
         Data_Management_Obj = new Data_Management_Page(driver);

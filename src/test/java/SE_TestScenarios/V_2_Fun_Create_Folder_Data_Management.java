@@ -10,12 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class V_2_Fun_Create_Folder_Data_Management{
+public class V_2_Fun_Create_Folder_Data_Management {
 
-private WebDriver driver;
-Faker faker = new Faker();
-String Z2DataFakerFolder = faker.name().firstName() + "1";
-
+    Faker faker = new Faker();
+    String Z2DataFakerFolder = faker.name().firstName() + "1";
+    private WebDriver driver;
     private ExcelFileManager Variables;
     private Data_Management_Page Data_Management_Obj;
     private Login_Page Login_Obj;
@@ -25,24 +24,25 @@ String Z2DataFakerFolder = faker.name().firstName() + "1";
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
-    @Test(description = "TS001 || Validate To Create Folder In Data Management",priority = 1)
-    public void Create_Folder_in_Data_Management(){
+    @Test(description = "TS001 || Validate To Create Folder In Data Management", priority = 1)
+    public void Create_Folder_in_Data_Management() {
 
         Data_Management_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Create_Folder();
         Data_Management_Obj.Z2D_Folder_Name(Z2DataFakerFolder);
         Data_Management_Obj.Z2D_Submit_Folder();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
-        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Data_Management_Obj.is_Row),Z2DataFakerFolder);
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Data_Management_Obj.is_Row), Z2DataFakerFolder);
         String istRow = driver.findElement(Data_Management_Obj.is_Row).getText();
         Assert.assertEquals(istRow, Z2DataFakerFolder);
         if (istRow.equals(Z2DataFakerFolder)) {
@@ -51,8 +51,7 @@ String Z2DataFakerFolder = faker.name().firstName() + "1";
             Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Toast_Container();
             String First_Folder_Name = driver.findElement(Data_Management_Obj.is_Row).getText();
             Assert.assertNotEquals(First_Folder_Name, Z2DataFakerFolder);
-        }
-        else {
+        } else {
             System.out.println("Folder not Exist");
         }
     }

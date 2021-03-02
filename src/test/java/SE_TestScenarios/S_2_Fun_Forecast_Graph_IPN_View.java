@@ -1,7 +1,10 @@
 package SE_TestScenarios;
 
 
-import SE_Page.*;
+import SE_Page.Data_Management_Page;
+import SE_Page.Login_Page;
+import SE_Page.Obsolescence_Page;
+import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
@@ -9,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class S_2_Fun_Forecast_Graph_IPN_View   {
+public class S_2_Fun_Forecast_Graph_IPN_View {
     private WebDriver driver;
     private ExcelFileManager Variables;
     private Data_Management_Page Data_Management_Obj;
@@ -21,13 +24,14 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
     @Parameters("Environment")
@@ -39,7 +43,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         Risk_Management_Obj.Z2D_Switchers_Pipeline_to_be_Clickable();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Forecast_Ele_First_Filter,5,true);
+        ElementActions.waitForElementToBePresent(driver, Risk_Management_Obj.Forecast_Ele_First_Filter, 5, true);
         String Multi_Source_Filter_Value = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Filter).getText();
         Risk_Management_Obj.Z2D_Forecast_Click_on_First_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
@@ -81,7 +85,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View   {
         if (TotalFilterValue3.equals("0")) {
             System.out.println("No Data for the Selected Filter");
         } else {
-            ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Forecast_Ele_First_Table_Data,5,true);
+            ElementActions.waitForElementToBePresent(driver, Risk_Management_Obj.Forecast_Ele_First_Table_Data, 5, true);
             String First_Row_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Table_Data).getText();
             Risk_Management_Obj.Z2D_Forecast_Click_on_First_Result();
             String Opened_File_Name = driver.findElement(Risk_Management_Obj.Forecast_Ele_File_Name).getText();

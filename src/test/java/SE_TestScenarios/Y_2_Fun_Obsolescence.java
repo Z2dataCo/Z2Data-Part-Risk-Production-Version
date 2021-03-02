@@ -8,11 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class Y_2_Fun_Obsolescence  {
+public class Y_2_Fun_Obsolescence {
     private WebDriver driver;
     private ExcelFileManager Variables;
-    private Login_Page Login_Obj ;
-    private Landing_Page Landing_Obj ;
+    private Login_Page Login_Obj;
+    private Landing_Page Landing_Obj;
     private Data_Management_Page Data_Management_Obj;
     private Risk_Management_Module Risk_Management_Obj;
     private Obsolescence_Page Obsolescence_Obj;
@@ -21,13 +21,14 @@ public class Y_2_Fun_Obsolescence  {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
     @Parameters("Environment")
@@ -37,7 +38,7 @@ public class Y_2_Fun_Obsolescence  {
         Landing_Obj.Z2D_Open_Data_Management();
         Data_Management_Obj.Z2D_Search();
         Data_Management_Obj.SetFile();
-           if (!(" TAP_BOM_Proud_Test".equals(driver.getPageSource()))) {
+        if (!(" TAP_BOM_Proud_Test".equals(driver.getPageSource()))) {
             Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         } else {
             Data_Management_Obj.Z2D_Click_on_BOM(Environment);
@@ -114,8 +115,8 @@ public class Y_2_Fun_Obsolescence  {
         Risk_Management_Obj.Z2D_Reports_Open_Obsolescence();
         Risk_Management_Obj.Z2D_Reports_Open_Obsolete_3Years();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
-        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.Row_Active,5,true);
-       // Assert.assertEquals(driver.findElement(Risk_Management_Obj.Row_Active).getText(), "Active");
+        ElementActions.waitForElementToBePresent(driver, Risk_Management_Obj.Row_Active, 5, true);
+        // Assert.assertEquals(driver.findElement(Risk_Management_Obj.Row_Active).getText(), "Active");
         //Assert.assertEquals(driver.findElement(Risk_Management_Obj.Row_3Y).getText(), "3 years");
         Obsolescence_Obj.Z2D_Get_Last_Page_For_3Y();
         int CountOfTable = driver.findElements(Obsolescence_Obj.Table_Size).size();
@@ -158,13 +159,14 @@ public class Y_2_Fun_Obsolescence  {
         Assert.assertEquals(Count, AllOfRow);
         Obsolescence_Obj.Z2D_Close_Slide();
     }
+
     @AfterClass(alwaysRun = true)
     public void TearDown() {
         Login_Obj.Tear_Down();
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void BeforeMethod(){
+    public void BeforeMethod() {
         Login_Obj = new Login_Page(driver);
         Landing_Obj = new Landing_Page(driver);
         Data_Management_Obj = new Data_Management_Page(driver);

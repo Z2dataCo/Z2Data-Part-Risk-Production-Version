@@ -22,13 +22,14 @@ public class O_2_Fun_Count_Of_Exact_Match {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
     @Parameters("Environment")
@@ -37,7 +38,7 @@ public class O_2_Fun_Count_Of_Exact_Match {
 
         Data_Management_Obj.Z2D_Move_to_Scrub_BOM(Environment);
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
-        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.FixedNumber,5,true);
+        ElementActions.waitForElementToBePresent(driver, Risk_Management_Obj.FixedNumber, 5, true);
         int FixedNum = Integer.parseInt(driver.findElement(Risk_Management_Obj.FixedNumber).getText());
         if (driver.findElement(Risk_Management_Obj.Last).isEnabled()) {
             int tableRows = Risk_Management_Obj.Z2D_Scrub_Table_Rows();

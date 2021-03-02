@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
+public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View {
     private WebDriver driver;
     private ExcelFileManager Variables;
     private Data_Management_Page Data_Management_Obj;
@@ -22,13 +22,14 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
-        else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+        } else {
+            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+        }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);
-        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL","Value"));
-        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName","Value"), Variables.getCellData("Password","Value"));
+        Login_Obj.Navigate_To_URL_for_Navigation(Variables.getCellData("URL", "Value"));
+        Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
     @Parameters("Environment")
@@ -37,9 +38,9 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
 
         Data_Management_Obj.Z2D_Move_to_Mitigation_BOM(Environment);
         //Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
-        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.NRND_Parts,5,true);
-        String NRND_Parts = driver.findElement(Risk_Management_Obj.NRND_Parts).getText().replace(" Parts","");
-        String End_of_Life_Parts = driver.findElement(Risk_Management_Obj.End_Of_Life_Parts).getText().replace(" Parts","");
+        ElementActions.waitForElementToBePresent(driver, Risk_Management_Obj.NRND_Parts, 5, true);
+        String NRND_Parts = driver.findElement(Risk_Management_Obj.NRND_Parts).getText().replace(" Parts", "");
+        String End_of_Life_Parts = driver.findElement(Risk_Management_Obj.End_Of_Life_Parts).getText().replace(" Parts", "");
         Risk_Management_Obj.Z2D_Mitigation_Scroll();
         while (driver.findElements(Risk_Management_Obj.Added_Part_Label_List).size() != 0) {
             Risk_Management_Obj.Z2D_Mitigation_Click_on_Close_Button();
@@ -75,7 +76,7 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
         //    Assert.assertEquals(TotalFilterValue + " Parts",Active_Parts );
 //has been Commented because of Bug ***********************
 
-       // String NRND_Parts = driver.findElement(Risk_Management_Obj.NRND_Parts).getText();
+        // String NRND_Parts = driver.findElement(Risk_Management_Obj.NRND_Parts).getText();
         System.out.println("NRND_Filter_Value : " + NRND_Parts);
         Risk_Management_Obj.Z2D_Mitigation_NRND_Parts_to_be_Clickable();
         Risk_Management_Obj.Z2D_Mitigation_Click_on_NRND_Filter();
@@ -83,9 +84,9 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
         Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), NRND_Parts);
         String TotalFilterValue2 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
         System.out.println("Total Filter Value : " + TotalFilterValue2);
-        Assert.assertEquals(TotalFilterValue2 , NRND_Parts);
+        Assert.assertEquals(TotalFilterValue2, NRND_Parts);
 
-      //  String End_of_Life_Parts = driver.findElement(Risk_Management_Obj.End_Of_Life_Parts).getText();
+        //  String End_of_Life_Parts = driver.findElement(Risk_Management_Obj.End_Of_Life_Parts).getText();
         System.out.println("End_Of_Life_Parts : " + End_of_Life_Parts);
         Risk_Management_Obj.Z2D_Mitigation_End_Of_Life_Parts_to_be_Clickable();
         Risk_Management_Obj.Z2D_Mitigation_Click_on_End_of_Life_Filter();
@@ -93,8 +94,9 @@ public class T_2_Fun_Mitigation_Filters_and_Data_MPN_View   {
         Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value), End_of_Life_Parts);
         String TotalFilterValue3 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
         System.out.println("Total Filter Value : " + TotalFilterValue3);
-        Assert.assertEquals(TotalFilterValue3 , End_of_Life_Parts);
+        Assert.assertEquals(TotalFilterValue3, End_of_Life_Parts);
     }
+
     @AfterClass(alwaysRun = true)
     public void TearDown() {
         Login_Page Login_Obj = new Login_Page(driver);
