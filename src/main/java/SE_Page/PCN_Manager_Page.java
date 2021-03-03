@@ -40,7 +40,7 @@ public class PCN_Manager_Page {
     public By Results_Table = By.id("tblPagePCN");
     public By First_Search_Result = By.xpath("//table[@id='tblPagePCN']/tbody/tr[1]/td[4]/div[1]/span");
     public By Showing_Of_Total = By.xpath("//div[@id=\"PCNManagerPCNTab\"]/div[2]/div[1]/div[1]/div/span[1]");
-    public By Impacted_MPN_Results = By.xpath("//*[@id=\"dataconfigrationtableTableView\"]/tr[48]/td[2]");
+    public By Impacted_MPN_Results = By.xpath("//a[normalize-space()='FSP012-FHEN2']");
     public By FSP_Text = By.xpath("//*[@id=\"PCNManagerPCNTab\"]/div[3]/div/div/div/div[1]/div/div[2]/h4/span[2]");
     public By Z2Data_Spinner_1 = By.id("progressDiv");
     // Impacted Parts

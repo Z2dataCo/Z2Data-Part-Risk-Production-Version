@@ -58,7 +58,7 @@ public class AB_1_PCN_Search {
         ElementActions.waitForElementToBePresent(driver, PCN_Manager_Obj.FSP_Text, 5, true);
         ElementActions.waitForTextToChange(driver, PCN_Manager_Obj.FSP_Text, "", 5);
         System.out.println(PCN_Manager_Obj.Impacted_MPN_Data() + " this is what is got");
-        Assert.assertTrue(PCN_Manager_Obj.Impacted_MPN_Data().contains(Variables.getCellData("MPN_ID", "Value")));
+        Assert.assertEquals( PCN_Manager_Obj.Impacted_MPN_Data(), Variables.getCellData("MPN_ID", "Value"));
     }
 
     @AfterClass()
