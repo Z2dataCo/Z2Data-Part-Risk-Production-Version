@@ -200,7 +200,7 @@ public class Risk_Management_Module {
 
     //Risk Management Methods
     public void Z2D_Followed_Text_to_be_Clickable() {
-        ElementActions.waitForElementToBePresent(driver, Followed_Text, 5, true);
+        ElementActions.waitForElementToBePresent(driver, Followed_Text, 10, true);
     }
 
     public void Z2D_Unfollow_Btn_to_be_Clickable() {

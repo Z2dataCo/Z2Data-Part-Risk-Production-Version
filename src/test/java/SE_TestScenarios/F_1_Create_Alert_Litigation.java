@@ -33,9 +33,9 @@ public class F_1_Create_Alert_Litigation {
 
     @Parameters("Environment")
     @Test(description = "TS001 || Validate creating alert by selecting Litigation only", priority = 1)
-    public void Create_Alert_Litigation() throws InterruptedException {
+    public void Create_Alert_Litigation(String Environment) throws InterruptedException {
 
-        Data_Management_Obj.Z2D_Move_To_Prod_BOM("Environment");
+        Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         Risk_Management_Obj.Z2D_Followed_Text_to_be_Clickable();
         if (driver.findElement(Risk_Management_Obj.Followed_Text).getText().equals("Followed")) {
             Risk_Management_Obj.Z2D_Click_Followed_Btn();
@@ -57,7 +57,7 @@ public class F_1_Create_Alert_Litigation {
         Risk_Management_Obj.Z2D_Click_Unfollow_Btn();
     }
 
-    @AfterClass(alwaysRun = true)
+    @AfterClass()
     public void TearDown() {
         Login_Obj.Tear_Down();
     }

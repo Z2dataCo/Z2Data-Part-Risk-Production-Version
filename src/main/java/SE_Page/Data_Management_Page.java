@@ -159,7 +159,7 @@ public class Data_Management_Page {
         else{
             Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
-        driver.get(Variables.getCellData("Pom_Dashboard_URL","Value"));
+        driver.navigate().to(Variables.getCellData("Pom_Dashboard_URL","Value"));
     }
 
     public void Z2D_Move_to_Mitigation_BOM(String Environment) {
