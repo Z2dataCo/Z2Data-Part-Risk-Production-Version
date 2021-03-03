@@ -106,7 +106,7 @@ public class Data_Management_Page {
     }
 
     public void Z2D_Open_BOM() {
-        ElementActions.click(driver, Select_BOM);
+        ElementActions.click(driver, Select_Proud_Test_BOM);
     }
 
     public void Z2D_Type_Folder_Name() {
