@@ -186,7 +186,7 @@ public class Data_Management_Page {
         else{
             Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
-        driver.get(Variables.getCellData("Reports_Tab_URL","Value"));
+        driver.get(Variables.getCellData("Compliance_Tab_URL","Value"));
         WebDriverWait WebWait = new WebDriverWait(driver, 90);
         WebWait.until(ExpectedConditions.titleIs("Part Risk | Z2DATA"));
     }
