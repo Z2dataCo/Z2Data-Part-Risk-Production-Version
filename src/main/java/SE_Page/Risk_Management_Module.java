@@ -23,7 +23,7 @@ public class Risk_Management_Module {
         jse.executeScript("window.scrollBy(0,1000)");
     }
 
-    public void Scroll_to_Element(By element) throws InterruptedException {
+    public void Scroll_to_Element(WebDriver driver, WebElement element) throws InterruptedException {
         jse.executeScript("arguments[0].scrollIntoView(true);", element);
         Thread.sleep(500);
     }
@@ -443,15 +443,17 @@ public class Risk_Management_Module {
     }
 
     public void Z2D_Forecast_Click_on_First_Filter() {
-        Scroll_To_Middle();
+        jse.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(Forecast_Ele_First_Filter));
         ElementActions.click(driver, Forecast_Ele_First_Filter);
     }
 
     public void Z2D_Forecast_Click_on_Second_Filter() {
+        jse.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(Forecast_Ele_Second_Filter));
         ElementActions.click(driver, Forecast_Ele_Second_Filter);
     }
 
     public void Z2D_Forecast_Click_on_Third_Filter() {
+        jse.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(Forecast_Ele_Third_Filter));
         ElementActions.click(driver, Forecast_Ele_Third_Filter);
     }
 

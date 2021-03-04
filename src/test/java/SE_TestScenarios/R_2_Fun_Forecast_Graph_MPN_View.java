@@ -5,6 +5,7 @@ import SE_Page.Data_Management_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
+import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -34,7 +35,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
 
     @Parameters("Environment")
     @Test(description = "TS001 || Validate affecting Forecast Graph by filtering the Status & Check table's data", priority = 1)
-    public void Forecast_Graph_MPN_View(String Environment) {
+    public void Forecast_Graph_MPN_View(String Environment) throws InterruptedException {
 
         Data_Management_Obj.Z2D_Move_To_Prod_BOM(Environment);
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
@@ -46,6 +47,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
         Risk_Management_Obj.Z2D_Forecast_Click_on_First_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
+        Risk_Management_Obj.Scroll_to_Element(driver,driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text));
         Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "Active");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "Active");
         String TotalFilterValue = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
@@ -56,6 +58,8 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
         Risk_Management_Obj.Z2D_Forecast_Click_on_Second_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
+        ElementActions.hover(driver,Risk_Management_Obj.Forecast_Ele_First_Filter);
+        Risk_Management_Obj.Scroll_to_Element(driver,driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text));
         Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "EOL");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "EOL");
         String TotalFilterValue2 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
@@ -66,6 +70,8 @@ public class R_2_Fun_Forecast_Graph_MPN_View {
         Risk_Management_Obj.Z2D_Forecast_Click_on_Third_Filter();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Forecast_Ele_First_Row_Text_Visibility();
+        ElementActions.hover(driver,Risk_Management_Obj.Forecast_Ele_First_Filter);
+        Risk_Management_Obj.Scroll_to_Element(driver,driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text));
         Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Forecast_Ele_First_Row_Text), "Unknown");
         Risk_Management_Obj.Z2D_Forecast_Get_Table_Data(driver, "Unknown");
         String TotalFilterValue3 = driver.findElement(Risk_Management_Obj.Forecast_Ele_Total_Value).getText();
