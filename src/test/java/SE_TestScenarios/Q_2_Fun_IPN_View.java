@@ -6,6 +6,7 @@ import SE_Page.Landing_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import com.shaft.gui.browser.BrowserFactory;
+import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -50,6 +51,7 @@ public class Q_2_Fun_IPN_View {
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_IPN_Table_Header_Visibility();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
+        ElementActions.waitForElementToBePresent(driver,Risk_Management_Obj.IPN_Table_Header,5,true);
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.IPN_Table_Header).getText().contains("IPN"));
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Product_Table_Header).getText().contains("Product"));
         Assert.assertTrue(driver.findElement(Risk_Management_Obj.Description_Table_Header).getText().contains("Description"));
