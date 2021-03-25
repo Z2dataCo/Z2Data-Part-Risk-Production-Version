@@ -46,22 +46,22 @@ public class P_2_Fun_MPN_View {
         Risk_Management_Obj.Z2D_Parts_to_be_Clickable();
         Risk_Management_Obj.Z2D_Open_Parts();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_IPN).getText(), "Uploaded IPN");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_MPN).getText(), "Uploaded MPN");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Uploaded_Supplier).getText(), "Uploaded Supplier");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.IPN).getText(), "IPN");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Part_Number).getText(), "Part Number");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Supplier).getText(), "Supplier"); //hna
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Product).getText(), "Product");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Description).getText(), "Description");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Package).getText(), "Package");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.LifeCycle).getText(), "Lifecycle");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.RoHos).getText(), "RoHS");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Crosses).getText(), "Crosses");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Inventory).getText(), "Inventory");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.PCN).getText(), "PCN");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.PartScore).getText(), "Part Score");
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Tags).getText(), "Tags");
+        Assert.assertEquals(Risk_Management_Obj.TableData(),"Uploaded IPN");
+        Assert.assertEquals(Risk_Management_Obj.TableData2(),"Uploaded MPN");
+        Assert.assertEquals(Risk_Management_Obj.TableData3(),"Uploaded Supplier");
+        Assert.assertEquals(Risk_Management_Obj.TableData4(),"IPN");
+        Assert.assertEquals(Risk_Management_Obj.TableData5(),"Part Number");
+        Assert.assertEquals(Risk_Management_Obj.TableData6(),"Supplier");
+        Assert.assertEquals(Risk_Management_Obj.TableData7(),"Product");
+        Assert.assertEquals(Risk_Management_Obj.TableData8(),"Description");
+        Assert.assertEquals(Risk_Management_Obj.TableData9(),"Package");
+        Assert.assertEquals(Risk_Management_Obj.TableData10(),"Lifecycle");
+        Assert.assertEquals(Risk_Management_Obj.TableData11(),"RoHS");
+        Assert.assertEquals(Risk_Management_Obj.TableData12(),"Crosses / Replacements");
+        Assert.assertEquals(Risk_Management_Obj.TableData13(),"Inventory");
+        Assert.assertEquals(Risk_Management_Obj.TableData14(),"PCN");
+        Assert.assertEquals(Risk_Management_Obj.TableData15(),"Part Score");
+        Assert.assertEquals(Risk_Management_Obj.TableData16(),"Tags");
     }
 
     @AfterClass(alwaysRun = true)

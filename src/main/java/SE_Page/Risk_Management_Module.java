@@ -756,5 +756,31 @@ public class Risk_Management_Module {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
     }
+
+    public String TableData(){ return driver.findElement(Uploaded_IPN).getText(); }
+    public String TableData2(){ return driver.findElement(Uploaded_MPN).getText(); }
+    public String TableData3(){ return driver.findElement(Uploaded_Supplier).getText(); }
+    public String TableData4(){ return driver.findElement(IPN).getText(); }
+    public String TableData5(){ return driver.findElement(Part_Number).getText(); }
+    public String TableData6(){ return driver.findElement(Supplier).getText(); }
+    public String TableData7(){ return driver.findElement(Product).getText(); }
+    public String TableData8(){ return driver.findElement(Description).getText(); }
+    public String TableData9(){ return driver.findElement(Package).getText(); }
+    public String TableData10(){ return driver.findElement(LifeCycle).getText(); }
+    public String TableData11(){ return driver.findElement(RoHos).getText(); }
+    public String TableData12(){ return driver.findElement(Crosses).getText(); }
+    public String TableData13(){ return driver.findElement(Inventory).getText(); }
+    public String TableData14(){ return driver.findElement(PCN).getText(); }
+    public String TableData15(){ return driver.findElement(PartScore).getText(); }
+    public String TableData16(){ return driver.findElement(Tags).getText(); }
+    public String DashboardTitle(){ return driver.findElement(Dashboard_Tab).getText();}
+    public String ScrubTitle(){return driver.findElement(Scrub_Tab).getText();}
+    public String PartsTitle(){return driver.findElement(Parts_Tab).getText();}
+    public String ForecastTitle(){return driver.findElement(Forecast_Tab).getText();}
+    public String ComplianceTitle(){return driver.findElement(Compliance_Tab).getText();}
+    public String MitigationTitle(){return driver.findElement(Mitigation_Tab).getText();}
+    public String ReportsTitle(){return driver.findElement(Reports_Tab).getText();}
+    public String Report_Window_Title(){return driver.findElement(Report_Window_Title).getText();}
+    public String First_Filter() {return driver.findElement(Reports_First_Filter).getText();}
 }
 

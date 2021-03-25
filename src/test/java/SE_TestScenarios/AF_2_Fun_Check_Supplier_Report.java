@@ -39,7 +39,7 @@ public class AF_2_Fun_Check_Supplier_Report {
         Risk_Management_Obj.Z2D_Reports_Open_Supplier_Report();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Reports_Report_Window_Title_Visibility();
-        Assert.assertTrue(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText().contains("Conflict Mineral Compliance by Supplier"));
+        Assert.assertTrue(Risk_Management_Obj.Report_Window_Title().contains("Conflict Mineral Compliance by Supplier"));
 
         String First_Filter = driver.findElement(Risk_Management_Obj.Reports_First_Filter).getText();
         Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), First_Filter.replace(" Suppliers", ""));

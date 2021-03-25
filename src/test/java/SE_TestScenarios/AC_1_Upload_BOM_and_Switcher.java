@@ -43,10 +43,8 @@ public class AC_1_Upload_BOM_and_Switcher {
         Upload_BOM_Obj.Z2D_Click_Next_Visibility();
 
         while (!(driver.findElement(By.xpath("//thead/tr[1]/td[2]"))).isDisplayed()) {
-            System.out.println("im Here1");
             Upload_BOM_Obj.Z2D_Click_Next();
         }
-        System.out.println("Done");
         Upload_BOM_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Upload_BOM_Obj.Z2D_Select_Type();
         Upload_BOM_Obj.Z2D_Supplier_Selection();
@@ -63,19 +61,18 @@ public class AC_1_Upload_BOM_and_Switcher {
         Upload_BOM_Obj.Z2D_Selected_Folder();
         Upload_BOM_Obj.Z2D_Finish();
         Upload_BOM_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
-
         Risk_Management_Obj.Z2D_Dashboard_Tab_Visibility();
-        Assert.assertEquals((driver.findElement(By.xpath("//a[contains(text(),'Dashboard')]"))).getText(), "Dashboard");
+        Assert.assertEquals(Risk_Management_Obj.DashboardTitle(), "Dashboard");
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
 
         Risk_Management_Obj.Z2D_Scrub_Tab_Visibility();
         Risk_Management_Obj.Z2D_Click_Scrub_Tab();
-        Assert.assertEquals((driver.findElement(By.xpath("//a[contains(text(),'Scrub')]"))).getText(), "Scrub");
+        Assert.assertEquals(Risk_Management_Obj.ScrubTitle(), "Scrub");
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
 
         Risk_Management_Obj.Z2D_Parts_Tab_Visibility();
         Risk_Management_Obj.Z2D_Click_Parts_Tab();
-        Assert.assertEquals((driver.findElement(By.xpath("//*[@id=\"RemainMainPage\"]/app-risk-manager/div/div//li[3]/a"))).getText(), "Parts");
+        Assert.assertEquals(Risk_Management_Obj.PartsTitle(), "Parts");
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
@@ -84,7 +81,7 @@ public class AC_1_Upload_BOM_and_Switcher {
 
         Risk_Management_Obj.Z2D_Forecast_Tab_Visibility();
         Risk_Management_Obj.Z2D_Click_Forecast_Tab();
-        Assert.assertEquals((driver.findElement(By.xpath("//a[contains(text(),'Forecast')]"))).getText(), "Forecast");
+        Assert.assertEquals(Risk_Management_Obj.ForecastTitle(), "Forecast");
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
@@ -93,12 +90,12 @@ public class AC_1_Upload_BOM_and_Switcher {
 
         Risk_Management_Obj.Z2D_Compliance_Tab_Visibility();
         Risk_Management_Obj.Z2D_Click_Compliance_Tab();
-        Assert.assertEquals((driver.findElement(By.xpath("//a[contains(text(),'Compliance')]"))).getText(), "Compliance");
+        Assert.assertEquals(Risk_Management_Obj.ComplianceTitle(), "Compliance");
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
 
         Risk_Management_Obj.Z2D_Mitigation_Tab_Visibility();
         Risk_Management_Obj.Z2D_Click_Mitigation_Tab();
-        Assert.assertEquals((driver.findElement(By.xpath("//a[contains(text(),'Mitigation')]"))).getText(), "Mitigation");
+        Assert.assertEquals(Risk_Management_Obj.MitigationTitle(), "Mitigation");
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
         Risk_Management_Obj.Z2D_Select_Switcher();
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
@@ -107,7 +104,7 @@ public class AC_1_Upload_BOM_and_Switcher {
 
         Risk_Management_Obj.Z2D_Reports_Tab_Visibility();
         Risk_Management_Obj.Z2D_Click_Reports_Tab();
-        Assert.assertEquals((driver.findElement(By.xpath("//a[contains(text(),'Reports')]"))).getText(), "Reports");
+        Assert.assertEquals(Risk_Management_Obj.ReportsTitle(), "Reports");
         Risk_Management_Obj.Z2D_Wait_Disappear_Z2Data_Spinner_0();
     }
 

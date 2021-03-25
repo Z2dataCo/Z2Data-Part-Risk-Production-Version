@@ -39,11 +39,10 @@ public class AG_2_Fun_Check_Compliance_MPN_Report {
         Risk_Management_Obj.Z2D_Reports_Open_Compliance_MPN_Report();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Reports_Report_Window_Title_Visibility();
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText(), "Conflict Mineral Compliance by Part");
+        Assert.assertEquals(Risk_Management_Obj.Report_Window_Title(), "Conflict Mineral Compliance by Part");
 
-        String First_Filter = driver.findElement(Risk_Management_Obj.Reports_First_Filter).getText();
-        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), First_Filter.replace(" Parts", ""));
-        Assert.assertTrue(First_Filter.contains(driver.findElement(Risk_Management_Obj.Info_Total).getText()));
+        Risk_Management_Obj.Wait_Text_To_be(driver.findElement(Risk_Management_Obj.Info_Total), Risk_Management_Obj.First_Filter().replace(" Parts", ""));
+        Assert.assertTrue(Risk_Management_Obj.First_Filter().contains(driver.findElement(Risk_Management_Obj.Info_Total).getText()));
 
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_1();
         Risk_Management_Obj.Z2D_Reports_Second_Filter_to_be_Clickable();

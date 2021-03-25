@@ -130,6 +130,8 @@ public class PCN_Manager_Page {
     public String Impacted_MPN_Data() {
         return  driver.findElement(Impacted_MPN_Results).getText();
         }
+
+    public String Search_Result(){ return driver.findElement(First_Search_Result).getText(); }
 }
 
 

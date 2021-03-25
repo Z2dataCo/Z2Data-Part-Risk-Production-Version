@@ -38,7 +38,7 @@ public class AE_2_Fun_Check_Smelters_Report {
         Risk_Management_Obj.Z2D_Reports_Open_Smelters_Report();
         Risk_Management_Obj.Z2D_Wait_Invisibility_Of_Z2Data_Spinner_2();
         Risk_Management_Obj.Z2D_Reports_Report_Window_Title_Visibility();
-        Assert.assertEquals(driver.findElement(Risk_Management_Obj.Report_Window_Title).getText(), ("Conflict Mineral Compliance by Smelter"));
+        Assert.assertEquals(Risk_Management_Obj.Report_Window_Title(), "Conflict Mineral Compliance by Smelter");
         Risk_Management_Obj.Z2D_Reports_Export_Button_Visibility();
         Risk_Management_Obj.Z2D_Reports_Export_Report_Excel();
     }

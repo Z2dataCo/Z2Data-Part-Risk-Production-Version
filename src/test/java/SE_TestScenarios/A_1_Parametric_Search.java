@@ -32,7 +32,6 @@ public class A_1_Parametric_Search {
         Login_Obj.Z2D_SignIn(Variables.getCellData("UserName", "Value"), Variables.getCellData("Password", "Value"));
     }
 
-
     @Test(description = "TS001 || Validate Parametric Search", priority = 1)
     public void Parametric_Search() {
         Landing_Obj.Search_using_Parametric();
