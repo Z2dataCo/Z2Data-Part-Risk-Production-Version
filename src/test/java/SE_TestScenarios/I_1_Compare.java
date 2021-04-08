@@ -4,6 +4,7 @@ package SE_TestScenarios;
 import SE_Page.Compare_Page;
 import SE_Page.Landing_Page;
 import SE_Page.Login_Page;
+import Utilities_Test.Constants_Test;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
@@ -23,9 +24,9 @@ public class I_1_Compare {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+            Variables = new ExcelFileManager(Constants_Test.Prod_Data_Path);
         } else {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+            Variables = new ExcelFileManager(Constants_Test.Test_Data_Path);
         }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);

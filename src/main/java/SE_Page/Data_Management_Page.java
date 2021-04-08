@@ -1,15 +1,14 @@
 package SE_Page;
 
+import Utilities_Main.Constants_Main;
 import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 
 import java.util.concurrent.TimeUnit;
 
@@ -155,36 +154,36 @@ public class Data_Management_Page {
 
     public void Z2D_Move_To_Prod_BOM(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Prod_Data_Path); }
         else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Test_Data_Path); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.navigate().to(Variables.getCellData("Pom_Dashboard_URL","Value"));
     }
 
     public void Z2D_Move_to_Mitigation_BOM(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Prod_Data_Path); }
         else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Test_Data_Path); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Variables.getCellData("Mitigation_Tab_URL","Value"));
     }
 
     public void Z2D_Move_to_Forecast_BOM(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Prod_Data_Path); }
         else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Test_Data_Path); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Variables.getCellData("ForeCast_Tab_URL","Value"));
     }
 
     public void Z2D_Move_to_Compliance_BOM(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Prod_Data_Path); }
         else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Test_Data_Path); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Variables.getCellData("Compliance_Tab_URL","Value"));
         WebDriverWait WebWait = new WebDriverWait(driver, 90);
@@ -193,18 +192,18 @@ public class Data_Management_Page {
 
     public void Z2D_Move_to_Reports_BOM(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Prod_Data_Path); }
         else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Test_Data_Path); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Variables.getCellData("Reports_Tab_URL","Value"));
     }
 
     public void Z2D_Move_to_Scrub_BOM(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Prod_Data_Path); }
         else{
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx"); }
+            Variables = new ExcelFileManager(Constants_Main.Test_Data_Path); }
         driver.manage().timeouts().pageLoadTimeout(150, TimeUnit.SECONDS);
         driver.get(Variables.getCellData("Scrub_Tab_URL","Value"));
     }

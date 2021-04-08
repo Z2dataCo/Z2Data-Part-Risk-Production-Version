@@ -4,6 +4,7 @@ import SE_Page.Landing_Page;
 import SE_Page.Login_Page;
 import SE_Page.Risk_Management_Module;
 import SE_Page.Upload_BOM_Page;
+import Utilities_Test.Constants_Test;
 import com.shaft.gui.browser.BrowserFactory;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.By;
@@ -26,9 +27,9 @@ public class AC_1_Upload_BOM_and_Switcher {
     @Parameters("Environment")
     public void initialize_Global_Objects_and_Navigate(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+            Variables = new ExcelFileManager(Constants_Test.Prod_Data_Path);
         } else {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+            Variables = new ExcelFileManager(Constants_Test.Test_Data_Path);
         }
         driver = BrowserFactory.getBrowser(BrowserFactory.BrowserType.GOOGLE_CHROME);
         Login_Obj = new Login_Page(driver);

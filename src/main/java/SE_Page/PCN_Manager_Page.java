@@ -1,15 +1,13 @@
 package SE_Page;
 
+import Utilities_Main.Constants_Main;
 import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ExcelFileManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 
 public class PCN_Manager_Page {
@@ -95,11 +93,11 @@ public class PCN_Manager_Page {
 
     public void Z2D_Search_PCN_ID(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+            Variables = new ExcelFileManager(Constants_Main.Prod_Data_Path);
             ElementActions.type(driver, Search_Field, Variables.getCellData("PCN_ID", "Value"));
         }
         else {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+            Variables = new ExcelFileManager(Constants_Main.Test_Data_Path);
             ElementActions.type(driver, Search_Field, Variables.getCellData("PCN_ID", "Value"));
         }
             ElementActions.click(driver, Search_button);
@@ -109,11 +107,11 @@ public class PCN_Manager_Page {
 
     public void Z2D_Search_MPN_ID(String Environment) {
         if (Environment.equalsIgnoreCase("Production")) {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\ProdEnv_Parameters.xlsx");
+            Variables = new ExcelFileManager(Constants_Main.Prod_Data_Path);
             ElementActions.type(driver, Search_Field, Variables.getCellData("MPN_ID", "Value"));
         }
         else {
-            Variables = new ExcelFileManager("D:\\IdeaProjects\\Z2Data-Part-Risk-Production-Version\\src\\test\\resources\\PartRiskTestData\\TestEnv_Parameters.xlsx");
+            Variables = new ExcelFileManager(Constants_Main.Test_Data_Path);
             ElementActions.type(driver, Search_Field, Variables.getCellData("MPN_ID", "Value"));
         }
         ElementActions.click(driver, Search_button);
